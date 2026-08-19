@@ -1,0 +1,87 @@
+*1. Today's Take*
+
+Yesterday was a high-volume trading day in the online six-figure collector market, recording $6,496,626 in sales across 25 completed transactions. This volume was heavily concentrated on Bring a Trailer, which swept 24 of the 25 sales, while Cars & Bids grabbed a single notable manual-transmission Porsche deal. Buyers displayed solid confidence in pristine, track-oriented Rennsport models and late-model naturally aspirated Ferrari V12s and V8s, showing that while the broader market can feel selective, collectors still aggressively chase highly-specified, analog-heavy icons.
+
+As we look at the weekly trend, transaction volume has hovered consistently between $4 million and $9 million per day. With major live auctions on the horizon, online bidding remains surprisingly resilient, indicating that digital platforms are no longer just a secondary option for six-figure assets but a primary vehicle for instant trading.
+
+[Chart: Daily Volume Trajectory]
+
+---
+
+*2. Vehicle Spotlight of the Day*
+
+*Yesterday's Featured Transaction*
+
+* *Vehicle*: 2019 Porsche 911 GT2 RS Weissach (https://bringatrailer.com/listing/2019-porsche-911-gt2-rs-27/)
+* *Sold Price*: $907,500
+* *Auction House*: Bring a Trailer
+* *Key Provenance*: Finished in GT Silver Metallic over black and red leather, this single-owner, Weissach-equipped supercar shows just 2,500 miles. It came highly optioned with the front-axle lift system, magnesium wheels, and carbon-ceramic brakes. 
+* *Market Insight*: This is an exceptional online result for a 991-generation GT2 RS, landing near the top of its current market spread. The Weissach package and single-owner history carried a significant premium here, proving that high-spec modern water-cooled performance still pulls serious money online even as the collector car community prepares for the physical flagship catalogs of Monterey.
+
+---
+
+*3. Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderboard)*
+
+Over the past rolling 7-day period, online platforms closed a massive $46,389,197 in transaction volume across 163 lots. Raking in high-end inventory remains a highly competitive game, with the average transaction values showing a clear split between boutique, high-reserve curation and mass-market volume.
+
+| Rank | Auction Site | 7-Day Avg Sale Price ($) | 7-Day $100k+ Volume ($) | 6-Figure Lots Sold |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | duPont REGISTRY Live | $608,273.08 | $7,907,550.00 | 13 |
+| 2 | Bring a Trailer | $263,645.57 | $36,383,089.35 | 138 |
+| 3 | Car & Classic | $177,025.50 | $177,025.50 | 1 |
+| 4 | Cars & Bids | $174,684.76 | $1,921,532.40 | 11 |
+
+[Chart: Average Sale Price by Auction House Combo Chart]
+
+---
+
+*4. What to Watch*
+
+*Modern Front-Engine V12 Resiliency*
+The sale of a 2019 Ferrari 812 Superfast (https://bringatrailer.com/listing/2019-ferrari-812-superfast-31/) yesterday for $573,500 is a major data point. This represents a highly resilient value curve for modern front-engine V12 grand tourers. As Ferrari transitions its lineup toward hybridization and turbocharged powerplants, collectors are actively parking cash in late-model, naturally aspirated twelve-cylinder powerhouses. High-option list prices are holding firm, and clean examples are commanding close to their original MSRPs.
+
+*The Late-Model Analog Premium*
+We also witnessed a 2015 Ferrari 458 Italia (https://bringatrailer.com/listing/2015-ferrari-458-italia-18/) change hands for a staggering $508,500. For a non-Speciale, this is a massive premium. It signals that low-mileage, exceptionally preserved paint-to-sample or highly optioned specs of the last naturally aspirated mid-engine V8 are finding an elite tier of buyers who are willing to pay near-supercar money to avoid the complexity of modern turbocharged replacements. 
+
+---
+
+*5. High-End Price Breakdown & Valuation Spread (7-Day Rolling Context)*
+
+The $100k to $250k tier remains the undeniable engine room of the online luxury car market, accounting for 110 of the 163 total six-figure sales. This is where Bring a Trailer and Cars & Bids trade blows daily. 
+
+However, as we move into the upper echelons, the distribution highlights how platforms like duPont REGISTRY Live successfully capture a slice of the absolute high-end market, securing a multi-million dollar transaction that skews their overall average sale price.
+
+[Chart: Price Tier Distribution]
+
+[Chart: Price Valuation Histogram]
+
+---
+
+*6. Market Movers (Yesterday's Key Sales Highlights)*
+
+Yesterday's completed sales showed a broad mix of modern supercars, classic V12 grand tourers, and even high-quality recreations.
+
+| Vehicle | Year | Sold Price ($) | Auction House | Quick Take |
+| :--- | :--- | :--- | :--- | :--- |
+| 2019 Porsche 911 GT2 RS Weissach (https://bringatrailer.com/listing/2019-porsche-911-gt2-rs-27/) | 2019 | $907,500.00 | Bring a Trailer | Equipped with the Weissach pack; a clean specimen of modern capability commanding top-tier market money. |
+| 2019 Ferrari 812 Superfast (https://bringatrailer.com/listing/2019-ferrari-812-superfast-31/) | 2019 | $573,500.00 | Bring a Trailer | Strong result indicating that demand for late-model, front-engine V12s remains exceptionally resilient. |
+| 2015 Ferrari 458 Italia (https://bringatrailer.com/listing/2015-ferrari-458-italia-18/) | 2015 | $508,500.00 | Bring a Trailer | Massive premium paid for the last of the naturally aspirated, mid-engine V8 Ferraris in clean collector condition. |
+| Mercedes-Benz 300 SLR Replica 6-Speed (https://bringatrailer.com/listing/mercedes-benz-300-slr-replica/) | — | $417,500.00 | Bring a Trailer | Proof that high-end custom builds and accurate recreations can command genuine supercar dollars when executed beautifully. |
+| 2012 Lamborghini Aventador LP700-4 Coupe (https://bringatrailer.com/listing/2012-lamborghini-aventador-lp700-4-coupe-3-2/) | 2012 | $319,500.00 | Bring a Trailer | Early Aventadors continue to find solid support above the $300k mark as collectors hold onto early carbon monocoque V12s. |
+| 1981 Ferrari 512 BB (https://bringatrailer.com/listing/1981-ferrari-512-bb-8/) | 1981 | $300,943.35 | Bring a Trailer | A clean classic Berlinetta Boxer import that demonstrates the steady collector appeal of vintage twelve-cylinder Ferraris. |
+| 2016 Nissan GT-R Nismo (https://bringatrailer.com/listing/2016-nissan-gt-r-nismo-10/) | 2016 | $275,500.00 | Bring a Trailer | Nismo variants continue to separate themselves from base R35 GT-Rs with strong premiums for well-kept examples. |
+| 2023 Porsche 911 GT3 (https://carsandbids.com/auctions/KV0l6XnY/2023-porsche-911-gt3) | 2023 | $266,500.00 | Cars & Bids | Solid market price for a modern 992 GT3, highlighting that daily-drivable track cars are still liquid assets. |
+| 2007 Porsche 911 GT3 (https://bringatrailer.com/listing/2007-porsche-911-gt3-109/) | 2007 | $260,750.00 | Bring a Trailer | 997.1 Mezger-powered GT3s are highly coveted by driving purists, holding their values beautifully. |
+| 2000 Ferrari 550 Maranello (https://bringatrailer.com/listing/2000-ferrari-550-maranello-67/) | 2000 | $247,500.00 | Bring a Trailer | A gate-shifted front-engine V12 manual classic that represents excellent relative value under $250k. |
+
+---
+
+*7. What's Coming Up This Week*
+
+This is one of the most exciting windows of the year for high-end automotive enthusiasts. While daily digital drops continue on Bring a Trailer and duPont REGISTRY Live, the entire collector community is shifting its focus to Monterey Car Week. The physical catalogs from RM Sotheby's, Gooding & Company, and Broad Arrow are packed with historic seven-figure and eight-figure metal, which will serve as the ultimate health check for the upper bounds of the classic and hypercar markets.
+
+Serious collectors should keep a close eye on early bidding behavior over the next seven days. When the physical tents open in California, the pricing established there will immediately ripple back down to the digital platforms. If you have been waiting to list a high-end asset, the next week of physical and online trading will tell us exactly how much dry powder is left in the room.
+
+Catch you tomorrow,
+
+*dRew*

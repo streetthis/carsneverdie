@@ -1,0 +1,16 @@
+# Environment variables & API keys
+.env
+
+# Python cache & build outputs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/

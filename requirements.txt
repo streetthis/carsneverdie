@@ -1,0 +1,6 @@
+google-adk
+google-genai
+requests
+python-dotenv
+markdown
+matplotlib
