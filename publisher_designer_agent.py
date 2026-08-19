@@ -52,7 +52,14 @@ def inject_inline_styles(html_content: str) -> str:
     return html_content
 
 
-from datetime import datetime
+EMOJI_REGEX = re.compile(r'[\U00010000-\U0010FFFF\u2600-\u27FF\u2300-\u23FF\u2B00-\u2BFF\u200D\uFE0F]')
+
+def _strip_header_emoji(match: re.Match) -> str:
+    prefix = match.group(1)
+    title = match.group(2)
+    cleaned = EMOJI_REGEX.sub('', title).strip()
+    return f"{prefix}{cleaned}"
+
 
 def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) -> str:
     """Deterministic template builder: converts editorial Markdown to inline-styled HTML 
@@ -81,7 +88,7 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
     # --- Step 1.6: Strip all emojis from headers ---
     editorial_markdown = re.sub(
         r'^(#{1,6}\s+)(.+)$',
-        lambda m: f"{m.group(1)}{re.sub(r'[\U00010000-\U0010FFFF\u2600-\u27FF\u2300-\u23FF\u2B00-\u2BFF\u200D\uFE0F]', '', m.group(2)).strip()}",
+        _strip_header_emoji,
         editorial_markdown,
         flags=re.MULTILINE
     )
@@ -127,7 +134,7 @@ def generate_whatsapp_text(markdown_content: str) -> str:
     # Strip emojis from headers
     text = re.sub(
         r'^(#{1,6}\s+)(.+)$',
-        lambda m: f"{m.group(1)}{re.sub(r'[\U00010000-\U0010FFFF\u2600-\u27FF\u2300-\u23FF\u2B00-\u2BFF\u200D\uFE0F]', '', m.group(2)).strip()}",
+        _strip_header_emoji,
         text,
         flags=re.MULTILINE
     )
