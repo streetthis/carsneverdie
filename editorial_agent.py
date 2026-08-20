@@ -30,7 +30,7 @@ def search_car_news(tool_context: ToolContext, query: str = "upcoming collector 
                 return "Web Search Results:\n\n" + "\n\n".join(clean_results)
     except Exception as e:
         print(f"[Web Search Exception] {e}")
-    return "Upcoming Car Auction News: Monterey Car Week 2026 previews featuring RM Sotheby's, Gooding & Company, Broad Arrow, and Bonhams flagship auctions with rare Ferraris, Porsches, and McLarens."
+    return "Upcoming Car Auction News: Late summer digital catalog drops featuring flagship sales from Bring a Trailer, duPont REGISTRY Live, Cars & Bids, and upcoming fall auction previews."
 
 
 # --- Editorial Memory Tools ---
@@ -180,8 +180,10 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 ---
 
 ## 7. What's Coming Up This Week
-- Write 2 engaging paragraphs highlighting what's hot and upcoming in the luxury & collector car market this week (e.g. Monterey Car Week previews like RM Sotheby's, Gooding & Co, and Broad Arrow flagship auctions, plus live daily digital drops on BaT & Drlive).
-- Give serious collectors advice on what to keep their eyes on over the next 7 days.
+- **REAL-TIME UPCOMING EVENT CALENDAR**: Write 2 engaging paragraphs highlighting actual upcoming auctions, catalog drops, and market events for the CURRENT WEEK / upcoming weekend.
+- **MUST CALL `search_car_news`**: Call `search_car_news` to search for real upcoming auction events for the current date (e.g., query `search_car_news("upcoming collector car auctions August 2026")`).
+- **NO HARDCODED PAST EVENTS**: Do NOT hardcode past events or out-of-season previews (e.g. do NOT mention Monterey Car Week unless today's date is early August). Focus on upcoming weekend catalog drops on BaT, duPont REGISTRY Live, Cars & Bids, and seasonal upcoming live sales.
+- Give serious collectors actionable advice on what to watch and prepare for over the next 7 days.
 
 ---
 
