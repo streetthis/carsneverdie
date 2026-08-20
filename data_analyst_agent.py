@@ -301,18 +301,18 @@ def generate_price_band_chart(tool_context: ToolContext, price_band_house_matrix
                     all_houses.update(matrix[b].keys())
                 
             HOUSE_COLORS = {
-                "Bring a Trailer": "#1d4ed8",         # Royal Blue
-                "RM Sotheby's": "#0f172a",            # Dark Slate Navy
-                "PCARMARKET": "#0284c7",              # Sky Blue
-                "Broad Arrow": "#4f46e5",             # Indigo
-                "Barrett-Jackson": "#06b6d4",         # Cyan / Teal
-                "Car & Classic": "#3b82f6",           # Blue Accent
-                "Cars & Bids": "#2563eb",             # Mid Blue
-                "duPont REGISTRY Live": "#1e3a5f",    # Navy Accent
-                "Hagerty": "#64748b",                 # Slate Grey
-                "Iconic": "#94a3b8"                   # Muted Silver
+                "Bring a Trailer": "#2563eb",         # Deep Sapphire Blue
+                "duPont REGISTRY Live": "#1e293b",    # Rich Charcoal Slate
+                "Cars & Bids": "#d97706",             # Warm Amber Gold
+                "Car & Classic": "#059669",           # Emerald Green
+                "RM Sotheby's": "#8b0000",            # Crimson Red
+                "Broad Arrow": "#7c3aed",             # Royal Purple
+                "Barrett-Jackson": "#dc2626",         # Bright Racing Red
+                "PCARMARKET": "#0891b2",              # Cyan Teal
+                "Collecting Cars": "#ea580c",          # Burnt Orange
+                "Hagerty": "#64748b"                  # Slate Grey
             }
-            FALLBACK_COLORS = ["#3b82f6", "#2563eb", "#1e40af", "#60a5fa", "#93c5fd"]
+            FALLBACK_COLORS = ["#2563eb", "#1e293b", "#d97706", "#059669", "#7c3aed", "#dc2626", "#0891b2", "#ea580c"]
             
             ordered_houses = list(all_houses)
             ordered_houses.sort(key=lambda h: ("Bring" in h, "duPont" in h, "Collecting" in h, "Classic" in h), reverse=True)
@@ -383,18 +383,18 @@ def generate_histogram_chart(tool_context: ToolContext, price_band_house_matrix:
                     all_houses.update(matrix[b].keys())
                 
             HOUSE_COLORS = {
-                "Bring a Trailer": "#1d4ed8",         # Royal Blue
-                "RM Sotheby's": "#0f172a",            # Dark Slate Navy
-                "PCARMARKET": "#0284c7",              # Sky Blue
-                "Broad Arrow": "#4f46e5",             # Indigo
-                "Barrett-Jackson": "#06b6d4",         # Cyan / Teal
-                "Car & Classic": "#3b82f6",           # Blue Accent
-                "Cars & Bids": "#2563eb",             # Mid Blue
-                "duPont REGISTRY Live": "#1e3a5f",    # Navy Accent
-                "Hagerty": "#64748b",                 # Slate Grey
-                "Iconic": "#94a3b8"                   # Muted Silver
+                "Bring a Trailer": "#2563eb",         # Deep Sapphire Blue
+                "duPont REGISTRY Live": "#1e293b",    # Rich Charcoal Slate
+                "Cars & Bids": "#d97706",             # Warm Amber Gold
+                "Car & Classic": "#059669",           # Emerald Green
+                "RM Sotheby's": "#8b0000",            # Crimson Red
+                "Broad Arrow": "#7c3aed",             # Royal Purple
+                "Barrett-Jackson": "#dc2626",         # Bright Racing Red
+                "PCARMARKET": "#0891b2",              # Cyan Teal
+                "Collecting Cars": "#ea580c",          # Burnt Orange
+                "Hagerty": "#64748b"                  # Slate Grey
             }
-            FALLBACK_COLORS = ["#3b82f6", "#2563eb", "#1e40af", "#60a5fa", "#93c5fd"]
+            FALLBACK_COLORS = ["#2563eb", "#1e293b", "#d97706", "#059669", "#7c3aed", "#dc2626", "#0891b2", "#ea580c"]
             
             ordered_houses = list(all_houses)
             ordered_houses.sort(key=lambda h: ("Bring" in h, "duPont" in h, "Collecting" in h, "Classic" in h), reverse=True)
