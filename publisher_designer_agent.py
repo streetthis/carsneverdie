@@ -109,6 +109,10 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
     if "<!-- DYNAMIC_NEWSLETTER_HTML -->" not in template_html:
         return "ERROR: email_template.html is missing the <!-- DYNAMIC_NEWSLETTER_HTML --> placeholder."
     
+    today_date_display = datetime.now().strftime("%B %d, %Y").upper()
+    if "<!-- DYNAMIC_DATE -->" in template_html:
+        template_html = template_html.replace("<!-- DYNAMIC_DATE -->", today_date_display)
+
     final_html = template_html.replace("<!-- DYNAMIC_NEWSLETTER_HTML -->", styled_body_html)
     
     # --- Step 5: Write output_newsletter.html AND timestamped archive to disk ---
