@@ -126,7 +126,56 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
     with open(output_whatsapp_path, "w", encoding="utf-8") as f:
         f.write(whatsapp_text)
     
+    # --- Step 7: Auto-update daily editorial memory on disk ---
+    _auto_update_memory(editorial_markdown)
+    
     return f"SUCCESS: Newsletter HTML written to {output_html_path}, archived locally at {archive_path}, and WhatsApp text written to {output_whatsapp_path}."
+
+
+def _auto_update_memory(editorial_markdown: str) -> None:
+    """Fallback memory recorder: parses generated editorial markdown and ensures editorial_memory.json is updated."""
+    try:
+        memory_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "editorial_memory.json")
+        history = []
+        if os.path.exists(memory_file):
+            try:
+                with open(memory_file, "r", encoding="utf-8") as f:
+                    history = json.load(f)
+            except Exception:
+                history = []
+
+        # Extract Spotlight car name from Section 2
+        spotlight_match = re.search(r'##\s*2\.\s*Vehicle Spotlight[^\n]*\n+.*?\[(.*?)\]', editorial_markdown, re.DOTALL)
+        spotlight_car = spotlight_match.group(1).strip() if spotlight_match else "Spotlight Car"
+
+        # Extract sub-heading themes
+        themes = re.findall(r'###\s*(.+)', editorial_markdown)
+        
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        entry = {
+            "date": today_str,
+            "title": f"Daily Cars Never Die Edition - {today_str}",
+            "spotlight_car": spotlight_car,
+            "top_movers": [],
+            "themes": [t.strip() for t in themes[:5]] if themes else ["Market Analysis"]
+        }
+        
+        updated = False
+        for i, h in enumerate(history):
+            if h.get("date") == today_str:
+                if spotlight_car != "Spotlight Car":
+                    history[i]["spotlight_car"] = spotlight_car
+                if themes:
+                    history[i]["themes"] = [t.strip() for t in themes[:5]]
+                updated = True
+                break
+        if not updated:
+            history.append(entry)
+            
+        with open(memory_file, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2)
+    except Exception as e:
+        print(f"[Memory Auto-Update Exception] {e}")
 
 
 def generate_whatsapp_text(markdown_content: str) -> str:

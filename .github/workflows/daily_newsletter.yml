@@ -35,3 +35,11 @@ jobs:
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
           BEEHIIV_POST_STATUS: "confirmed"
         run: python agents.py
+
+      - name: Commit and push updated editorial memory
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add editorial_memory.json
+          git diff-index --quiet HEAD || git commit -m "Update daily editorial memory log [skip ci]"
+          git push
