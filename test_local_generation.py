@@ -1,51 +1,42 @@
 import os
-import requests
-from dotenv import load_dotenv
-from google.adk import Agent
-from google.adk.agents import SequentialAgent
-from google.adk.tools.tool_context import ToolContext
-
-load_dotenv()
-if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
-    os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY", "")
-if not os.getenv("GEMINI_API_KEY") and os.getenv("GOOGLE_API_KEY"):
-    os.environ["GEMINI_API_KEY"] = os.getenv("GOOGLE_API_KEY", "")
-
-from data_analyst_agent import data_analyst
-from editorial_agent import editorial_agent
-from publisher_designer_agent import publisher_agent
-from beehiiv_publisher_agent import beehiiv_publisher_agent
-
-# --- 3. Orchestrate the Workflow ---
-
-# Sequential Pipeline: Analyst -> Editor -> Publisher Designer -> beehiiv Publisher
-newsletter_team = SequentialAgent(
-    name="newsletter_pipeline",
-    sub_agents=[data_analyst, editorial_agent, publisher_agent, beehiiv_publisher_agent]
-)
-
 import asyncio
+from dotenv import load_dotenv
+from google.adk.agents import SequentialAgent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
+load_dotenv()
+if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
+    os.environ["GOOGLE_API_KEY"] = os.getenv("GEMINI_API_KEY", "")
+
+from data_analyst_agent import data_analyst
+from editorial_agent import editorial_agent
+from publisher_designer_agent import publisher_agent
+
+# Local pipeline: Data Analyst -> Editorial Agent -> Publisher Designer (No Beehiiv publish)
+local_pipeline = SequentialAgent(
+    name="local_newsletter_pipeline",
+    sub_agents=[data_analyst, editorial_agent, publisher_agent]
+)
+
 async def main():
     session_service = InMemorySessionService()
     runner = Runner(
-        agent=newsletter_team,
+        agent=local_pipeline,
         session_service=session_service,
-        app_name="editorial_app"
+        app_name="local_editorial_app"
     )
     
     session = await session_service.create_session(
-        app_name="editorial_app",
+        app_name="local_editorial_app",
         user_id="drew_user"
     )
     
     from datetime import datetime, timedelta
     today_date_str = datetime.now().strftime('%B %d, %Y')
     yesterday_str = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-    print(f"Running daily automated pipeline for date: {yesterday_str} (Publication date: {today_date_str})...")
+    print(f"Running local generation for date: {yesterday_str} (Publication date: {today_date_str})...")
 
     user_msg = types.Content(
         role="user",
@@ -54,7 +45,6 @@ async def main():
     
     import sys
     sys.stdout.reconfigure(encoding='utf-8')
-    print("Starting newsletter generation pipeline...\n")
     async for event in runner.run_async(
         session_id=session.id,
         user_id="drew_user",
