@@ -18,42 +18,43 @@
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100% !important; }
         table { border-collapse: collapse !important; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #dcd5c7; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f6f1e7; }
 
         /* General Typography Defaults */
         h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; color: #1a1a1a; margin: 0 0 14px 0; }
         p, td, th, li { font-family: 'Merriweather', Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: #222222; margin-top: 0; }
         a { color: #8b0000; text-decoration: underline; font-weight: 700; }
 
-        /* Responsive Mobile Styles */
+        /* Responsive Mobile Styles (iPhone 16 Pro / Gmail iOS Full Width Fix) */
         @media only screen and (max-width: 620px) {
-            .outer-padding { padding: 0 !important; }
-            .email-container { width: 100% !important; max-width: 100% !important; border-left: none !important; border-right: none !important; border-radius: 0 !important; box-shadow: none !important; }
-            .content-padding { padding: 20px 14px !important; font-size: 16.5px !important; }
-            .masthead { padding: 20px 14px 14px 14px !important; }
-            .masthead-title { font-size: 32px !important; line-height: 1.15 !important; }
-            .masthead-sub { font-size: 11px !important; letter-spacing: 1.5px !important; }
+            body, .bg-outer { background-color: #f6f1e7 !important; }
+            .outer-padding { padding: 0 !important; width: 100% !important; }
+            .email-container { width: 100% !important; max-width: 100% !important; border-left: none !important; border-right: none !important; border-radius: 0 !important; box-shadow: none !important; border-top: none !important; }
+            .content-padding { padding: 18px 12px !important; font-size: 16.5px !important; }
+            .masthead { padding: 16px 12px 12px 12px !important; }
+            .masthead-title { font-size: 30px !important; line-height: 1.12 !important; }
+            .masthead-sub { font-size: 10.5px !important; letter-spacing: 1.2px !important; }
             .hide-mobile { display: none !important; }
             
             /* Responsive typography & layout overrides */
-            h2 { font-size: 20px !important; margin: 26px 0 12px 0 !important; }
-            h3 { font-size: 17px !important; }
+            h2 { font-size: 19.5px !important; margin: 24px 0 10px 0 !important; }
+            h3 { font-size: 16.5px !important; }
             p, li { font-size: 16.5px !important; line-height: 1.65 !important; }
             
             /* Responsive tables */
             table { width: 100% !important; max-width: 100% !important; font-size: 13px !important; display: table !important; }
-            th { font-size: 11px !important; padding: 8px 6px !important; }
-            td { font-size: 13px !important; padding: 8px 6px !important; word-break: break-word !important; }
+            th { font-size: 11px !important; padding: 7px 5px !important; }
+            td { font-size: 12.5px !important; padding: 7px 5px !important; word-break: break-word !important; }
             
             /* Responsive images */
-            img, .chart-img { max-width: 100% !important; width: 100% !important; height: auto !important; margin: 14px auto !important; }
-            blockquote { padding: 14px 16px !important; margin: 18px 0 !important; }
+            img, .chart-img { max-width: 100% !important; width: 100% !important; height: auto !important; margin: 12px auto !important; }
+            blockquote { padding: 12px 14px !important; margin: 16px 0 !important; }
         }
 
         /* LIGHT VS DARK MODE: Highly tuned contrast for night reading */
         @media (prefers-color-scheme: dark) {
-            body, .bg-outer { background-color: #1f1d1a !important; } /* Deep vintage charcoal */
-            .email-container, .bg-inner { background-color: #141311 !important; border-color: #3b352e !important; } /* Darker paper, soft borders */
+            body, .bg-outer { background-color: #141311 !important; } /* Unified dark paper background */
+            .email-container, .bg-inner { background-color: #141311 !important; border-color: #3b352e !important; } /* Dark paper, soft borders */
             .masthead { background-color: #141311 !important; border-bottom-color: #3b352e !important; }
             h1, h2, h3, h4, h5, h6, p, td, th, li, strong, b, span, .masthead-title, .dark-text { color: #e6e1d6 !important; } /* Soft parchment white text */
             .border-dark { border-color: #3b352e !important; }
@@ -71,15 +72,15 @@
     </style>
     <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; background-color: #dcd5c7; -webkit-font-smoothing: antialiased;" class="bg-outer">
+<body id="body" style="margin: 0; padding: 0; background-color: #f6f1e7; -webkit-font-smoothing: antialiased;" class="bg-outer">
     
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="bg-outer" style="background-color: #dcd5c7; width: 100%;">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="bg-outer" style="background-color: #f6f1e7; width: 100%;">
         <tr>
-            <td align="center" class="outer-padding" style="padding: 24px 8px;">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" class="email-container bg-inner" style="max-width: 640px; width: 100%; background-color: #f6f1e7; border: 2px solid #1a1a1a; box-shadow: 0 8px 20px rgba(0,0,0,0.12);">
+            <td align="center" class="outer-padding" style="padding: 0; width: 100%;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="email-container bg-inner" style="max-width: 640px; width: 100%; background-color: #f6f1e7; border-left: 1px solid #d4cebe; border-right: 1px solid #d4cebe;">
                     
                     <tr>
-                        <td align="center" class="masthead" style="background-color: #f6f1e7; padding: 24px 20px 16px 20px; border-bottom: 4px double #1a1a1a;">
+                        <td align="center" class="masthead" style="background-color: #f6f1e7; padding: 20px 16px 14px 16px; border-bottom: 4px double #1a1a1a;">
                             
                             <!-- Top Metadata Bar -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="border-dark" style="border-bottom: 1px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 14px;">
@@ -112,14 +113,14 @@
 
                     <!-- MAIN CONTENT CONTAINER -->
                     <tr>
-                        <td align="left" class="content-padding bg-inner" style="padding: 28px 26px; background-color: #f6f1e7; font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222;">
+                        <td align="left" class="content-padding bg-inner" style="padding: 24px 20px; background-color: #f6f1e7; font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222;">
                             <!-- DYNAMIC_NEWSLETTER_HTML -->
                         </td>
                     </tr>
 
                     <!-- VINTAGE NEWSPAPER FOOTER -->
                     <tr>
-                        <td align="center" class="footer-bg border-dark" style="background-color: #ede7da; padding: 28px 20px; border-top: 3px double #1a1a1a; font-family: 'Merriweather', Georgia, serif; font-size: 13px; color: #555555;">
+                        <td align="center" class="footer-bg border-dark" style="background-color: #ede7da; padding: 24px 18px; border-top: 3px double #1a1a1a; font-family: 'Merriweather', Georgia, serif; font-size: 13px; color: #555555;">
                             <p class="dark-text" style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px 0;">
                                 Catch you tomorrow,<br /><strong style="color: #8b0000; font-family: 'Merriweather', Georgia, serif; font-weight: 700;">dRew</strong>
                             </p>
