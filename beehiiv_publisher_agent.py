@@ -61,9 +61,15 @@ def create_beehiiv_post(
     
     target_status = os.getenv("BEEHIIV_POST_STATUS", status)
     
+    # --- Strip all emojis from title and subtitle for clean email subject lines ---
+    import re
+    emoji_regex = re.compile(r'[\U00010000-\U0010FFFF\u2600-\u27FF\u2300-\u23FF\u2B00-\u2BFF\u200D\uFE0F]')
+    clean_title = emoji_regex.sub('', title).strip()
+    clean_subtitle = emoji_regex.sub('', subtitle).strip()
+
     payload = {
-        "title": title,
-        "subtitle": subtitle,
+        "title": clean_title,
+        "subtitle": clean_subtitle,
         "status": target_status,
         "body_content": body_content_html
     }
@@ -100,8 +106,10 @@ BEEHIIV_PUBLISHER_INSTRUCTION = """You are an automated beehiiv Newsletter Publi
 
 CRITICAL RULE: Call the `create_beehiiv_post` tool EXACTLY ONCE. Do NOT retry or call it multiple times.
 
+NO EMOJIS: Do NOT include any emojis in the title or subtitle under any circumstances. Keep titles and subject lines 100% clean and emoji-free.
+
 Your procedure:
-1. Generate a compelling title and subtitle based on the newsletter content.
+1. Generate a compelling, clean title and subtitle based on the newsletter content (NO emojis allowed).
 2. Make a SINGLE call to `create_beehiiv_post` with status='draft'. The HTML body is automatically read from output_newsletter.html on disk — you do NOT need to pass it.
 3. Stop and return the resulting post ID and web_url."""
 
