@@ -7,31 +7,47 @@
     <meta name="supported-color-schemes" content="light dark" />
     <title>Cars Never Die by dRew</title>
     
-    <!-- Google Fonts: Authentic Vintage Press Typography -->
+    <!-- Google Fonts: Classic Broadsheet Vintage Press Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" />
     
     <style type="text/css">
         /* Client-specific Resets */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100% !important; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #dcd5c7; }
 
         /* General Typography Defaults */
-        h1, h2, h3, h4, h5, h6 { font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif; color: #1a1a1a; margin: 0 0 14px 0; }
-        p, td, th, li { font-family: 'Crimson Text', Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 1.6; color: #222222; margin-top: 0; }
-        a { color: #8b0000; text-decoration: underline; font-weight: 600; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; color: #1a1a1a; margin: 0 0 14px 0; }
+        p, td, th, li { font-family: 'Merriweather', Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: #222222; margin-top: 0; }
+        a { color: #8b0000; text-decoration: underline; font-weight: 700; }
 
         /* Responsive Mobile Styles */
         @media only screen and (max-width: 620px) {
-            .email-container { width: 100% !important; max-width: 100% !important; border: none !important; }
-            .content-padding { padding: 25px 16px !important; }
-            .masthead-title { font-size: 32px !important; }
-            .mobile-stack { display: block !important; width: 100% !important; padding-bottom: 15px !important; }
+            .outer-padding { padding: 0 !important; }
+            .email-container { width: 100% !important; max-width: 100% !important; border-left: none !important; border-right: none !important; border-radius: 0 !important; box-shadow: none !important; }
+            .content-padding { padding: 20px 14px !important; font-size: 16.5px !important; }
+            .masthead { padding: 20px 14px 14px 14px !important; }
+            .masthead-title { font-size: 32px !important; line-height: 1.15 !important; }
+            .masthead-sub { font-size: 11px !important; letter-spacing: 1.5px !important; }
             .hide-mobile { display: none !important; }
+            
+            /* Responsive typography & layout overrides */
+            h2 { font-size: 20px !important; margin: 26px 0 12px 0 !important; }
+            h3 { font-size: 17px !important; }
+            p, li { font-size: 16.5px !important; line-height: 1.65 !important; }
+            
+            /* Responsive tables */
+            table { width: 100% !important; max-width: 100% !important; font-size: 13px !important; display: table !important; }
+            th { font-size: 11px !important; padding: 8px 6px !important; }
+            td { font-size: 13px !important; padding: 8px 6px !important; word-break: break-word !important; }
+            
+            /* Responsive images */
+            img, .chart-img { max-width: 100% !important; width: 100% !important; height: auto !important; margin: 14px auto !important; }
+            blockquote { padding: 14px 16px !important; margin: 18px 0 !important; }
         }
 
         /* LIGHT VS DARK MODE: Highly tuned contrast for night reading */
@@ -59,7 +75,7 @@
     
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="bg-outer" style="background-color: #dcd5c7; width: 100%;">
         <tr>
-            <td align="center" style="padding: 30px 10px;">
+            <td align="center" class="outer-padding" style="padding: 24px 8px;">
                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="640" class="email-container bg-inner" style="max-width: 640px; width: 100%; background-color: #f6f1e7; border: 2px solid #1a1a1a; box-shadow: 0 8px 20px rgba(0,0,0,0.12);">
                     
                     <tr>
@@ -68,23 +84,23 @@
                             <!-- Top Metadata Bar -->
                             <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="border-dark" style="border-bottom: 1px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 14px;">
                                 <tr>
-                                    <td align="left" class="text-muted" style="font-family: 'Crimson Text', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 33%;">
+                                    <td align="left" class="text-muted" style="font-family: 'Merriweather', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 33%;">
                                         DAILY MARKET ED.
                                     </td>
-                                    <td align="center" class="text-muted hide-mobile" style="font-family: 'Crimson Text', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 34%;">
+                                    <td align="center" class="text-muted hide-mobile" style="font-family: 'Merriweather', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 34%;">
                                         VOL. I &bull; NO. 1
                                     </td>
-                                    <td align="right" class="text-muted" style="font-family: 'Crimson Text', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 33%;">
+                                    <td align="right" class="text-muted" style="font-family: 'Merriweather', Georgia, serif; font-size: 11px; font-weight: 700; color: #555555; text-transform: uppercase; letter-spacing: 1px; width: 33%;">
                                         EST. 2026
                                     </td>
                                 </tr>
                             </table>
 
                             <!-- Main Title Banner -->
-                            <h1 class="masthead-title dark-text" style="font-family: 'Old Standard TT', Georgia, 'Times New Roman', serif; font-size: 44px; font-weight: 700; color: #1a1a1a; margin: 0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1;">
+                            <h1 class="masthead-title dark-text" style="font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; font-size: 44px; font-weight: 800; color: #1a1a1a; margin: 0; text-transform: uppercase; letter-spacing: 1.5px; line-height: 1.1;">
                                 CARS NEVER DIE
                             </h1>
-                            <p class="text-muted" style="font-family: 'Crimson Text', Georgia, serif; font-size: 12px; font-weight: 700; color: #444444; margin: 8px 0 0 0; text-transform: uppercase; letter-spacing: 2px;">
+                            <p class="text-muted masthead-sub" style="font-family: 'Merriweather', Georgia, serif; font-size: 12px; font-weight: 700; color: #444444; margin: 8px 0 0 0; text-transform: uppercase; letter-spacing: 2px;">
                                 DAILY COLLECTOR CAR MARKET INTELLIGENCE • BY DREW
                             </p>
 
@@ -96,18 +112,18 @@
 
                     <!-- MAIN CONTENT CONTAINER -->
                     <tr>
-                        <td align="left" class="content-padding bg-inner" style="padding: 30px 28px; background-color: #f6f1e7; font-family: 'Crimson Text', Georgia, serif; font-size: 16px; line-height: 1.6; color: #222222;">
+                        <td align="left" class="content-padding bg-inner" style="padding: 28px 26px; background-color: #f6f1e7; font-family: 'Merriweather', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222;">
                             <!-- DYNAMIC_NEWSLETTER_HTML -->
                         </td>
                     </tr>
 
                     <!-- VINTAGE NEWSPAPER FOOTER -->
                     <tr>
-                        <td align="center" class="footer-bg border-dark" style="background-color: #ede7da; padding: 30px 25px; border-top: 3px double #1a1a1a; font-family: 'Crimson Text', Georgia, serif; font-size: 13px; color: #555555;">
-                            <p class="dark-text" style="font-family: 'Old Standard TT', Georgia, serif; font-style: italic; font-size: 20px; font-weight: 700; color: #1a1a1a; margin: 0 0 15px 0;">
-                                Catch you tomorrow,<br /><strong style="color: #8b0000; font-family: 'Crimson Text', Georgia, serif;">dRew</strong>
+                        <td align="center" class="footer-bg border-dark" style="background-color: #ede7da; padding: 28px 20px; border-top: 3px double #1a1a1a; font-family: 'Merriweather', Georgia, serif; font-size: 13px; color: #555555;">
+                            <p class="dark-text" style="font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 800; color: #1a1a1a; margin: 0 0 12px 0;">
+                                Catch you tomorrow,<br /><strong style="color: #8b0000; font-family: 'Merriweather', Georgia, serif; font-weight: 700;">dRew</strong>
                             </p>
-                            <div class="border-dark" style="width: 40px; border-bottom: 1px solid #555555; margin: 0 auto 15px auto;"></div>
+                            <div class="border-dark" style="width: 40px; border-bottom: 1px solid #555555; margin: 0 auto 14px auto;"></div>
                             <p class="text-muted" style="font-size: 12px; color: #555555; margin: 0; line-height: 1.6; text-transform: uppercase; letter-spacing: 0.5px;">
                                 © 2026 Cars Never Die Press Group.<br />
                                 Printed & Published Daily for Car Collectors.
