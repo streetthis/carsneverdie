@@ -164,7 +164,7 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 ## 6. Market Movers (Yesterday's Key Sales Highlights)
 - Highlight key $100k+ sales completed **YESTERDAY** from `yesterday_focus.yesterday_top_movers`.
 - Table format: `| Vehicle | Year | Sold Price ($) | Auction House |`
-- Format the `Vehicle` column with clickable listing links: `|[1989 Porsche 911 Singer](https://...)|...|`
+- Format the `Vehicle` column with standard Markdown links: `[Vehicle Name](https://...)`
 
 ---
 
