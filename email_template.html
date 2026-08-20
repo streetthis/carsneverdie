@@ -13,12 +13,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" />
     
     <style type="text/css">
-        /* Client-specific Resets */
+        /* Client-specific Resets & Beehiiv Outer Wrapper Overrides */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100% !important; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #f6f1e7; }
+        
+        /* Beehiiv Email Wrapper Full Width Override */
+        .beehiiv-email-wrap, .beehiiv-email-body, div[class*="beehiiv"], div[style*="padding: 20px"], div[style*="padding: 16px"] {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            width: 100% !important;
+        }
 
         /* General Typography Defaults */
         h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; color: #1a1a1a; margin: 0 0 14px 0; }
@@ -29,11 +38,11 @@
         @media only screen and (max-width: 620px) {
             body, .bg-outer { background-color: #f6f1e7 !important; }
             .outer-padding { padding: 0 !important; width: 100% !important; }
-            .email-container { width: 100% !important; max-width: 100% !important; border-left: none !important; border-right: none !important; border-radius: 0 !important; box-shadow: none !important; border-top: none !important; }
-            .content-padding { padding: 18px 12px !important; font-size: 16.5px !important; }
-            .masthead { padding: 16px 12px 12px 12px !important; }
-            .masthead-title { font-size: 30px !important; line-height: 1.12 !important; }
-            .masthead-sub { font-size: 10.5px !important; letter-spacing: 1.2px !important; }
+            .email-container { width: 100% !important; max-width: 100% !important; border: none !important; border-left: none !important; border-right: none !important; border-radius: 0 !important; box-shadow: none !important; border-top: none !important; }
+            .content-padding { padding: 14px 6px !important; font-size: 16.5px !important; }
+            .masthead { padding: 14px 8px 10px 8px !important; }
+            .masthead-title { font-size: 28px !important; line-height: 1.12 !important; }
+            .masthead-sub { font-size: 10px !important; letter-spacing: 1px !important; }
             .hide-mobile { display: none !important; }
             
             /* Responsive typography & layout overrides */
