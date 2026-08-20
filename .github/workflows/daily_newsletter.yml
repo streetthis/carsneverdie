@@ -6,14 +6,21 @@ on:
     - cron: '0 11 * * *'
   workflow_dispatch: # Allows manual trigger from GitHub Actions UI anytime
 
+permissions:
+  contents: write
+
 jobs:
   run-daily-newsletter:
     name: Generate & Publish Daily Newsletter
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
