@@ -331,7 +331,7 @@ def generate_price_band_chart(tool_context: ToolContext, price_band_house_matrix
             
             handles, labels = ax.get_legend_handles_labels()
             if handles:
-                ax.legend(title="Auction House", frameon=False, loc="upper right", fontsize=9, title_fontsize=9.5)
+                ax.legend(handles, labels, title="Auction House", bbox_to_anchor=(1.02, 1), loc="upper left", frameon=False, fontsize=9.5, title_fontsize=10)
         else:
             values = [price_band_house_matrix.get(b, 0) if isinstance(price_band_house_matrix, dict) else 0 for b in bands]
             blues = [BLUE_DARK, BLUE_PRIMARY, BLUE_MID, BLUE_LIGHT, '#60a5fa', '#93c5fd']
@@ -412,7 +412,7 @@ def generate_histogram_chart(tool_context: ToolContext, price_band_house_matrix:
                 
             handles, labels = ax.get_legend_handles_labels()
             if handles:
-                ax.legend(title="Auction House", frameon=False, loc="upper right", fontsize=9, title_fontsize=9.5)
+                ax.legend(handles, labels, title="Auction House", bbox_to_anchor=(1.02, 1), loc="upper left", frameon=False, fontsize=9.5, title_fontsize=10)
         else:
             values = [price_band_house_matrix.get(b, 0) if isinstance(price_band_house_matrix, dict) else 0 for b in bands]
             blues = [BLUE_DARK, BLUE_PRIMARY, BLUE_MID, BLUE_LIGHT, '#60a5fa', '#93c5fd']
