@@ -71,7 +71,12 @@ def create_beehiiv_post(
         "title": clean_title,
         "subtitle": clean_subtitle,
         "status": target_status,
-        "body_content": body_content_html
+        "body_content": body_content_html,
+        "email_settings": {
+            "email_subject_line": clean_title,
+            "preview_text": clean_subtitle,
+            "display_title": False
+        }
     }
     
     try:
