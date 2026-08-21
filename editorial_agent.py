@@ -142,21 +142,21 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ### Standard Newsletter Structure (When Sales Data Exists):
 
-## 1. Today's Take
+## WHY I DID NOT SLEEP LAST NIGHT
 - Write 2-3 short, punchy, conversational paragraphs analyzing **YESTERDAY'S completed sales** ($ volume, top sales, buyer sentiment).
 - Speak like a savvy insider talking to a collector friend over coffee — zero corporate fluff or generic AI intros. Start directly with yesterday's action.
 - Embed the 7-day daily volume velocity trend line chart using its public HTTPS URL: `<img src="PUBLIC_DAILY_TREND_URL" class="chart-img" alt="Daily Volume Trajectory">`.
 
 ---
 
-## 2. Vehicle Spotlight of the Day
+## VEHICLE SPOTLIGHT
 - Feature yesterday's top highlight vehicle provided in `yesterday_focus.yesterday_spotlight_car` (or 7-day spotlight if yesterday has no photo).
 - Output a dedicated highlight box with vehicle title linked to its URL `[Vehicle Title](url)`, price, auction house, and quick provenance notes.
 - **PHOTO RULE**: ONLY embed the exact image URL provided in `spotlight.photo`. If `spotlight.photo` is empty, missing, or `#`, omit the `<img>` tag completely.
 
 ---
 
-## 3. Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderboard)
+## THE LEADER BOARD
 - Leaderboard ranking top online auction platforms strictly by **7-Day Rolling Average Sale Price ($)**.
 - Table format: `| Rank | Auction Site | 7-Day Avg Sale Price ($) | 7-Day $100k+ Volume ($) | 6-Figure Lots Sold |`
 - Sort table strictly by 7-Day Avg Sale Price ($) descending.
@@ -164,14 +164,14 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ---
 
-## 4. What to Watch (Auctions Closing Today & Tomorrow)
-- **FORWARD-LOOKING FOCUS**: Focus Section 4 strictly on active auctions closing **TODAY and TOMORROW**, or upcoming flagship drops to watch across BaT, duPont REGISTRY Live, Cars & Bids, and live catalog previews (e.g. Monterey Car Week, RM Sotheby's, Gooding & Co, Broad Arrow).
+## WHAT TO WATCH
+- **FORWARD-LOOKING FOCUS**: Focus Section 4 strictly on active auctions closing **TODAY and TOMORROW**, or upcoming flagship drops to watch across BaT, duPont REGISTRY Live, Cars & Bids, and live catalog previews.
 - Call `search_car_news` if needed to look up active/upcoming auction lots or catalog previews closing today or tomorrow.
 - Highlight 2 specific upcoming lots or active categories closing today/tomorrow with actionable advice for collectors watching the boards today (e.g. key reserve levels, bidding momentum to watch, options/specs to target).
 
 ---
 
-## 5. High-End Price Breakdown & Valuation Spread (7-Day Rolling Context)
+## DATA CORNER
 - Summarize volume distribution across the 6 high-end price tiers ($100k-$250k, $250k-$500k, $500k-$750k, $750k-$1M, $1M-$2M, $2M+) over the 7-day rolling period.
 - Embed BOTH chart graphics using their public HTTPS URLs:
   - `<img src="PUBLIC_PRICE_BAND_URL" class="chart-img" alt="Price Tier Distribution">`
@@ -179,17 +179,17 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ---
 
-## 6. Market Movers (Yesterday's Key Sales Highlights)
+## TOP MOVERS
 - Highlight key $100k+ sales completed **YESTERDAY** from `yesterday_focus.yesterday_top_movers`.
 - Table format: `| Vehicle | Year | Sold Price ($) | Auction House |`
 - Format the `Vehicle` column with standard Markdown links: `[Vehicle Name](https://...)`
 
 ---
 
-## 7. What's Coming Up This Week
+## WHAT'S COMING UP THIS WEEK
 - **REAL-TIME UPCOMING EVENT CALENDAR**: Write 2 engaging paragraphs highlighting actual upcoming auctions, catalog drops, and market events for the CURRENT WEEK / upcoming weekend.
-- **MUST CALL `search_car_news`**: Call `search_car_news` to search for real upcoming auction events for the current date (e.g., query `search_car_news("upcoming collector car auctions August 2026")`).
-- **NO HARDCODED PAST EVENTS**: Do NOT hardcode past events or out-of-season previews (e.g. do NOT mention Monterey Car Week unless today's date is early August). Focus on upcoming weekend catalog drops on BaT, duPont REGISTRY Live, Cars & Bids, and seasonal upcoming live sales.
+- **MUST CALL `search_car_news`**: Call `search_car_news` to search for real upcoming auction events for the current date.
+- **NO HARDCODED PAST EVENTS**: Do NOT hardcode past events or out-of-season previews. Focus on upcoming weekend catalog drops on BaT, duPont REGISTRY Live, Cars & Bids, and seasonal upcoming live sales.
 - Give serious collectors actionable advice on what to watch and prepare for over the next 7 days.
 
 ---

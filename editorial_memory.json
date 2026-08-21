@@ -1,5 +1,27 @@
 [
   {
+    "date": "2026-08-21",
+    "title": "WHY I DID NOT SLEEP LAST NIGHT",
+    "spotlight_car": "2021 McLaren 765LT",
+    "top_movers": [
+      "1973 Porsche 911 Carrera RS Lightweight",
+      "2007 Lamborghini Murcielago LP640 Coupe",
+      "2021 McLaren 765LT",
+      "1997 Porsche 911 Turbo",
+      "2001 Porsche 911 GT2 Clubsport",
+      "2026 Porsche 911 GT3 Touring Lightweight 6-Speed",
+      "2025 Lamborghini Urus SE",
+      "2007 Ferrari 599 GTB Fiorano",
+      "2022 Porsche 718 Spyder 000 Package 6-Speed",
+      "1996 Porsche 911 Carrera 4S Coupe 6-Speed"
+    ],
+    "themes": [
+      "2021 McLaren 765LT",
+      "Analogue V12 Escalation",
+      "Post-Monterey GT Momentum"
+    ]
+  },
+  {
     "date": "2026-08-20",
     "title": "Post-Monterey Liquid Flow: V12s and GTs Hold the Line",
     "spotlight_car": "2005 Porsche Carrera GT",
@@ -20,21 +42,6 @@
       "Late-Model Rennsport Variants",
       "Front-Engine V12 Ferraris",
       "High-Tier Replica Builds"
-    ]
-  },
-  {
-    "date": "2026-08-21",
-    "title": "The Post-Monterey Reorganization: Track Specials and Lightweight Legends Take Center Stage",
-    "spotlight_car": "2021 McLaren 765LT",
-    "top_movers": [
-      "1973 Porsche 911 Carrera RS Lightweight",
-      "2007 Lamborghini Murcielago LP640 Coupe",
-      "2021 McLaren 765LT",
-      "1997 Porsche 911 Turbo",
-      "2001 Porsche 911 GT2 Clubsport"
-    ],
-    "themes": [
-      "[2021 McLaren 765LT](https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718)"
     ]
   }
 ]
