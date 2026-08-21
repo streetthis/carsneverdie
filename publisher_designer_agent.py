@@ -105,19 +105,10 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
     # --- Step 3: Inject inline CSS styles into every tag for email client compatibility ---
     styled_body_html = inject_inline_styles(body_html)
     
-    # --- Step 4: Substitute into the template placeholder ---
-    if "<!-- DYNAMIC_NEWSLETTER_HTML -->" not in template_html:
-        return "ERROR: email_template.html is missing the <!-- DYNAMIC_NEWSLETTER_HTML --> placeholder."
-    
-    today_date_display = datetime.now().strftime("%B %d, %Y").upper()
-    if "<!-- DYNAMIC_DATE -->" in template_html:
-        template_html = template_html.replace("<!-- DYNAMIC_DATE -->", today_date_display)
-
-    final_html = template_html.replace("<!-- DYNAMIC_NEWSLETTER_HTML -->", styled_body_html)
-    
-    # --- Step 5: Write output_newsletter.html, output_body_content.html AND timestamped archive to disk ---
+    # --- Step 4: Write output_newsletter.html, output_body_content.html AND timestamped archive to disk ---
+    # Pure section HTML so Beehiiv's Default Template wraps it on Beehiiv
     with open(output_html_path, "w", encoding="utf-8") as f:
-        f.write(final_html)
+        f.write(styled_body_html)
         
     body_content_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_body_content.html")
     with open(body_content_path, "w", encoding="utf-8") as f:
@@ -128,7 +119,7 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
     timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
     archive_path = os.path.join(archives_dir, f"newsletter_{timestamp}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        f.write(final_html)
+        f.write(styled_body_html)
     
     # --- Step 6: Generate WhatsApp/Telegram text version ---
     whatsapp_text = generate_whatsapp_text(editorial_markdown)
