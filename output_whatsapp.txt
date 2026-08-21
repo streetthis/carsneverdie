@@ -1,10 +1,8 @@
 *WHY I DID NOT SLEEP LAST NIGHT*
 
-Yesterday was a massive reality check for anyone claiming the high-end collector market is losing steam. We saw exactly $5,677,213 shift hands across 21 six-figure cars, proving that clean, highly optioned cars are still pulling crazy numbers as the post-Monterey dry powder finds its home. 
+If you were watching the boards yesterday, you saw $5.68M shift hands across 21 six-figure cars. The physical dust from Monterey is finally settling, but the digital space is absorbing the leftover heat. Buyers who went to California with open checkbooks and left empty-handed are clearly not waiting around for the autumn live auctions; they are deploying capital online right now.
 
-What really caught my eye was the Porsche domination. Between a legendary air-cooled RS, an ultra-rare water-cooled GT2 Clubsport, and a modern manual GT3 Touring, the Zuffenhausen factory captured three of yesterday's top six spots. 
-
-But it wasn't just Porsche. The analog V12 market is in absolute overdrive. When a gated-manual Lamborghini Murcielago and a high-spec front-engine Ferrari V12 are transacting back-to-back, you know the smart money is hedging hard against an increasingly hybrid future.
+Yesterday was dominated by air-cooled icons and gated-shifting V12s. We watched a 1973 Porsche 911 Carrera RS Lightweight pull a massive $812,500 on BaT, while a pristine 2007 Lamborghini Murcielago LP640 Coupe commanded $707,500. This is not panic buying. It is smart money targeting highly optioned, low-mileage modern classics that are increasingly difficult to source in the wild.
 
 [Chart: Daily Volume Trajectory]
 
@@ -12,15 +10,14 @@ But it wasn't just Porsche. The analog V12 market is in absolute overdrive. When
 
 *VEHICLE SPOTLIGHT*
 
-This is an absolute monster of a result. While some modern British supercars suffer from the typical depreciation curve, the 765LT has proven to be the exception to the rule. This particular example in MSO Curaçao Blue crossed the block on duPont REGISTRY Live for a staggering $635,250. 
-
-With limited production numbers and a reputation as one of the most violent, unfiltered track weapons of the modern era, the LT suffix still commands a serious premium. Buyers are waking up to the fact that McLaren will likely never make something quite this raw again.
+Yesterday's top highlight vehicle was a track-focused weapon from Woking:
 
 *2021 McLaren 765LT (https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718)*
-* *Sold For:* $635,250 USD
-* *Platform:* duPont REGISTRY Live
-* *Key Stats:* Finished in MSO Curaçao Blue with extensive carbon fiber options.
-* *Significance:* A massive sale that confirms the strong, steady demand for limited-run, modern British supercars.
+* *Price*: $635,250
+* *Auction House*: duPont REGISTRY Live
+* *Provenance*: Finished in Curacao Blue with extensive MSO options. 
+
+While standard 720S prices continue to face typical modern supercar depreciation, the limited-run 765LT is proving to be a genuine store of value. Bidders recognized the rarity of this spec and paid up for a highly documented example. At $635,250, it represents a strong, stable marker for McLaren's ultimate series models in the current secondary market.
 
 [Chart: 2021 McLaren 765LT]
 
@@ -28,12 +25,14 @@ With limited production numbers and a reputation as one of the most violent, unf
 
 *THE LEADER BOARD*
 
+Online platforms are battling hard for premium market share. While Bring a Trailer commands absolute volume, duPont REGISTRY Live continues to capture the highest-end segment, posting a massive $548k average sale price over the past week.
+
 | Rank | Auction Site | 7-Day Avg Sale Price ($) | 7-Day $100k+ Volume ($) | 6-Figure Lots Sold |
-| :---: | :--- | :---: | :---: | :---: |
-| *1* | duPont REGISTRY Live | $548,347.06 | $9,321,900.00 | 17 |
-| *2* | Bring a Trailer | $248,268.46 | $28,054,336.40 | 113 |
-| *3* | Cars & Bids | $153,941.18 | $1,077,588.25 | 7 |
-| *4* | Car & Classic | $101,247.20 | $101,247.20 | 1 |
+| :---: | :--- | :--- | :--- | :---: |
+| 1 | duPont REGISTRY Live | 548,347.06 | 9,321,900.00 | 17 |
+| 2 | Bring a Trailer | 248,268.46 | 28,054,336.40 | 113 |
+| 3 | Cars & Bids | 153,941.18 | 1,077,588.25 | 7 |
+| 4 | Car & Classic | 101,247.20 | 101,247.20 | 1 |
 
 [Chart: Average Sale Price by Auction House Combo Chart]
 
@@ -41,26 +40,16 @@ With limited production numbers and a reputation as one of the most violent, unf
 
 *WHAT TO WATCH*
 
-We are keeping a very close eye on two major market-moving battles closing today and tomorrow:
+With the physical auctions in California behind us, the digital marketplace is the best place to track real-time collector sentiment over the next 48 hours. Here are two areas to watch closing today and tomorrow:
 
-*1. High-Tier Analog Track Weapons*
-Following the massive $807,500 result for a 2004 Ferrari 360 Challenge Stradale earlier this week, all eyes are on Bring a Trailer today for late-model analog track specials. A 2011 Porsche 911 GT3 RS (997.2) is heading into its final hours, and we want to see if it can push past the $280,000 barrier. If the bidding momentum holds, it will prove that the premium for hydraulic steering and mechanical throttle response is still climbing.
-
-*2. Naturally Aspirated V12 GTs*
-With yesterday's Ferrari 599 GTB Fiorano bringing $247,800, we are watching several front-engine V12s closing today. Keep a close eye on the bidding action for modern, naturally aspirated V12 GTs. The reserves on these are notoriously tight, and a single missed bid could mean the difference between a high-water mark and a frustrating RNM. Check if the buyers who missed out on V12s in Monterey are stepping up to pay the premium online.
+1. *Air-Cooled Porsche Momentum*: Following the solid performance of yesterday's 1997 Porsche 911 Turbo at $385,500 and the Carrera RS at $812,500, pay close attention to several late-model 993 and 964 Turbos closing today on Bring a Trailer. If these clear their reserves with strong bidding, it proves that the vintage Porsche market has shrugged off any summer stagnation.
+2. *Modern Supercar Price Floors*: Watch the low-mileage Ferrari F8 and McLaren 720S lots closing on Cars & Bids and Bring a Trailer. These mid-engine modern platforms have experienced steady downward pressure over the past year, but we are beginning to see solid floors established. Look for active bidding on clean, well-documented examples to confirm if the slide is finally flattening out.
 
 ---
 
 *DATA CORNER*
 
-Analyzing where the capital is flowing reveals a market highly concentrated in the entry-level six-figure space ($100k - $250k), but with significant multi-million dollar outliers.
-
-* *$100k - $250k:* 94 cars
-* *$250k - $500k:* 28 cars
-* *$500k - $750k:* 9 cars
-* *$750k - $1M:* 5 cars
-* *$1M - $2M:* 1 car
-* *$2M+:* 1 car
+The six-figure market remains heavily weighted toward the $100k to $250k entry-luxury bracket, which accounted for over 68% of all high-end sales over the past week. However, the multi-million dollar segment continues to generate massive headlines, showing that elite buyers remain highly active.
 
 [Chart: Price Tier Distribution]
 
@@ -70,26 +59,28 @@ Analyzing where the capital is flowing reveals a market highly concentrated in t
 
 *TOP MOVERS*
 
+Here are yesterday's completed six-figure sales that defined the market direction:
+
 | Vehicle | Year | Sold Price ($) | Auction House |
-| :--- | :---: | :---: | :--- |
-| [1973 Porsche 911 Carrera RS Lightweight (https://bringatrailer.com/listing/1973-porsche-911-carrera-rs-sport-4/)] | 1973 | $812,500.00 | Bring a Trailer |
-| [2007 Lamborghini Murcielago LP640 Coupe (https://bringatrailer.com/listing/2007-lamborghini-murcielago-lp640-coupe-11/)] | 2007 | $707,500.00 | Bring a Trailer |
-| [2021 McLaren 765LT (https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718)] | 2021 | $635,250.00 | duPont REGISTRY Live |
-| [1997 Porsche 911 Turbo (https://bringatrailer.com/listing/1997-porsche-911-turbo-7-2/)] | 1997 | $385,500.00 | Bring a Trailer |
-| [2001 Porsche 911 GT2 Clubsport (https://live.dupontregistry.com/auction/2001-porsche-911gt2clubsport7700miles1of70-3704)] | 2001 | $380,100.00 | duPont REGISTRY Live |
-| [2026 Porsche 911 GT3 Touring Lightweight 6-Speed (https://bringatrailer.com/listing/2026-porsche-911-gt3-touring-24/)] | 2026 | $320,740.00 | Bring a Trailer |
-| [2025 Lamborghini Urus SE (https://bringatrailer.com/listing/2025-lamborghini-urus-se-4/)] | 2025 | $279,053.00 | Bring a Trailer |
-| [2007 Ferrari 599 GTB Fiorano (https://live.dupontregistry.com/auction/2007-ferrari-599gtbfioranodaytonaseatscarbonfibertrim-3732)] | 2007 | $247,800.00 | duPont REGISTRY Live |
-| [2022 Porsche 718 Spyder 000 Package 6-Speed (https://bringatrailer.com/listing/2022-porsche-718-spyder-38/)] | 2022 | $211,218.00 | Bring a Trailer |
-| [1996 Porsche 911 Carrera 4S Coupe 6-Speed (https://bringatrailer.com/listing/1996-porsche-911-carrera-4s-152/)] | 1996 | $183,500.00 | Bring a Trailer |
+| :--- | :--- | :--- | :--- |
+| 1973 Porsche 911 Carrera RS Lightweight (https://bringatrailer.com/listing/1973-porsche-911-carrera-rs-sport-4/) | 1973 | 812,500.00 | Bring a Trailer |
+| 2007 Lamborghini Murcielago LP640 Coupe (https://bringatrailer.com/listing/2007-lamborghini-murcielago-lp640-coupe-11/) | 2007 | 707,500.00 | Bring a Trailer |
+| 2021 McLaren 765LT (https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718) | 2021 | 635,250.00 | duPont REGISTRY Live |
+| 1997 Porsche 911 Turbo (https://bringatrailer.com/listing/1997-porsche-911-turbo-7-2/) | 1997 | 385,500.00 | Bring a Trailer |
+| 2001 Porsche 911 GT2 Clubsport (https://live.dupontregistry.com/auction/2001-porsche-911gt2clubsport7700miles1of70-3704) | 2001 | 380,100.00 | duPont REGISTRY Live |
+| 2026 Porsche 911 GT3 Touring Lightweight 6-Speed (https://bringatrailer.com/listing/2026-porsche-911-gt3-touring-24/) | 2026 | 320,740.00 | Bring a Trailer |
+| 2025 Lamborghini Urus SE (https://bringatrailer.com/listing/2025-lamborghini-urus-se-4/) | 2025 | 279,053.00 | Bring a Trailer |
+| 2007 Ferrari 599 GTB Fiorano (https://live.dupontregistry.com/auction/2007-ferrari-599gtbfioranodaytonaseatscarbonfibertrim-3732) | 2007 | 247,800.00 | duPont REGISTRY Live |
+| 2022 Porsche 718 Spyder 000 Package 6-Speed (https://bringatrailer.com/listing/2022-porsche-718-spyder-38/) | 2022 | 211,218.00 | Bring a Trailer |
+| 1996 Porsche 911 Carrera 4S Coupe 6-Speed (https://bringatrailer.com/listing/1996-porsche-911-carrera-4s-152/) | 1996 | 183,500.00 | Bring a Trailer |
 
 ---
 
 *WHAT'S COMING UP THIS WEEK*
 
-The physical dust has settled in Monterey, and transporters are heading back across the country. But the digital marketplace is just getting started. This weekend, we are expecting a massive surge of catalog drops as unsuccessful bidders from California look to deploy their dry power. Keep your eyes on Bring a Trailer, duPont REGISTRY Live, and Cars & Bids for some incredible late-summer listings.
+With Monterey Car Week officially in the rearview mirror, we are entering the classic late-August transition. The live, physical catalogs are pausing briefly before the fall auctions, which means the spotlight shifts entirely to the digital platforms. Over the coming weekend, we expect major late-summer catalog drops on Bring a Trailer, duPont REGISTRY Live, and Cars & Bids, where sellers who held back during the Monterey madness are now listing their inventory to capture unspent buyer capital.
 
-My advice for this weekend? Don't panic buy, but don't sleep on high-quality manual GT cars. The gap between average examples and investment-grade cars is widening fast, and the smart money is paying up for the best-of-the-best.
+If you are a serious collector, use this weekend to scour these fresh listings. Many underbidders from the physical auctions in California are actively scanning the online boards, creating a highly competitive but liquid environment. Look for premium modern classics and limited-run GTs to lead the charge as we close out the summer.
 
 Catch you tomorrow,
 
