@@ -115,9 +115,13 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
 
     final_html = template_html.replace("<!-- DYNAMIC_NEWSLETTER_HTML -->", styled_body_html)
     
-    # --- Step 5: Write output_newsletter.html AND timestamped archive to disk ---
+    # --- Step 5: Write output_newsletter.html, output_body_content.html AND timestamped archive to disk ---
     with open(output_html_path, "w", encoding="utf-8") as f:
         f.write(final_html)
+        
+    body_content_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_body_content.html")
+    with open(body_content_path, "w", encoding="utf-8") as f:
+        f.write(styled_body_html)
         
     archives_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "archives")
     os.makedirs(archives_dir, exist_ok=True)
