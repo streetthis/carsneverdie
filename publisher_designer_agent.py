@@ -11,19 +11,19 @@ from google.adk.tools.tool_context import ToolContext
 
 # Inline CSS styles for email client compatibility (Gmail, Outlook, Apple Mail)
 INLINE_STYLES = {
-    "h2": 'style="font-family: \'Playfair Display\', Georgia, serif; font-size: 22px; font-weight: 800; color: #1a1a1a; margin: 32px 0 14px 0; border-bottom: 2px solid #1a1a1a; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;"',
-    "h3": 'style="font-family: \'Playfair Display\', Georgia, serif; font-size: 18px; font-weight: 700; color: #1a1a1a; margin: 20px 0 10px 0;"',
-    "p": 'style="font-family: \'Merriweather\', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222; margin: 0 0 16px 0;"',
-    "a": 'style="color: #8b0000; font-weight: 700; text-decoration: underline;"',
-    "ul": 'style="font-family: \'Merriweather\', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222; padding-left: 20px; margin: 12px 0 16px 0;"',
-    "li": 'style="font-family: \'Merriweather\', Georgia, serif; font-size: 17px; line-height: 1.7; color: #222222; margin-bottom: 8px;"',
-    "table": 'style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #1a1a1a; font-size: 14px; word-break: break-word;"',
-    "th": 'style="background-color: #1a1a1a; color: #f6f1e7; font-family: \'Playfair Display\', Georgia, serif; font-size: 12.5px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;"',
-    "td": 'style="font-family: \'Merriweather\', Georgia, serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #d4cebe; color: #222222; word-break: break-word;"',
-    "img": 'style="max-width: 100%; width: 100%; height: auto; border: 2px solid #1a1a1a; margin: 18px auto; display: block;"',
-    "hr": 'style="border: none; border-top: 1px solid #c4bda8; margin: 28px 0;"',
+    "h2": 'style="font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;"',
+    "h3": 'style="font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 20px; font-weight: 700; color: #030712; margin: 20px 0 10px 0; text-transform: uppercase;"',
+    "p": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"',
+    "a": 'style="color: #D65A43; font-weight: 700; text-decoration: underline;"',
+    "ul": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; padding-left: 20px; margin: 12px 0 16px 0;"',
+    "li": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"',
+    "table": 'style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #E5E7EB; font-size: 14px; word-break: break-word;"',
+    "th": 'style="background-color: #030712; color: #FFFFFF; font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;"',
+    "td": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"',
+    "img": 'style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"',
+    "hr": 'style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"',
     "strong": 'style="font-weight: 700;"',
-    "blockquote": 'style="background-color: #ede7da; border: 1px solid #1a1a1a; border-left: 5px solid #8b0000; padding: 16px 20px; margin: 24px 0;"',
+    "blockquote": 'style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-left: 5px solid #030712; padding: 16px 20px; margin: 24px 0;"',
 }
 
 
