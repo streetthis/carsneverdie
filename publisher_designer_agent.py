@@ -68,30 +68,16 @@ def _strip_header_emoji(match: re.Match) -> str:
 
 
 def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) -> str:
-    """Deterministic template builder: converts editorial Markdown to inline-styled HTML 
-    and inserts it into email_template.html at the DYNAMIC_NEWSLETTER_HTML placeholder.
-    
-    Args:
-        editorial_markdown: The full newsletter markdown content from dRew (Editor-in-Chief).
-    
-    Returns:
-        Confirmation message with the path to the generated output_newsletter.html file.
+    """Deterministic template builder: converts editorial Markdown to inline-styled 
+    Beehiiv Studio HTML matching your exact Beehiiv template design.
     """
-    template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "email_template.html")
     output_html_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_newsletter.html")
     output_whatsapp_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_whatsapp.txt")
     
-    # --- Step 1: Read the email template from disk ---
-    try:
-        with open(template_path, "r", encoding="utf-8") as f:
-            template_html = f.read()
-    except FileNotFoundError:
-        return f"ERROR: email_template.html not found at {template_path}"
-    
-    # --- Step 1.5: Strip redundant top title banner if present (template masthead already has it) ---
+    # --- Step 1: Strip redundant top title banner if present ---
     editorial_markdown = re.sub(r'^\s*#?\s*\*?\s*(?:🏎️\s*)?CARS NEVER DIE\*?\s*\n+(?:\*?by dRew\*?\s*\n+)?(?:---\s*\n+)?', '', editorial_markdown, flags=re.IGNORECASE)
 
-    # --- Step 1.6: Strip all emojis from headers ---
+    # --- Step 2: Strip all emojis from headers ---
     editorial_markdown = re.sub(
         r'^(#{1,6}\s+)(.+)$',
         _strip_header_emoji,
@@ -99,37 +85,109 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
         flags=re.MULTILINE
     )
 
-    # --- Step 2: Convert editorial Markdown to raw HTML ---
+    # --- Step 3: Convert editorial Markdown to raw HTML ---
     body_html = markdown.markdown(
         editorial_markdown,
         extensions=["tables", "fenced_code", "nl2br"]
     )
     
-    # --- Step 3: Inject inline CSS styles into every tag for email client compatibility ---
+    # --- Step 4: Inject inline CSS styles into every tag for email client compatibility ---
     styled_body_html = inject_inline_styles(body_html)
     
-    # --- Step 4: Write output_newsletter.html, output_body_content.html AND timestamped archive to disk ---
-    # Pure section HTML so Beehiiv's Default Template wraps it on Beehiiv
+    # --- Step 5: Format sections into #F3F1EE cards & 2-column layouts matching Beehiiv template ---
+    def _wrap_section_1(match):
+        h2_tag = match.group(1)
+        content = match.group(2)
+        paras = re.findall(r'<p[^>]*>.*?</p>', content, re.DOTALL)
+        if len(paras) >= 2:
+            left_col = f"{h2_tag}\n" + "\n".join(paras[:1])
+            right_col = "\n".join(paras[1:])
+            return f'''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:20px 0;">
+  <tr>
+    <td bgcolor="#F3F1EE" style="background-color:#F3F1EE;border-top:1px solid #283642;border-bottom:1px solid #283642;padding:20px 12px;box-sizing:border-box;">
+      <table role="none" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="50%" valign="top" style="vertical-align:top;padding:0 10px;">
+            {left_col}
+          </td>
+          <td width="50%" valign="top" style="vertical-align:top;padding:0 10px;">
+            {right_col}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>'''
+        else:
+            return f'''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:20px 0;">
+  <tr>
+    <td bgcolor="#F3F1EE" style="background-color:#F3F1EE;border-top:1px solid #283642;border-bottom:1px solid #283642;padding:20px 16px;box-sizing:border-box;">
+      {h2_tag}
+      {content}
+    </td>
+  </tr>
+</table>'''
+
+    styled_body_html = re.sub(
+        r'(<h2[^>]*>\s*(?:<b>)?\s*WHY I DID NOT SLEEP LAST NIGHT\??\s*(?:</b>)?\s*</h2>)(.*?)(?=<h[1-6]|<table|\Z)',
+        _wrap_section_1,
+        styled_body_html,
+        flags=re.IGNORECASE | re.DOTALL
+    )
+
+    def _wrap_section_3(match):
+        h5_tag = match.group(1) if match.group(1) else ""
+        h2_tag = match.group(2)
+        content = match.group(3)
+        return f'''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:20px 0;">
+  <tr>
+    <td bgcolor="#F3F1EE" style="background-color:#F3F1EE;border-top:1px solid #283642;border-bottom:1px solid #283642;padding:20px 16px;box-sizing:border-box;">
+      {h5_tag}
+      {h2_tag}
+      {content}
+    </td>
+  </tr>
+</table>'''
+
+    styled_body_html = re.sub(
+        r'(<h5[^>]*>\s*The Leader Board\s*</h5>\s*)?(<h2[^>]*>\s*(?:<b>)?\s*Auction House Roundup.*?\s*(?:</b>)?\s*</h2>)(.*?)(?=<h[1-6]|\Z)',
+        _wrap_section_3,
+        styled_body_html,
+        flags=re.IGNORECASE | re.DOTALL
+    )
+
+    # Add top CARS NEVER DIE Oswald title banner
+    top_banner = '''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0 0 16px 0;">
+  <tr>
+    <td align="center" style="text-align:center;padding:16px 0 8px 0;">
+      <h1 style="font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;font-weight:600;font-size:38px;color:#283642;margin:0;letter-spacing:1.5px;text-align:center;"><b>CARS NEVER DIE</b></h1>
+    </td>
+  </tr>
+</table>'''
+
+    final_beehiiv_html = top_banner + "\n" + styled_body_html
+
+    # --- Step 6: Write output_newsletter.html, output_body_content.html AND timestamped archive to disk ---
     with open(output_html_path, "w", encoding="utf-8") as f:
-        f.write(styled_body_html)
+        f.write(final_beehiiv_html)
         
     body_content_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "output_body_content.html")
     with open(body_content_path, "w", encoding="utf-8") as f:
-        f.write(styled_body_html)
+        f.write(final_beehiiv_html)
         
     archives_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "archives")
     os.makedirs(archives_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H%M%S")
     archive_path = os.path.join(archives_dir, f"newsletter_{timestamp}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        f.write(styled_body_html)
+        f.write(final_beehiiv_html)
     
-    # --- Step 6: Generate WhatsApp/Telegram text version ---
+    # --- Step 7: Generate WhatsApp/Telegram text version ---
     whatsapp_text = generate_whatsapp_text(editorial_markdown)
     with open(output_whatsapp_path, "w", encoding="utf-8") as f:
         f.write(whatsapp_text)
     
-    # --- Step 7: Auto-update daily editorial memory on disk ---
+    # --- Step 8: Auto-update daily editorial memory on disk ---
     _auto_update_memory(editorial_markdown)
     
     return f"SUCCESS: Newsletter HTML written to {output_html_path}, archived locally at {archive_path}, and WhatsApp text written to {output_whatsapp_path}."
