@@ -156,14 +156,30 @@ def build_newsletter_html(tool_context: ToolContext, editorial_markdown: str) ->
         flags=re.IGNORECASE | re.DOTALL
     )
 
-    # Add top CARS NEVER DIE Oswald title banner
-    top_banner = '''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0 0 16px 0;">
+    # Look for top lead feature image (non-chart photo) in styled_body_html
+    hero_image_html = ""
+    lead_img_match = re.search(r'(<p[^>]*>\s*)?(<img[^>]+src=["\']([^"\']+)["\'][^>]*>)\s*(</p>)?', styled_body_html)
+    if lead_img_match:
+        img_src = lead_img_match.group(3)
+        if not any(chart_name in img_src.lower() for chart_name in ["chart", "trend", "combo", "price_band", "histogram"]):
+            hero_image_html = f'''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0 0 20px 0;">
+  <tr>
+    <td align="center" style="padding:0;">
+      <img src="{img_src}" alt="Cars Never Die Lead Feature" style="max-width:100%;width:100%;height:auto;display:block;border-radius:0px;border:none;" />
+    </td>
+  </tr>
+</table>'''
+            styled_body_html = styled_body_html.replace(lead_img_match.group(0), "", 1)
+
+    # Add top CARS NEVER DIE Oswald title banner + Top Hero Image
+    top_banner = f'''<table role="none" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin:0 0 16px 0;">
   <tr>
     <td align="center" style="text-align:center;padding:16px 0 8px 0;">
       <h1 style="font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;font-weight:600;font-size:38px;color:#283642;margin:0;letter-spacing:1.5px;text-align:center;"><b>CARS NEVER DIE</b></h1>
     </td>
   </tr>
-</table>'''
+</table>
+{hero_image_html}'''
 
     final_beehiiv_html = top_banner + "\n" + styled_body_html
 

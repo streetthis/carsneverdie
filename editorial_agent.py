@@ -148,7 +148,8 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ### Standard Newsletter Structure (When Sales Data Exists):
 
-## WHY I DID NOT SLEEP LAST NIGHT
+## WHY I DID NOT SLEEP LAST NIGHT: [DYNAMIC DAILY HOOK]
+- **TOP LEAD HERO IMAGE (MANDATORY)**: Embed a stunning lead feature image right under Section 1's title! Use the exact photo URL from yesterday's top highlight car (`yesterday_focus.yesterday_spotlight_car.photo` or `yesterday_focus.yesterday_top_movers[0].photo`): `<img src="HERO_IMAGE_URL" class="hero-img" alt="Lead Feature Vehicle">`.
 - Write 2-3 short, punchy, conversational paragraphs analyzing **YESTERDAY'S completed sales** ($ volume, top sales, buyer sentiment).
 - Speak like a savvy insider talking to a collector friend over coffee — zero corporate fluff or generic AI intros. Start directly with yesterday's action.
 - Embed the 7-day daily volume velocity trend line chart using its public HTTPS URL: `<img src="PUBLIC_DAILY_TREND_URL" class="chart-img" alt="Daily Volume Trajectory">`.
