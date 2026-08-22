@@ -20,6 +20,28 @@ local_pipeline = SequentialAgent(
     sub_agents=[data_analyst, editorial_agent, publisher_agent]
 )
 
+import json
+
+def load_memory_context():
+    memory_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "editorial_memory.json")
+    if not os.path.exists(memory_path):
+        return ""
+    try:
+        with open(memory_path, "r", encoding="utf-8") as f:
+            history = json.load(f)
+            recent = history[-7:]
+            if not recent:
+                return ""
+            spotlights = [h.get("spotlight_car") for h in recent if h.get("spotlight_car") and h.get("spotlight_car") != "Spotlight Car"]
+            titles = [h.get("title") for h in recent if h.get("title")]
+            themes = []
+            for h in recent:
+                themes.extend(h.get("themes", []))
+            return f"\n\n[EDITORIAL MEMORY - PAST 7 DAYS COVERAGE]\n- DO NOT REPEAT RECENT SPOTLIGHT CARS: {list(set(spotlights))}\n- DO NOT REPEAT RECENT HEADLINES: {list(set(titles))}\n- RECENTLY COVERED THEMES (ROTATE AWAY): {list(set(themes))}\nChoose a fresh brand, spotlight vehicle, dynamic daily headline hook, and unique narrative angle today."
+    except Exception as e:
+        print(f"[Memory Load Warning] {e}")
+        return ""
+
 async def main():
     session_service = InMemorySessionService()
     runner = Runner(
@@ -36,11 +58,14 @@ async def main():
     from datetime import datetime, timedelta
     today_date_str = datetime.now().strftime('%B %d, %Y')
     yesterday_str = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+    memory_context = load_memory_context()
     print(f"Running local generation for date: {yesterday_str} (Publication date: {today_date_str})...")
+
+    prompt_text = f"Today's publication date is {today_date_str}. Run the daily sync analyzing yesterday's completed sales ({yesterday_str}) and generate today's newsletter issue.{memory_context}"
 
     user_msg = types.Content(
         role="user",
-        parts=[types.Part.from_text(text=f"Today's publication date is {today_date_str}. Run the daily sync analyzing yesterday's completed sales ({yesterday_str}) and generate today's newsletter issue.")]
+        parts=[types.Part.from_text(text=prompt_text)]
     )
     
     import sys

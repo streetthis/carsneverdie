@@ -205,29 +205,45 @@ def _auto_update_memory(editorial_markdown: str) -> None:
             except Exception:
                 history = []
 
+        # Extract main headline title from Section 1
+        title_match = re.search(r'##\s*(.*?)(?:\n|\Z)', editorial_markdown)
+        main_title = title_match.group(1).strip() if title_match else "Daily Cars Never Die Edition"
+
         # Extract Spotlight car name from Section 2
-        spotlight_match = re.search(r'##\s*2\.\s*Vehicle Spotlight[^\n]*\n+.*?\[(.*?)\]', editorial_markdown, re.DOTALL)
+        spotlight_match = re.search(r'#####\s*Vehicle Spotlight\s*\n+##\s*(.*?)(?:\n|\Z)', editorial_markdown, re.IGNORECASE)
+        if not spotlight_match:
+            spotlight_match = re.search(r'##\s*Vehicle Spotlight[^\n]*\n+.*?\[(.*?)\]', editorial_markdown, re.IGNORECASE | re.DOTALL)
+        
         spotlight_car = spotlight_match.group(1).strip() if spotlight_match else "Spotlight Car"
 
-        # Extract sub-heading themes
-        themes = re.findall(r'###\s*(.+)', editorial_markdown)
+        # Extract top movers list from Markdown table
+        top_movers = re.findall(r'\|.*?\[(.*?)\]\(.*?\).*?\|', editorial_markdown)
+        clean_movers = [m.strip() for m in top_movers if m.strip() and not m.startswith("Vehicle") and not m.startswith("Rank")]
+
+        # Extract real sub-heading themes (filter out generic section titles)
+        all_subheadings = re.findall(r'###\s*(.+)', editorial_markdown)
+        generic_titles = {"vehicle spotlight", "the leaderboard", "the leader board", "data corner", "top movers", "what's coming up this week", "what to watch"}
+        clean_themes = [t.strip() for t in all_subheadings if t.strip().lower() not in generic_titles]
         
         today_str = datetime.now().strftime("%Y-%m-%d")
         entry = {
             "date": today_str,
-            "title": f"Daily Cars Never Die Edition - {today_str}",
+            "title": main_title,
             "spotlight_car": spotlight_car,
-            "top_movers": [],
-            "themes": [t.strip() for t in themes[:5]] if themes else ["Market Analysis"]
+            "top_movers": clean_movers[:10],
+            "themes": clean_themes[:5] if clean_themes else [main_title]
         }
         
         updated = False
         for i, h in enumerate(history):
             if h.get("date") == today_str:
+                history[i]["title"] = main_title
                 if spotlight_car != "Spotlight Car":
                     history[i]["spotlight_car"] = spotlight_car
-                if themes:
-                    history[i]["themes"] = [t.strip() for t in themes[:5]]
+                if clean_movers:
+                    history[i]["top_movers"] = clean_movers[:10]
+                if clean_themes:
+                    history[i]["themes"] = clean_themes[:5]
                 updated = True
                 break
         if not updated:
