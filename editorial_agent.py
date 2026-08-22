@@ -149,14 +149,16 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ---
 
-## VEHICLE SPOTLIGHT
+##### Vehicle Spotlight
+## [Spotlight Vehicle Year & Model Name]
 - Feature yesterday's top highlight vehicle provided in `yesterday_focus.yesterday_spotlight_car` (or 7-day spotlight if yesterday has no photo).
-- Output a dedicated highlight box with vehicle title linked to its URL `[Vehicle Title](url)`, price, auction house, and quick provenance notes.
+- Output a dedicated highlight box with vehicle details: hammer price, auction house, spec, and quick provenance notes.
 - **PHOTO RULE**: ONLY embed the exact image URL provided in `spotlight.photo`. If `spotlight.photo` is empty, missing, or `#`, omit the `<img>` tag completely.
 
 ---
 
-## THE LEADER BOARD
+##### The Leader Board
+## Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderboard)
 - Leaderboard ranking top online auction platforms strictly by **7-Day Rolling Average Sale Price ($)**.
 - Table format: `| Rank | Auction Site | 7-Day Avg Sale Price ($) | 7-Day $100k+ Volume ($) | 6-Figure Lots Sold |`
 - Sort table strictly by 7-Day Avg Sale Price ($) descending.
@@ -171,7 +173,8 @@ If the Data Analyst reports `status: no_data` or `total_six_figure_sales_count =
 
 ---
 
-## DATA CORNER
+##### Data Corner
+## High-End Price Breakdown & Valuation Spread (7-Day Rolling Context)
 - Summarize volume distribution across the 6 high-end price tiers ($100k-$250k, $250k-$500k, $500k-$750k, $750k-$1M, $1M-$2M, $2M+) over the 7-day rolling period.
 - Embed BOTH chart graphics using their public HTTPS URLs:
   - `<img src="PUBLIC_PRICE_BAND_URL" class="chart-img" alt="Price Tier Distribution">`

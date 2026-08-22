@@ -11,19 +11,22 @@ from google.adk.tools.tool_context import ToolContext
 
 # Inline CSS styles for email client compatibility (Gmail, Outlook, Apple Mail)
 INLINE_STYLES = {
-    "h2": 'style="font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;"',
-    "h3": 'style="font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 20px; font-weight: 700; color: #030712; margin: 20px 0 10px 0; text-transform: uppercase;"',
-    "p": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"',
-    "a": 'style="color: #D65A43; font-weight: 700; text-decoration: underline;"',
-    "ul": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; padding-left: 20px; margin: 12px 0 16px 0;"',
-    "li": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"',
-    "table": 'style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #E5E7EB; font-size: 14px; word-break: break-word;"',
-    "th": 'style="background-color: #030712; color: #FFFFFF; font-family: \'Oswald\', \'Inter\', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;"',
-    "td": 'style="font-family: \'Open Sans\', \'Helvetica Neue\', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"',
-    "img": 'style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"',
-    "hr": 'style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"',
-    "strong": 'style="font-weight: 700;"',
-    "blockquote": 'style="background-color: #F8F9FA; border: 1px solid #E5E7EB; border-left: 5px solid #030712; padding: 16px 20px; margin: 24px 0;"',
+    "h1": 'style="font-family: \'Oswald\', Montserrat, \'Lucida Sans Unicode\', sans-serif; font-weight: 600; font-size: 38px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0;"',
+    "h2": 'style="font-family: \'Oswald\', Montserrat, \'Lucida Sans Unicode\', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;"',
+    "h3": 'style="font-family: \'Oswald\', Montserrat, \'Lucida Sans Unicode\', sans-serif; font-weight: 700; font-size: 20px; color: #283642; line-height: 1.1; margin: 14px 0 4px 0; text-transform: uppercase;"',
+    "h4": 'style="font-family: \'Oswald\', Montserrat, \'Lucida Sans Unicode\', sans-serif; font-weight: 700; font-size: 17px; color: #283642; line-height: 1.15; margin: 12px 0 4px 0;"',
+    "h5": 'style="font-family: \'Helvetica\', Arial, sans-serif; font-weight: 600; font-size: 14px; color: #4A5B6A; text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 2px 0;"',
+    "p": 'style="font-family: \'Helvetica\', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"',
+    "a": 'style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;"',
+    "ul": 'style="font-family: \'Helvetica\', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; padding-left: 22px; margin: 12px 0;"',
+    "li": 'style="font-family: \'Helvetica\', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; margin-bottom: 8px;"',
+    "table": 'style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 16px 0; border: 1px solid #C0C0C0; font-size: 14px; word-break: break-word;"',
+    "th": 'style="background-color: #F1F1F1; color: #283642; font-family: \'Trebuchet MS\', \'Lucida Grande\', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;"',
+    "td": 'style="font-family: \'Helvetica\', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;"',
+    "img": 'style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"',
+    "hr": 'style="border: none; border-top: 1px solid #283642; margin: 24px 0;"',
+    "strong": 'style="font-weight: 700; color: #283642;"',
+    "blockquote": 'style="background-color: #F3F1EE; border-top: 1px solid #283642; border-bottom: 1px solid #283642; padding: 16px 20px; margin: 20px 0;"',
 }
 
 
