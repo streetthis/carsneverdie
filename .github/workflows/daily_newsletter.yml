@@ -41,12 +41,14 @@ jobs:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
           BEEHIIV_POST_STATUS: "confirmed"
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          SOCIAL_POSTING_API_KEY: ${{ secrets.SOCIAL_POSTING_API_KEY }}
         run: python agents.py
 
-      - name: Commit and push updated editorial memory
+      - name: Commit and push updated editorial memory and social media assets
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add editorial_memory.json
-          git diff-index --quiet HEAD || git commit -m "Update daily editorial memory log [skip ci]"
+          git add editorial_memory.json output_reel.mp4 output_social_caption.txt archives/
+          git diff-index --quiet HEAD || git commit -m "Update daily editorial memory log & social media assets [skip ci]"
           git push

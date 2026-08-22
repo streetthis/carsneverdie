@@ -4,3 +4,5 @@ requests
 python-dotenv
 markdown
 matplotlib
+pillow
+moviepy

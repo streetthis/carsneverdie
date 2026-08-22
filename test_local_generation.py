@@ -13,11 +13,12 @@ if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
 from data_analyst_agent import data_analyst
 from editorial_agent import editorial_agent
 from publisher_designer_agent import publisher_agent
+from social_media_agent import social_media_agent
 
-# Local pipeline: Data Analyst -> Editorial Agent -> Publisher Designer (No Beehiiv publish)
+# Local pipeline: Data Analyst -> Editorial Agent -> Publisher Designer -> Social Media Agent
 local_pipeline = SequentialAgent(
     name="local_newsletter_pipeline",
-    sub_agents=[data_analyst, editorial_agent, publisher_agent]
+    sub_agents=[data_analyst, editorial_agent, publisher_agent, social_media_agent]
 )
 
 import json

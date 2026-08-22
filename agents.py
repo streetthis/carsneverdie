@@ -15,13 +15,14 @@ from data_analyst_agent import data_analyst
 from editorial_agent import editorial_agent
 from publisher_designer_agent import publisher_agent
 from beehiiv_publisher_agent import beehiiv_publisher_agent
+from social_media_agent import social_media_agent
 
 # --- 3. Orchestrate the Workflow ---
 
-# Sequential Pipeline: Analyst -> Editor -> Publisher Designer -> beehiiv Publisher
+# Sequential Pipeline: Analyst -> Editor -> Publisher Designer -> beehiiv Publisher -> Social Media Agent
 newsletter_team = SequentialAgent(
     name="newsletter_pipeline",
-    sub_agents=[data_analyst, editorial_agent, publisher_agent, beehiiv_publisher_agent]
+    sub_agents=[data_analyst, editorial_agent, publisher_agent, beehiiv_publisher_agent, social_media_agent]
 )
 
 import asyncio
