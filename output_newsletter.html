@@ -1,288 +1,148 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="supported-color-schemes" content="light dark" />
-    <title>Cars Never Die by dRew</title>
-    
-    <!-- Google Fonts: Oswald, Inter & Open Sans for Beehiiv Match -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
-    
-    <style type="text/css">
-        /* Client-specific Resets & Beehiiv Outer Wrapper Overrides */
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100% !important; }
-        table { border-collapse: collapse !important; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ffffff; }
-        
-        /* Beehiiv Email Wrapper Full Width Override */
-        .beehiiv-email-wrap, .beehiiv-email-body, div[class*="beehiiv"] {
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            width: 100% !important;
-        }
-
-        /* General Typography Defaults */
-        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Inter', system-ui, sans-serif; color: #030712; margin: 0 0 14px 0; }
-        p, td, th, li { font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-top: 0; }
-        a { color: #D65A43; text-decoration: underline; font-weight: 700; }
-
-        /* Responsive Mobile Styles (iPhone 16 Pro / Gmail iOS Full Width Fix) */
-        @media only screen and (max-width: 620px) {
-            body, .bg-outer { background-color: #ffffff !important; }
-            .outer-padding { padding: 0 !important; width: 100% !important; }
-            .email-container { width: 100% !important; max-width: 100% !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; }
-            .content-padding { padding: 14px 6px !important; font-size: 15.5px !important; }
-            .masthead { padding: 16px 8px 12px 8px !important; }
-            .masthead-title { font-size: 32px !important; line-height: 1.1 !important; }
-            .masthead-sub { font-size: 10px !important; letter-spacing: 1.5px !important; }
-            .hide-mobile { display: none !important; }
-            
-            /* Responsive typography & layout overrides */
-            h2 { font-size: 22px !important; margin: 24px 0 10px 0 !important; }
-            h3 { font-size: 18px !important; }
-            p, li { font-size: 15.5px !important; line-height: 1.6 !important; }
-            
-            /* Responsive tables */
-            table { width: 100% !important; max-width: 100% !important; font-size: 13px !important; display: table !important; }
-            th { font-size: 11.5px !important; padding: 8px 6px !important; }
-            td { font-size: 13px !important; padding: 8px 6px !important; word-break: break-word !important; }
-            
-            /* Responsive images */
-            img, .chart-img { max-width: 100% !important; width: 100% !important; height: auto !important; margin: 12px auto !important; }
-            blockquote { padding: 12px 14px !important; margin: 16px 0 !important; }
-        }
-
-        /* LIGHT VS DARK MODE */
-        @media (prefers-color-scheme: dark) {
-            body, .bg-outer { background-color: #131415 !important; }
-            .email-container, .bg-inner { background-color: #131415 !important; border-color: #35383b !important; }
-            .masthead { background-color: #131415 !important; border-bottom-color: #35383b !important; }
-            h1, h2, h3, h4, h5, h6, p, td, th, li, strong, b, span, .masthead-title, .dark-text { color: #f9fafb !important; }
-            .border-dark { border-color: #35383b !important; }
-            .text-muted { color: #9ca3af !important; }
-            .footer-bg { background-color: #0d0e0f !important; border-top-color: #35383b !important; }
-            a { color: #f87171 !important; }
-            blockquote { background-color: #1f2023 !important; border-color: #35383b !important; }
-        }
-    </style>
-
-    <!--[if mso]>
-    <style type="text/css">
-        h1, h2, h3, h4, h5, h6 { font-family: Arial, sans-serif !important; }
-        p, td, th, li, a { font-family: Arial, sans-serif !important; }
-    </style>
-    <![endif]-->
-</head>
-<body id="body" style="margin: 0; padding: 0; background-color: #ffffff; -webkit-font-smoothing: antialiased;" class="bg-outer">
-    
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="bg-outer" style="background-color: #ffffff; width: 100%;">
-        <tr>
-            <td align="center" class="outer-padding" style="padding: 0; width: 100%;">
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" class="email-container bg-inner" style="max-width: 670px; width: 100%; background-color: #ffffff; border-left: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb;">
-                    
-                    <tr>
-                        <td align="center" class="masthead" style="background-color: #ffffff; padding: 24px 16px 18px 16px; border-bottom: 1px solid #e5e7eb;">
-                            <!-- Beehiiv Header Logo -->
-                            <img src="https://media.beehiiv.com/cdn-cgi/image/format=auto,onerror=redirect/uploads/publication/logo/ec5a45c5-fcef-4515-8372-2b500843ed81/carsneverdie.png" alt="Cars Never Die" style="max-height: 48px; width: auto; margin: 0 auto; display: block;" />
-                        </td>
-                    </tr>
-
-                    <!-- MAIN CONTENT CONTAINER -->
-                    <tr>
-                        <td align="left" class="content-padding bg-inner" style="padding: 24px 20px; background-color: #ffffff; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222;">
-                            <h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">WHY I DID NOT SLEEP LAST NIGHT</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Yesterday was a loud reminder that the post-Monterey capital has not dried up. We saw $5,813,713.05 shift hands across 22 six-figure cars yesterday, pushing our 7-day rolling total to $38,691,571.85 across 139 completed transactions. </p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">The live-auction dust in California has settled, but the liquidity didn't leave the building. High-end collectors who went home empty-handed from the peninsula are taking their remaining capital straight to the digital boards. The online platforms are absorbing that leftover demand without missing a beat.</p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Yesterday’s trading was a mix of vintage analog dominance and high-ticket modern track weapons. Bring a Trailer cleared an elite 1973 Porsche 911 Carrera RS Lightweight at $812,500 and a gated-spec 2007 Lamborghini Murcielago LP640 Coupe for $707,500, while duPont REGISTRY Live secured our spotlight car of the day with a stunning Curacao Blue 2021 McLaren 765LT at $635,250. The appetite for premium, highly optioned machinery remains incredibly healthy.</p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><img src="https://iili.io/CZ5oOcG.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Daily Volume Trajectory" style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"></p>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">VEHICLE SPOTLIGHT</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Yesterday's top spotlight sale went to an absolute track-focused beast on duPont REGISTRY Live.</p>
-<h3 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #030712; margin: 20px 0 10px 0; text-transform: uppercase;"><a href="https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2021 McLaren 765LT</a></h3>
-<ul style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; padding-left: 20px; margin: 12px 0 16px 0;">
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">Sold Price:</strong> $635,250 USD</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">Auction House:</strong> duPont REGISTRY Live</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">Key Details:</strong> Custom finished in Curacao Blue with extensive McLaren Special Operations (MSO) carbon fiber options. This limited-production twin-turbo V8 weapon represents the pinnacle of modern performance.</li>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">WHY I DID NOT SLEEP LAST NIGHT</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">If you watched the digital boards yesterday, you saw exactly how the post-Monterey capital rotation is playing out. There was no late-summer slowdown. $7.01M shifted hands across 19 six-figure cars on a random Friday in late August. This is the classic window where bidders who kept their hands down in California are now hunting aggressively on their phones, injecting serious liquid momentum back into online platforms.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Bring a Trailer led the charge with $4.25M in volume across 13 high-end lots, while duPont REGISTRY Live kept its ultra-high-end streak alive, locking in $2.54M on just 4 completed sales. This suggests that the high-end digital market is not just holding firm—it is absorbing the premium demand that physical auction houses left behind last week.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><img src="https://iili.io/CZLARGj.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Daily Volume Trajectory" style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"></p>
+<h5 style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: 14px; color: #4A5B6A; text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 2px 0;">Vehicle Spotlight</h5>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">2020 McLaren Senna GTR</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Track-only hypercars are notoriously difficult to value because they exist outside the bounds of street legality and standard club racing classes. Yet, when a 1-of-75 track weapon like the <a href="https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2020 McLaren Senna GTR</a> crosses the digital block, the collector market pays close attention. Yesterday, duPont REGISTRY Live hammered down No. 45 of 75, finished in MSO Pure White, for a substantial $1,187,550.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Unlike standard road-going Sennas, the GTR throws out all road compliance regulations to maximize ground-effect aerodynamics, generating a massive 2,205 pounds of downforce. Powered by a twin-turbocharged 4.0-liter V8 pushing 814 horsepower, this carbon-clad brute represents McLaren's ultimate vision of track performance. Buying a GTR is a pure statement of track intent, and this result confirms that ultra-low-volume track toys are still highly valued assets for collectors wanting the absolute peak of modern performance.</p>
+<ul style="font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; padding-left: 22px; margin: 12px 0;">
+<li style="font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; margin-bottom: 8px;"><strong style="font-weight: 700; color: #283642;">Hammer Price</strong>: $1,187,550</li>
+<li style="font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; margin-bottom: 8px;"><strong style="font-weight: 700; color: #283642;">Platform</strong>: duPont REGISTRY Live</li>
+<li style="font-family: 'Helvetica', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #4A5B6A; margin-bottom: 8px;"><strong style="font-weight: 700; color: #283642;">Listing</strong>: <a href="https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2020 McLaren Senna GTR</a></li>
 </ul>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><img src="https://d3nennihyoygko.cloudfront.net/dprauctions/vehicles/DB61E533-41AD-492B-B346-C0B6737C9EE2/images/b722a949-a230-4802-8080-a5be1848e622.jpg" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="2021 McLaren 765LT" style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"></p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">This isn't just an optioned-up 720S; it's a raw, track-focused machine that commands respect. Finding an MSO-spec car like this in Curacao Blue for under $650k shows where the high-end British supercar market is finding its footing. It is a very fair buy for a car that offers hypercar-level performance at a fraction of the cost.</p>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">THE LEADER BOARD</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Below is the ranking of online auction platforms over the past 7 days, ranked strictly by average sale price to show who is moving the highest-ticket iron.</p>
-<table style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #E5E7EB; font-size: 14px; word-break: break-word;">
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><img src="https://d3nennihyoygko.cloudfront.net/dprauctions/vehicles/7D6FAC33-789E-4B11-A6DB-1881FC9D1110/images/8691720a-68fc-4e84-b181-ad1648f23f8e.jpg" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="2020 McLaren Senna GTR" style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"></p>
+<h5 style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: 14px; color: #4A5B6A; text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 2px 0;">The Leader Board</h5>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderboard)</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Over the past rolling seven days, the online market for six-figure collector cars logged a massive 139 completed sales, resulting in $41.31M in total transaction volume. The clear platform dynamic remains: Bring a Trailer commands the volume engine with 110 transactions, while duPont REGISTRY Live rules the top of the price tiers, pulling in an extraordinary average sale price of $564.6k.</p>
+<table style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 16px 0; border: 1px solid #C0C0C0; font-size: 14px; word-break: break-word;">
 <thead>
 <tr>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Rank</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Auction Site</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">7-Day Avg Sale Price ($)</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">7-Day $100k+ Volume ($)</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">6-Figure Lots Sold</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Rank</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Auction Site</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">7-Day Avg Sale Price ($)</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">7-Day $100k+ Volume ($)</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">6-Figure Lots Sold</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">1</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">duPont REGISTRY Live</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$548,347.06</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$9,321,900.00</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">17</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">duPont REGISTRY Live</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">564,650.00</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">11,857,650.00</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">21</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$247,288.04</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$28,190,836.40</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">114</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">257,999.04</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">28,379,894.75</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">110</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">3</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Cars &amp; Bids</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$153,941.18</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$1,077,588.25</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">7</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">3</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Cars &amp; Bids</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">139,091.18</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">973,638.25</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">7</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">4</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Car &amp; Classic</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$101,247.20</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$101,247.20</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">1</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">4</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Car &amp; Classic</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">101,247.20</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">101,247.20</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1</td>
 </tr>
 </tbody>
 </table>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><img src="https://iili.io/CZ5o6Pe.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Average Sale Price by Auction House Combo Chart" style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"></p>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">WHAT TO WATCH</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">With Monterey Car Week officially wrapped up, all eyes are back on the digital boards today and tomorrow to see if this momentum holds through the weekend.</p>
-<h3 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #030712; margin: 20px 0 10px 0; text-transform: uppercase;">Post-Monterey Manual Momentum</h3>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Following yesterday's $707,500 result for the 2007 Lamborghini Murcielago LP640 Coupe on Bring a Trailer, keep a close eye on any manual-conversion or original gated V10 and V12 supercars closing this weekend. The market is aggressively rewarding three-pedal setups, and buyers who missed out on live-auction lots in California are actively hunt-mode for manual conversion projects.</p>
-<h3 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #030712; margin: 20px 0 10px 0; text-transform: uppercase;">Rennsport Volume Check</h3>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">We saw a massive influx of modern Porsches cross the block yesterday, including a 2026 GT3 Touring Lightweight 6-Speed at $320,740. Watch the high-end water-cooled Porsches closing today and tomorrow to see if the market can continue to absorb this volume, or if we will start to see buyers getting selective on specs and colors as supply remains highly active.</p>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">DATA CORNER</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">The $100k–$250k segment continues to act as the absolute engine of the high-end online market, accounting for 95 of our 139 six-figure sales over the past week. However, the upper tiers remain incredibly active, bolstered by multi-million dollar outliers.</p>
-<ul style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; padding-left: 20px; margin: 12px 0 16px 0;">
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$100k - $250k:</strong> 95 units</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$250k - $500k:</strong> 28 units</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$500k - $750k:</strong> 9 units</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$750k - $1M:</strong> 5 units</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$1M - $2M:</strong> 1 unit</li>
-<li style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin-bottom: 8px;"><strong style="font-weight: 700;">$2M+:</strong> 1 unit</li>
-</ul>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><img src="https://iili.io/CZ5ouwB.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Price Tier Distribution" style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"></p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><img src="https://iili.io/CZ5o08v.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Price Valuation Histogram" style="max-width: 100%; width: 100%; height: auto; border-radius: 6px; border: 1px solid #E5E7EB; margin: 18px auto; display: block;"></p>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">TOP MOVERS</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">These are the standout six-figure sales completed yesterday, August 20, 2026.</p>
-<table style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #E5E7EB; font-size: 14px; word-break: break-word;">
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><img src="https://iili.io/CZLAc8B.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Average Sale Price by Auction House Combo Chart" style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"></p>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">WHAT TO WATCH</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">With the physical auctions in Monterey wrapped up, we are seeing a massive influx of premium digital consignments hitting the boards this weekend. Collectors who missed out on high-reserve lots in California are actively scanning their screens, looking to redeploy their capital into clean, documented machinery.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">First, keep a close eye on modern track specials closing over the next 48 hours. Following the $1.18M Senna GTR and the $803k GT2 RS yesterday, watch the reserve levels on high-tier Porsches and track-only platforms. Bidders are highly selective right now, prioritizing original paint, low track hours, and single-ownership provenance over speculative builds.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Second, watch the momentum on gated modern classics and manual conversions. Converted Italian V12s and manual-swapped late-90s models continue to outperform standard paddle-shift equivalents by wide margins. If you see clean manual or converted modern exotics closing today or tomorrow, expect late-bidding frenzies as collectors hunt for analog mechanical engagement.</p>
+<h5 style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 600; font-size: 14px; color: #4A5B6A; text-transform: uppercase; letter-spacing: 0.5px; margin: 12px 0 2px 0;">Data Corner</h5>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">High-End Price Breakdown &amp; Valuation Spread (7-Day Rolling Context)</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">The 7-day price distribution demonstrates where the core liquidity of the online market resides. An overwhelming 93 out of 139 transactions closed in the entry-luxury $100k - $250k tier, showing that the high-end daily driver and sports car market is incredibly liquid. Meanwhile, the $250k - $500k tier remains solid with 27 completed transactions.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">As you move beyond $500k, the volume thins out, but the average values spike dramatically. The multi-million dollar space remains highly concentrated, with duPont REGISTRY Live commanding the sole transaction over $2M this week (the $3.72M Porsche Carrera GT on August 15). Bring a Trailer holds a dominant share of the $500k to $2M space, while duPont REGISTRY Live continues to capture high-end market share as prices climb.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><img src="https://iili.io/CZLAf44.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Price Tier Distribution" style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"></p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><img src="https://iili.io/CZLAzu9.png" class="chart-img" style="max-width: 580px; width: 100%; height: auto; border-radius: 8px; margin: 16px auto; display: block;" alt="Price Valuation Histogram" style="max-width: 100%; width: 100%; height: auto; margin: 12px auto; display: block;"></p>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">TOP MOVERS</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Here is a breakdown of the key six-figure sales completed yesterday, August 21, 2026, showcasing strong results across modern hypercars, track-day specials, and vintage analog legends:</p>
+<table style="width: 100%; max-width: 100%; border-collapse: collapse; margin: 16px 0; border: 1px solid #C0C0C0; font-size: 14px; word-break: break-word;">
 <thead>
 <tr>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Vehicle</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Year</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Sold Price ($)</th>
-<th style="background-color: #030712; color: #FFFFFF; font-family: 'Oswald', 'Inter', sans-serif; font-size: 13px; font-weight: 700; padding: 10px 8px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">Auction House</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Vehicle</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Year</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Sold Price ($)</th>
+<th style="background-color: #F1F1F1; color: #283642; font-family: 'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif; font-size: 13px; font-weight: 700; padding: 8px; border: 1px solid #C0C0C0; text-align: left;">Auction House</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/1973-porsche-911-carrera-rs-sport-4/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">1973 Porsche 911 Carrera RS Lightweight</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">1973</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$812,500</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2020 McLaren Senna GTR</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2020</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1,187,550</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">duPont REGISTRY Live</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/2007-lamborghini-murcielago-lp640-coupe-11/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2007 Lamborghini Murcielago LP640 Coupe</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2007</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$707,500</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/2020-ferrari-488-pista-40/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2020 Ferrari 488 Pista</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2020</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1,127,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2021 McLaren 765LT</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2021</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$635,250</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">duPont REGISTRY Live</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://live.dupontregistry.com/auction/2018-porsche-gt2rsweissachpackage3019miles-3739" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2018 Porsche GT2 RS</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2018</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">803,250</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">duPont REGISTRY Live</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/1997-porsche-911-turbo-7-2/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">1997 Porsche 911 Turbo</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">1997</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$385,500</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/2017-ford-gt-19/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2017 Ford GT</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2017</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">728,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://live.dupontregistry.com/auction/2001-porsche-911gt2clubsport7700miles1of70-3704" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2001 Porsche 911 GT2 Clubsport</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2001</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$380,100</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">duPont REGISTRY Live</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/2020-ferrari-f8-tributo-18/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2020 Ferrari F8 Tributo</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2020</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">462,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/2026-porsche-911-gt3-touring-24/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2026 Porsche 911 GT3 Touring Lightweight 6-Speed</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2026</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$320,740</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/2016-ferrari-488-spider-11/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2016 Ferrari 488 Spider</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2016</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">390,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/2025-lamborghini-urus-se-4/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2025 Lamborghini Urus SE</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2025</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$279,053</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://live.dupontregistry.com/auction/2008-ferrari-599gtbvipbook4500miles-3767" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2008 Ferrari 599 GTB</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2008</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">372,750</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">duPont REGISTRY Live</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://live.dupontregistry.com/auction/2007-ferrari-599gtbfioranodaytonaseatscarbonfibertrim-3732" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2007 Ferrari 599 GTB Fiorano</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2007</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$247,800</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">duPont REGISTRY Live</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/2025-porsche-718-cayman-gt4-rs-clubsport/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">2025 Porsche 718 Cayman GT4 RS Clubsport</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">2025</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">248,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/2022-porsche-718-spyder-38/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">2022 Porsche 718 Spyder 000 Package 6-Speed</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">2022</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$211,218</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/1997-ferrari-f355-gts-25/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">1997 Ferrari F355 GTS 6-Speed</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1997</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">219,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 <tr>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;"><a href="https://bringatrailer.com/listing/1996-porsche-911-carrera-4s-152/" style="color: #D65A43; font-weight: 700; text-decoration: underline;">1996 Porsche 911 Carrera 4S Coupe 6-Speed</a></td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">1996</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">$183,500</td>
-<td style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 14px; padding: 10px 8px; border-bottom: 1px solid #E5E7EB; color: #222222; word-break: break-word;">Bring a Trailer</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">[<a href="https://bringatrailer.com/listing/1967-chevrolet-corvette-convertible-337/" style="color: #D65A43 !important; font-weight: 700; text-decoration: underline; font-style: italic;">1967 Chevrolet Corvette Convertible L71 427/435 4-Speed</a>]</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">1967</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">219,500</td>
+<td style="font-family: 'Helvetica', Arial, sans-serif; font-size: 14px; padding: 8px; border: 1px solid #C0C0C0; color: #283642; word-break: break-word;">Bring a Trailer</td>
 </tr>
 </tbody>
 </table>
-<hr  style="border: none; border-top: 1px solid #E5E7EB; margin: 28px 0;"/>
-<h2 style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 26px; font-weight: 700; color: #030712; margin: 32px 0 14px 0; border-bottom: 2px solid #030712; padding-bottom: 6px; text-transform: uppercase; letter-spacing: 1px;">WHAT'S COMING UP THIS WEEK</h2>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">This late-August weekend is historically one of the busiest times for digital platforms. High-end dealers are actively clearing space on their showroom floors after a busy Monterey week, and private collectors are eager to deploy their liquid capital. Expect a massive catalog drop on both Bring a Trailer and duPont REGISTRY Live over the next 48 hours.</p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">For buyers looking to strike a deal, keep a close watch on high-reserve lots closing this Sunday. Many sellers who missed the spotlight in California are highly motivated to close deals online, meaning there will be excellent opportunities to step in and negotiate post-auction if the bidding falls just short of the reserve.</p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;">Catch you tomorrow,</p>
-<p style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 16px 0;"><strong style="font-weight: 700;">dRew</strong></p>
-                        </td>
-                    </tr>
-
-                    <!-- FOOTER -->
-                    <tr>
-                        <td align="center" class="footer-bg border-dark" style="background-color: #f9fafb; padding: 24px 18px; border-top: 2px solid #030712; font-family: 'Open Sans', sans-serif; font-size: 13px; color: #555555;">
-                            <p class="dark-text" style="font-family: 'Oswald', 'Inter', sans-serif; font-size: 22px; font-weight: 700; color: #030712; margin: 0 0 12px 0; text-transform: uppercase;">
-                                Catch you tomorrow,<br /><strong style="color: #D65A43; font-family: 'Oswald', sans-serif; font-weight: 700;">dRew</strong>
-                            </p>
-                            <div class="border-dark" style="width: 40px; border-bottom: 1px solid #555555; margin: 0 auto 14px auto;"></div>
-                            <p class="text-muted" style="font-size: 12px; color: #555555; margin: 0; line-height: 1.6; text-transform: uppercase; letter-spacing: 0.5px;">
-                                © 2026 Cars Never Die Press Group.<br />
-                                Printed & Published Daily for Car Collectors.
-                            </p>
-                            <p class="text-muted" style="font-size: 12px; margin: 12px 0 0 0;">
-                                <a href="#" style="color: #555555; font-weight: normal; text-decoration: underline;">Unsubscribe</a> &nbsp;|&nbsp; <a href="#" style="color: #555555; font-weight: normal; text-decoration: underline;">View in Browser</a>
-                            </p>
-                        </td>
-                    </tr>
-
-                </table>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
+<h2 style="font-family: 'Oswald', Montserrat, 'Lucida Sans Unicode', sans-serif; font-weight: 700; font-size: 28px; color: #283642; line-height: 1.1; margin: 16px 0 6px 0; text-transform: uppercase;">WHAT'S COMING UP THIS WEEK</h2>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">This week marks the beginning of the post-Monterey catalog transition. Physical auction houses are shipping cars and settling accounts, while digital platforms are capitalizing on the massive price benchmarks established on the peninsula. Expect a major influx of premium consignments from dealers and private collectors looking to capture the remaining late-summer buyer enthusiasm.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">For serious collectors, this is a prime window to acquire vehicles. Many buyers who exhausted their energy or missed out during Car Week are taking a brief breather, which means less crowded bidding wars on digital listings over the next seven days. Keep your notifications active on Bring a Trailer and duPont REGISTRY Live, and be ready to pull the trigger if a clean, highly documented spec flies under the radar.</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;">Catch you tomorrow,</p>
+<p style="font-family: 'Helvetica', Arial, sans-serif; font-weight: 400; color: #4A5B6A; font-size: 16px; line-height: 1.5; margin: 0 0 12px 0;"><strong style="font-weight: 700; color: #283642;">dRew</strong></p>

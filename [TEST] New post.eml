@@ -1,0 +1,1658 @@
+Delivered-To: antoinetessier@gmail.com
+Received: by 2002:a05:6200:6342:20b0:65f:6174:3951 with SMTP id 2-n2csp2321253qns;
+        Sat, 22 Aug 2026 06:24:37 -0700 (PDT)
+X-Received: by 2002:a05:622a:2304:b0:52d:825f:e53b with SMTP id d75a77b69052e-52df5be1347mr134627061cf.39.1787405077118;
+        Sat, 22 Aug 2026 06:24:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1787405077; cv=none;
+        d=google.com; s=arc-20260327;
+        b=LxdL1ykPD76M10u0kPCdBFEnF8SUcPcGShASHjaUqZWDUPG22MKm4xAZOJUlNPEkl1
+         ZE4rctlmYdsk45jmOV9vU+Du0axDlpV60bE/SgQX9Hk5Q2XKcYd0q+UiUwipogwuPjaE
+         gQNfy9huch+wZ+7CgOypXFGsiHXsCjW2XcxOQFsMkqH9i7ahxeooHqE4htId5OlXgY2r
+         tpAU55DWyu/aet9po8xF/hgmgr/RDNnahCAV+PifeaspFxeIwg8xwYb8C5b39T0a5b+4
+         0wS3QiH+5GtEXDn6ZawIB/sIdhRoCuPjZrcKnMLKEAJEnIC7q96T7Q+90478E1Co3S3r
+         XzkA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=to:sid:list-unsubscribe-post:feedback-id:reply-to:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=0BxdJ0IWjHfupZULkdwdLfkZhEAcVVwutwbFndsNtm4=;
+        fh=llg5Lvlea7SDmLBTAhAnp9aHE4YNG0PBePn37oaUKwI=;
+        b=kERjUwTWyu4rfZy5BIjME8sV/MgUUtQUmMqDV/tY1rP6HG77s78wk6aoYZY5ChRJVK
+         pwbH2zCBIKGkVhxK5jnz76GHaymqViMjHCL6merGnhnSDwVX7OxwDtZulFPVG7pUNhGU
+         1wJL3l/C9LXYh1MuogsD8AcQEuRSKBkfEYlYK5gxfxII0Ju5wDEeza3E/xZPWBQodmfV
+         PYlptxGblq6dxVRxyqpGSfxXX2AbZuaPb6MiwcnRYYYg7vT8SOsAHppED+BQS1UX3zs/
+         G0YeMVhBQv7WjADKpOYh44gameuUPjiTxs2PJGn6O80YQXdW6F3dfy4yedsh6Dte2lmI
+         etKQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=a+iySMST;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oMbLAiuy;
+       spf=pass (google.com: domain of bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com designates 149.72.163.115 as permitted sender) smtp.mailfrom="bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+Return-Path: <bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com>
+Received: from o138.ptr4310.mail.beehiiv.com (o138.ptr4310.mail.beehiiv.com. [149.72.163.115])
+        by mx.google.com with ESMTPS id 6a1803df08f44-90c938fed51si10976896d6.256.2026.08.22.06.24.36
+        for <antoinetessier@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 22 Aug 2026 06:24:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com designates 149.72.163.115 as permitted sender) client-ip=149.72.163.115;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.beehiiv.com header.s=s1 header.b=a+iySMST;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=oMbLAiuy;
+       spf=pass (google.com: domain of bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com designates 149.72.163.115 as permitted sender) smtp.mailfrom="bounces+112266177-92a6-antoinetessier=gmail.com@em2003.mail.beehiiv.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=beehiiv.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.beehiiv.com;
+	h=content-type:date:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; t=1787405075;
+	bh=0BxdJ0IWjHfupZULkdwdLfkZhEAcVVwutwbFndsNtm4=;
+	b=a+iySMSTTI1mYs+1UgZAeX8sIcOdexFseGR8Sr54+M7kfoboEDD6uneabDUbt11BWPOq
+	5M01+GYiXwFgIsiq9wB9oLdbH/1vTpMW2U831vCLmTtuQTW52UUEUD/eK5Yq6i1DCmZ/Gx
+	lBqGn2u9qS8i4nNmQJ9KOmWTivMfE3BGQ7lyOwVarteJMjcGXVKAY5N56hKjnGgXwlajYP
+	BmaklwKALsWGWC4L9rI6q+2C+YKw9BXqfo0AKXuinZ4A/ATWS0tSMZeZqgiA48yONACPsv
+	RJ+nv4+WG3b85uTnxlHMEDtWu52Q5HFdgA8iou8Kms4NaylCh19dEqTPef+0OgVg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:reply-to:feedback-id:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; t=1787405075;
+	bh=0BxdJ0IWjHfupZULkdwdLfkZhEAcVVwutwbFndsNtm4=;
+	b=oMbLAiuyGzSsaNmXlwWwekobk0w+9gO9lwZbGoBPOCLwrfXgCNN0Qy8wXh+nq/xsI9S1
+	r/r25upEAcSZo17UDtdftR6LN+LD5frxV4kpo8hkTPyiwXallvM6gStPwuSDIjfaWG358U
+	W8R+eXIpt42h1iE5Aoz/o0AgOg4O7pVS4=
+Received: by recvd-68db557557-dbbfh with SMTP id recvd-68db557557-dbbfh-1-6A89A313-3A
+	2026-08-22 13:24:35.737337968 +0000 UTC m=+2140348.850422580
+Received: from MTEyMjY2MTc3 (unknown)
+	by geopod-ismtpd-129 (SG) with HTTP
+	id IBBsQalKRs2N4YbbmYN8gQ
+	Sat, 22 Aug 2026 13:24:35.672 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2c35a7c583f5f14b769c50e5c907ff4906a9abb1f54d2ea677e2aae0c65d
+Date: Sat, 22 Aug 2026 13:24:35 +0000 (UTC)
+From: Cars Never Die <carsneverdie@mail.beehiiv.com>
+Mime-Version: 1.0
+Message-ID: <IBBsQalKRs2N4YbbmYN8gQ@geopod-ismtpd-129>
+Subject: [TEST] New post
+Reply-To: Cars Never Die <antoinetessier@gmail.com>
+Feedback-ID: 
+ =?us-ascii?Q?61695eac-c89a-43a6-8824-fb612d6bb239=3Anewsletter=3Aec5a45c5-fcef-?=
+ =?us-ascii?Q?4515-8372-2b500843ed81=3A6cd8441a34d1ec9?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+sId: ec5a45c5-fcef-4515-8372-2b500843ed81
+x-beehiiv-ids: 
+ =?us-ascii?Q?{=22account=5Fname=22=3A=22https=3A=2F=2Fcarsneverdie=2Ebeehiiv=2Ecom=2F=22=2C=22campaign=5F?=
+ =?us-ascii?Q?id=22=3A=2261695eac-c89a-43a6-8824-fb612d6bb2?=
+ =?us-ascii?Q?39=22=2C=22category=22=3A=22newsletter=22=2C=22email=5Fgene?=
+ =?us-ascii?Q?rated=5Fat=22=3A1787405075=2C=22user=5Fid=22=3A=22ec5a45c?=
+ =?us-ascii?Q?5-fcef-4515-8372-2b500843ed81=22}?=
+x-beehiiv-type: newsletter
+x-list-id: ec5a45c5-fcef-4515-8372-2b500843ed81
+x-list-owner: <mailto:antoinetessier@gmail.com>
+x-newsletter: https://carsneverdie.beehiiv.com/p/new-post-7344cb5e2bbfd510
+x-newsletter-id: https://carsneverdie.beehiiv.com/
+x-newsletter-signup: https://carsneverdie.beehiiv.com/subscribe
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EwO+byantuS112hjBFDV=2Fncv=2F97BaFhK66cxT01l2NClV7HkRaaiJs+w71?=
+ =?us-ascii?Q?UFesnssQ3OFs1NEbrl5I4g1uYv1noBgVbKGuGD5?=
+ =?us-ascii?Q?AbVRTPOMYbfqMUh1G2d9vyHyXVq9d7LfE=2F+unt2?=
+ =?us-ascii?Q?5cXc7OYs4Mcvf3WTy8XYDDVnlQ0=2Fbi7GaOGHClw?=
+ =?us-ascii?Q?RmPah+wr3HNXLN7B9JrseeJ6+HifW7wQ=2FenEpwS?=
+ =?us-ascii?Q?efd47bV640cpUcYA6Ybxid8v+fl9tAG6UZazEXb?=
+ =?us-ascii?Q?lxUkko8nuVC7wTrLdn0NDO0u1A=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprC8hQewUUnFmA4oq?=
+ =?us-ascii?Q?7=2FxqaAvqD6k1OC2PqRQzu=2Ftl7Ekjbfj28djYDDG?=
+ =?us-ascii?Q?W+DCxHpXMa2M43DeZt86f5a=2FiGD87jjs0ykCkQc?=
+ =?us-ascii?Q?LuCw6MBwqPnKCvuiAmeEzkD3hexO0Jiw1G9sAn0?=
+ =?us-ascii?Q?UpqD=2FNH8ygxjj1QNNYGhPHEhzQSPfy59NolQ9yX?=
+ =?us-ascii?Q?ea0Q=2F=2FjJOdNkdzoNG86VTzO3gKgOwuF+AO90fE0?=
+ =?us-ascii?Q?s1K2kI7YCNV5XokIhCaW4uz8XeszlHAPkOnnWSk?=
+ =?us-ascii?Q?gfd6BAOk=3D?=
+To: "antoinetessier@gmail.com" <antoinetessier@gmail.com>
+X-Entity-ID: u001.VL7x8LAioQgg3GLmfh7q1Q==
+
+--2c35a7c583f5f14b769c50e5c907ff4906a9abb1f54d2ea677e2aae0c65d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+----------
+# **CARS NEVER DIE**
+
+View image: (https://media.staginghiiv.com/cdn-cgi/image/fit=3Dscale-down,f=
+ormat=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/5811eae2-52=
+1b-443b-9cb9-083c6fd4e489/White_Brown_House_Mountain_Daytime.jpg?t=3D174298=
+9804)
+Caption:=20
+
+
+--------------------
+## **WHY I DID NOT SPLEEP LAST NIGHT?**
+
+The dust has barely settled on the Monterey Peninsula, but the big money di=
+dn't pack up and go home. If you spent any time watching the boards yesterd=
+ay, you saw $6.63M shift hands across 26 six-figure cars online. The physic=
+al auctions in California might be over, but the digital platforms are imme=
+diately absorbing the unspent capital of frustrated underbidders who missed=
+ out on the physical auction blocks.
+
+Bring a Trailer completely dominated yesterday's action, taking home 25 of =
+the 26 six-figure sales. Cars & Bids logged a single, high-profile closing =
+with a 992-generation Porsche 911 GT3 finding a new home for $266,500. It i=
+s clear that the modern GT and analog V12 market is not experiencing any po=
+st-Monterey hangover; instead, we are seeing immediate, highly liquid redep=
+loyment of cash.
+
+The daily volume trajectory illustrates a steady mid-week momentum. The mar=
+ket has found its late-summer rhythm, showing consistent daily turnover as =
+high-end collectors seek out curated specs without the physical auction hou=
+se premiums.
+
+
+
+----------View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-=
+down,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/ea665=
+acc-6ad2-4f0b-89b1-7ce597339412/image.png?t=3D1787318541)
+Caption:=20
+
+----------
+##### Vehicle Spotlight
+
+## **2005 Porsche Carrera GT**
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/8f1aaa42-da7a-4=
+e86-907e-4490b95a0e41/image.png?t=3D1787318648)
+Caption:=20
+
+Behind every perfect corner lies intention.
+
+We step into three of Copenhagen=E2=80=99s most captivating homes: spaces b=
+athed in calm light, layered with earthy tones and crafted with a sharp eye=
+ for functional beauty.
+
+**SEE HOW LOCALS STYLE WITH PURPOSE =E2=86=92**
+
+
+--------------------
+##### The Leader Board
+
+## **Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderb=
+oard)**
+
+The leaderboard is sorted strictly by the average sale price of six-figure =
+cars over the past 7 days. This ranking highlights which platforms are capt=
+uring the highest-tier inventory versus those driving sheer volume.
+
+**Rank**
+
+
+**Auction Site**
+
+
+**7-Day Avg Sale Price ($)**
+
+
+**7-Day $100k+ Volume ($)**
+
+
+**6-Figure Lots Sold**
+
+
+
+1
+
+
+duPont REGISTRY Live
+
+
+608,273.08
+
+
+7,907,550.00
+
+
+13
+
+
+
+2
+
+
+Bring a Trailer
+
+
+274,100.75
+
+
+32,069,787.35
+
+
+117
+
+
+
+3
+
+
+Car & Classic
+
+
+177,025.50
+
+
+177,025.50
+
+
+1
+
+
+
+4
+
+
+Cars & Bids
+
+
+172,153.24
+
+
+1,721,532.40
+
+
+10
+
+
+
+
+While duPont REGISTRY Live maintains the highest average transaction size d=
+ue to hypercar listings like the Carrera GT, Bring a Trailer remains the ma=
+ssive engine of the collector car market, digesting 117 six-figure transact=
+ions in a single week.
+
+## **WHAT TO WATCH**
+
+
+
+View image: (https://media.staginghiiv.com/cdn-cgi/image/fit=3Dscale-down,f=
+ormat=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/64b0bc18-dc=
+a3-4fb5-a998-970ac675dab1/Living_Room_Furniture_Photo.jpg?t=3D1742997251)
+Caption:=20
+
+### **SUBTLE SOPHISTICATION**
+
+The secrets behind a neutral palette that feels anything but cold.
+
+**LEARN MORE =E2=86=92**
+
+View image: (https://media.staginghiiv.com/cdn-cgi/image/fit=3Dscale-down,f=
+ormat=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/4a32748b-b3=
+d3-42e2-a58e-f27638352a41/Cozy_Winter_Holidays_Photo.jpg?t=3D1742997032)
+Caption:=20
+
+### **CRAFTING HYGGE**
+
+Creating authentic warmth beyond candles and knits.
+
+**LEARN MORE =E2=86=92**
+
+
+
+--------------------
+##### Data Corner
+
+## **High-End Price Breakdown & Valuation Spread (7-Day Rolling Context) **
+
+View image: (https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,forma=
+t=3Dauto,onerror=3Dredirect,quality=3D80/uploads/asset/file/9d6620ab-7a4f-4=
+43e-af94-192bd9950424/image.png?t=3D1787319092)
+Caption:=20
+
+The bulk of the high-end market remains concentrated in the $100k to $250k =
+tier, acting as the entry point for blue-chip modern classics. However, the=
+ upper brackets have shown remarkable health, indicating that seven-figure =
+buyers are comfortable transacting online without physical inspections.
+
+* **$100k - $250k:** 94 sales (80 on Bring a Trailer, 8 on Cars & Bids, 5 o=
+n duPont REGISTRY Live, 1 on Car & Classic)
+
+* **$250k - $500k:** 29 sales (22 on Bring a Trailer, 5 on duPont REGISTRY =
+Live, 2 on Cars & Bids)
+
+* **$500k - $750k:** 8 sales (7 on Bring a Trailer, 1 on duPont REGISTRY Li=
+ve)
+
+* **$750k - $1M:** 6 sales (5 on Bring a Trailer, 1 on duPont REGISTRY Live=
+)
+
+* **$1M - $2M:** 3 sales (All on Bring a Trailer)
+
+* **$2M+:** 1 sale (On duPont REGISTRY Live)
+
+##=20
+TOP MOVERS
+
+**VEHICLE**
+
+
+**YEAR**
+
+
+**SOLD PRICE ($)**
+
+
+**AUCTION HOUSE**
+
+
+
+_**[2019 Porsche 911 GT2 RS Weissach](https://link.mail.beehiiv.com/ss/c/u0=
+01.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3u7UDscrRf4qRPAt6JyjJur4a8TnCeT=
+SAp9jd_Q5Z95v7bL91XfkkLrdrxkzaROu6Z5Bpvt3Zac85w9e6RamRmzGAw3pWDTl8aPl3-KZWB=
+m5eSclsi2xnig7gUPBb4ozU4IBWybnkCGha6WSp4awS-MPc4mdThq1hfVmmzewwwaT60iRAey5I=
+Lg_wFHj4JQ3Wocz5RbOUyD9NpPS82YXSSF7h3Q05zLvso_Q8qxP9M8wg/4tc/V_Z_M0T4SUmqcT=
+BDUitwpg/h2/h001.jdW2TE2gOJAxFnH1QD1wD21SWlQgYiQ_5oeJoT_t3nM)**_
+
+
+2019
+
+
+907,500
+
+
+Bring a Trailer
+
+
+
+_**[2019 Ferrari 812 Superfast](https://link.mail.beehiiv.com/ss/c/u001.IbE=
+MCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tTfy31yeaPDHgPcvL_Vi7RE1sbrA11iEwuWb=
+qEWFeJDdHFU7Holjv0A2Wvox28D-3KnIgMg5V3QgWaExFAUnBS1i1bSLCnd1iwZ-lRq0lPWE5JZ=
+5r3bE3fj92Ijt5Mn5kyVQvbenS4J90V4R3w1jjEnTSvl4BOOMuob1m3FRBLzdF3hbL26t91xRir=
+wFV6XhjiixLQcsvQitWMQQrje9TVAjghOHXstQobJizK1IjL9Q/4tc/V_Z_M0T4SUmqcTBDUitw=
+pg/h3/h001.DgaLt6FDfj79KpMB5Djq9ukLtOKVhgcwoiX8teWrpVM)**_
+
+
+2019
+
+
+573,500
+
+
+Bring a Trailer
+
+
+
+_**[2015 Ferrari 458 Italia](https://link.mail.beehiiv.com/ss/c/u001.IbEMCT=
+2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tP7uSS1g3ckJ0nFPGjoiu3xU47_JTZMz0ywYcXz=
+InhdRUbfZ0qLnBrDywKopBvHz1HFJdvj2WcsEkn73EQwUQsWRbhVEEoo1HrgbncPUDwfha4tvqW=
+xcC2IpVwFWuDohLhMS9Rs49jqEDbvElFoI5gnfBWEt6ruZ0hyrCvJpWT9hutQuUFWKV0rRb1Y4m=
+w7Maq7Ez-46yh8uQpxox2ZtZ_QLVV8vajcdzZdDZFk979xQ/4tc/V_Z_M0T4SUmqcTBDUitwpg/=
+h4/h001.fexrxbEiz-leh_a59BvlxLLQu2b8t9bQw0bwaL1PF1I)**_
+
+
+2015
+
+
+508,500
+
+
+Bring a Trailer
+
+
+
+_**[Mercedes-Benz 300 SLR Replica 6-Speed](https://link.mail.beehiiv.com/ss=
+/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tPcRQjEdZ3dZDtAhnO64CA3AT=
+PoVbxTc9s3Wi398jSdB3Gv-yrsDR5b9afj72obldjJ0gvDaBFI26rpcdKWtjG_WOtC1qjDWM3bP=
+vl24n8xjbAU1erbV20_rRweeDKCILyfcN8vHVEQIGFEEFxk_CSdhjhW5ip6zEMxtVtAM2WDGTLs=
+BudYPDfrNSamzb5sIXsnGpJ2HqufDwPXaDLSJfyoDxL0vGmPMpEu2ktCUQtNQ/4tc/V_Z_M0T4S=
+UmqcTBDUitwpg/h5/h001.22juZRS_WfbL4au3uY6igKrLFJAo3yEOhnD2i9utCGk)**_
+
+
+=E2=80=94
+
+
+417,500
+
+
+Bring a Trailer
+
+
+
+_**[2012 Lamborghini Aventador LP700-4 Coupe](https://link.mail.beehiiv.com=
+/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3vWc9yfynBRhVxFyPSWJn9B=
+RphhoSYCRxBSiGGprKMYCQ_eDbTIB2orS9KkLsLn-zFR4zfaGCVfbHF0WqOeYZD9SJAsvotg9sD=
+eSgOoJo34HOHTppdF5SBNha3Y-vhKwIbqnWX78IZqVROMhCBuauC6FgqTUqnvngY1WSY3-xquys=
+6NFx-raRvmwH27AUiIzZ44T6e9jbMSuqLmpwgEGoCgqBrM5VSf4isCsxD-0we9ff_iekCZu00A7=
+epv1vOvxr8/4tc/V_Z_M0T4SUmqcTBDUitwpg/h6/h001.evyTzSvC4SukRKFAlqFMHACxhyR9D=
+9XEuHF-Ckr8ESQ)**_
+
+
+2012
+
+
+319,500
+
+
+Bring a Trailer
+
+
+
+_**[1981 Ferrari 512 BB](https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M0h=
+pX3NRAqP6q331mgxz4HLcOSJfRqi0cG3sdvnOmrdCFInyyAEFwKlu-9nqDtiVB8_3OmDlUhO2Xx=
+NwlB1X5cC417GgoFqn_d2DUuaZdiweVCe59mgMMOgnx9BRyhIHeggdG334NK5OLnf3W4oieQmnj=
+g5PCOFeott9d9eya7S6j4wN4s_zwl2HscRSQZRGXlFtfEuo9jfBnEcXQPUfT6AyDHw7mNbcrLfF=
+7pcLPLjevZsWM1sZoSPO0/4tc/V_Z_M0T4SUmqcTBDUitwpg/h7/h001.PUL_-qZygUFdHoUKrm=
+HsbV0lnXjzXg6bic_0sGt58kE)**_
+
+
+1981
+
+
+300,943.35
+
+
+Bring a Trailer
+
+
+
+_**[2016 Nissan GT-R Nismo](https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2=
+M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tu8eRYNMZa23CXM3lXquww86vo2JdcQHTNB-zzrV=
+YVImKOr2Ac1cycYHNFgo2RAJ7NK4KVFN8G1_BSmMa62nc_IX0ymF087T6ylge_GphxXrAmvkr2P=
+cNxbF9OLDXrSO77dE-35r0bYeMxellH3q5ecXbeE3UClaKEhguPKWkRkx65hsLHsbrEnZ7LzgCf=
+OPB4zcOM8RO4kPHgZzoEnW-G/4tc/V_Z_M0T4SUmqcTBDUitwpg/h8/h001.vd-4S7K6fRHxztT=
+A7YG_djbWx3pScajl_IklzaC0bkU)**_
+
+
+2016
+
+
+275,500
+
+
+Bring a Trailer
+
+
+
+_**[2023 Porsche 911 GT3](https://link.mail.beehiiv.com/ss/c/u001.AVSL5CBbZ=
+I_JD4YsVKaxY8mJ_2jyXOW7Xrxk3JsD-hioCxTyDTJuhVAEI9IwPuzL-ge4q3Fok89HCGUOfWKl=
+TRXUApAgh67-Ta8r4mvkf0FlmWmO--_GvsPpBb3xKgxbXYuTCRuVXW-UPqVUxuzwAZIYCp6W_e0=
+PgshFDv6v11eb0WZ8PSOROTEYkHylri_VPr2hbYZ2eXwMwhexjDKgHNyoyDTNRi2QB3QEjgKFrR=
+JFwESzRgo_DW1YEH4LS2SA9yXqWVOTTOy9K3-AeBV_oA/4tc/V_Z_M0T4SUmqcTBDUitwpg/h9/=
+h001.WA_aX59aq1WMFWQFXxJQiUqNoupoAVl-8FlCfBv2NoM)**_
+
+
+2023
+
+
+266,500
+
+
+Cars & Bids
+
+
+
+_**[2007 Porsche 911 GT3](https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M0=
+hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tZz4HM_zLuRFqzGFFogMnErLkdkEC5gJXhH373Byg2=
+eApnXFuk6zXloUkmoVxk0f13MdFu2XmaBX-mfvCefehP9MdO6b5FGMvIJelGnGvFIBNXgfBcjxL=
+_BAbl_gkrii1x2DbhJJTIhLyHDVKIcZ4yfEV50HiM_2USMk4Ui4m0mrT9vnXvd24j759_en0VOq=
+jJf37FWzJrLfCS4cIHQmMb/4tc/V_Z_M0T4SUmqcTBDUitwpg/h10/h001.or105bv3oKLx5l2W=
+8UxA-D6a8wwiwKomEHXJiMKPziY)**_
+
+
+2007
+
+
+260,750
+
+
+Bring a Trailer
+
+
+
+_**[2000 Ferrari 550 Maranello](https://link.mail.beehiiv.com/ss/c/u001.IbE=
+MCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3t3os4fdb8nlxwWG4dmnF5L9CoXxBknYrwQ9C=
+D9e3cl3HXL_CS__06UxPX6PMw-piUmQQ4A0fQa2C6WQh2GeoYJWOkaAMfMk3ShKwl-cHYW3Moim=
+8x52JMQBrvUtrnPrC3DkHk5fB_28tGA25tkTCHk6Jyzu0u17mAp3qvfzMWqenwJs8zfCyHhtNhU=
+9CIuLOQOSo5st6x7GyKRXc8LSIloEuFob6yOa7wlv01mWVz8lg/4tc/V_Z_M0T4SUmqcTBDUitw=
+pg/h11/h001.oUW5TB3tvmBsJL93soOy9NuvnUVkueaf7NrmfCd76Ag)**_
+
+
+2000
+
+
+247,500
+
+
+Bring a Trailer
+
+
+
+
+
+--------------------
+Chat tomorrow,
+
+dRew
+
+
+--------------------
+
+
+
+----------
+=E2=80=94=E2=80=94=E2=80=94
+
+You are reading a plain text version of this post. For the best experience,=
+ copy and paste this link in your browser to view the post online:
+https://carsneverdie.beehiiv.com/
+
+--2c35a7c583f5f14b769c50e5c907ff4906a9abb1f54d2ea677e2aae0c65d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office" style=3D"font-size:16px;"><head></head><head><meta charset=
+=3D"utf-8"/><!--[if !mso]><!--><meta http-equiv=3D"X-UA-Compatible" content=
+=3D"IE=3Dedge"/><!--<![endif]--><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"/><meta name=3D"x-apple-disable-message-refo=
+rmatting"/><meta name=3D"format-detection" content=3D"telephone=3Dno,addres=
+s=3Dno,email=3Dno,date=3Dno,url=3Dno"/><meta name=3D"color-scheme" content=
+=3D"light"/><meta name=3D"supported-color-schemes" content=3D"light"/><titl=
+e>New post</title><!--[if mso]><xml><o:OfficeDocumentSettings><o:AllowPNG/>=
+<o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![en=
+dif]--><style>
+  :root { color-scheme: light; supported-color-schemes: light; }
+  body { margin: 0; padding: 0; min-width: 100%!important; -ms-text-size-ad=
+just: 100% !important; -webkit-transform: scale(1) !important; -webkit-text=
+-size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importa=
+nt; }
+  .body { word-wrap: normal; word-spacing:normal; }
+  table.mso { width: 100%; border-collapse: collapse; padding: 0; table-lay=
+out: fixed; }
+  img { border: 0; outline: none; }
+  table {  mso-table-lspace: 0px; mso-table-rspace: 0px; }
+  td, a, span {  mso-line-height-rule: exactly; }
+  #root [x-apple-data-detectors=3Dtrue],
+  a[x-apple-data-detectors=3Dtrue],
+  #MessageViewBody a { color: inherit !important; text-decoration: inherit =
+!important; font-size: inherit !important; font-family: inherit !important;=
+ font-weight: inherit !important; line-height: inherit !important; }
+  span.MsoHyperlink { color: inherit !important; mso-style-priority: 99 !im=
+portant; }
+  span.MsoHyperlinkFollowed { color: inherit !important; mso-style-priority=
+: 99 !important; }
+  .a { background-color:#FFFFFF; }
+  .b { background-color:#283642; }
+  .c  { background-color:#FFFFFF; }
+  .d { background-color:#F3F1EE; }
+  .d2 { background-color:#F3F1EE; }
+  .d3 { background-color:#F3F1EE; }
+  h1 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h2 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h3 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h4 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h5 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h6 a { text-decoration:underline;color:#D65A43 !important;font-style:ital=
+ic; }
+  h1, h1 a, h2, h2 a, h3, h3 a, h4, h4 a, h5, h5 a, h6, h6 a, ul, li, ol, p=
+, p a { margin: 0;padding: 0; }
+  h1 { font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;fon=
+t-weight:600;font-size:80px;color:#283642;line-height:0.9;padding-bottom:4p=
+x;padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h2 { font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;fon=
+t-weight:700;font-size:54px;color:#283642;line-height:1;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h3 { font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;fon=
+t-weight:700;font-size:24px;color:#283642;line-height:1;padding-bottom:4px;=
+padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h4 { font-family:'Oswald',Montserrat,'Lucida Sans Unicode',sans-serif;fon=
+t-weight:700;font-size:18px;color:#283642;line-height:1.125;padding-bottom:=
+4px;padding-top:16px;mso-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h5 { font-family:'Helvetica',Arial,sans-serif;font-weight:400;font-size:1=
+6px;color:#4A5B6A;line-height:0;padding-bottom:4px;padding-top:16px;mso-mar=
+gin-top-alt:16px;mso-margin-bottom-alt:4px }
+  h6 { font-family:'Helvetica',Arial,sans-serif;font-weight:400;font-size:1=
+4px;color:#283642;line-height:0.875;padding-bottom:4px;padding-top:16px;mso=
+-margin-top-alt:16px;mso-margin-bottom-alt:4px }
+  p { font-family:'Helvetica',Arial,sans-serif;font-weight:400;color:#4A5B6=
+A;font-size:16px;line-height:1.5;padding-bottom:12px;padding-top:12px;mso-m=
+argin-top-alt:12px;mso-margin-bottom-alt:12px; }
+  p a, .e a, ul a, li a, .h a, .h2 a, .h3 a { word-break:break-word;color:#=
+D65A43 !important;text-decoration:underline;text-decoration-color:#D65A43;f=
+ont-style:italic; }
+  p a span, .e a span, ul a span, li a span { color: inherit }
+  p .bold { font-weight:bold;color:#4A5B6A; }
+  p span[style*=3D"font-size"] { line-height: 1.6; }
+  .f p { font-size:12px;line-height:15px;color:#4A5B6A;padding:0; }
+  .f p a { color:#4A5B6A !important; }
+  .g p { font-family:'Helvetica',Arial,sans-serif;font-size:16px;line-heigh=
+t:22px;font-weight:400;margin:0; }
+  .g p a  { text-decoration: underline; }
+  .i p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-size=
+:15px;color:#283642; }
+  .i p a { color:#283642 !important; }
+  .i2 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.5;font-siz=
+e:15px;color:#283642; }
+  .i2 p a { color:#283642 !important; }
+  .i3 p { font-family:'Helvetica',Arial,sans-serif;line-height:1.8;font-siz=
+e:24px;color:#283642; }
+  .i3 p a { color:#283642 !important; }
+  .h p a { color:#283642 !important; }
+  .h2 p a { color:#283642 !important; }
+  .h3 p a { color:#283642 !important; }
+  .f p a, .i p a, .i2 p a, .i3 p a, .h p a, .h2 p a, .h3 p a { text-decorat=
+ion:underline; }
+  .j { border-top:1px solid #283642; }
+  .k p { padding-left:15px;padding-bottom:0px;padding-top:6px;mso-margin-to=
+p-alt:6px;mso-margin-bottom-alt:0px;mso-margin-left-alt:15px; }
+  .o { background-color:#283642;border:1px solid #283642;border-radius:5px;=
+ }
+  .o p { font-family:'Helvetica',Arial,sans-serif;padding:0px;margin:0px; }
+  .l p,
+  .l p a, .l a { font-size:14px;line-height:20px;font-weight: bold;color:#F=
+3F1EE;padding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .m p,
+  .m p a { font-size:13px;line-height:18px;font-weight:400;color:#2D2D2D;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .n p,
+  .n p a { font-size:12px;line-height:17px;font-weight:400;color:#D65A43;pa=
+dding-bottom:6px;mso-margin-bottom-alt:6px;text-decoration:none; }
+  .p { background-color:#FFFFFF;max-width:520px;border:1px solid #E1E8ED;bo=
+rder:1px solid rgba(80, 80, 80, 0.3);border-radius:5px; }
+  .q { font-size:16px;font-family:Helvetica,Roboto,Calibri,sans-serif !impo=
+rtant;border:1px solid #e1e8ed;border:1px solid rgba(80, 80, 80, 0.3);borde=
+r-radius:10px;background-color:#FFFFFF; }
+  .q p { font-size:16px;font-family:system-ui,Helvetica,Roboto,Calibri,sans=
+-serif !important;color:#222222;padding:4px 0; }
+  .r { border:1px solid #E1E8ED !important;border-radius:5px; }
+  .s p { font-size: 14px; line-height: 17px; font-weight: 400; color: #6978=
+82; text-decoration: none; }
+  .t p { font-family:'Helvetica',Arial,sans-serif;font-size:12px;line-heigh=
+t:1.5;font-weight:400;color:#000000;font-style:italic;padding:0px; }
+  .v { border-radius:10px;border:solid 0px #283642;background-color:#283642=
+;font-family:'Helvetica',Arial,sans-serif;color:#F3F1EE; }
+  .v a { text-decoration:none;display:block;color:#F3F1EE; }
+  .w p { font-size:12px;line-height:15px;font-weight:400;color:#F3F1EE; }
+  .w p a { text-decoration: underline !important;color:#F3F1EE !important; =
+}
+  ul { font-family:'Helvetica',Arial,sans-serif;margin:0px 0px 0px 25px !im=
+portant;padding:0px !important;color:#283642;line-height:24px;list-style-ty=
+pe:disc !important;font-size:16px; }
+  ul ul { list-style-type:circle !important; }
+  ul ul ul { list-style-type:square !important; }
+  ul ul ul ul { list-style-type:disc !important; }
+  ul ul ul ul ul { list-style-type:circle !important; }
+  ul ul ul ul ul ul { list-style-type:square !important; }
+  ul ul ul ul ul ul ul { list-style-type:disc !important; }
+  ul ul ul ul ul ul ul ul { list-style-type:circle !important; }
+  ul ul ul ul ul ul ul ul ul { list-style-type:square !important; }
+  ul > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #283642; }
+  .poll-choices > li { margin: 4px 0px 0px 0px !important; }
+  ol { font-family:'Helvetica',Arial,sans-serif;margin: 0px 0px 0px 25px !i=
+mportant;padding:0px !important;color:#283642;line-height:24px;list-style:d=
+ecimal;font-size:16px; }
+  ol > li { font-family:'Helvetica',Arial,sans-serif;margin:10px 0px 0px 0p=
+x !important;padding: 0px 0px 0px 0px !important; color: #283642; }
+  li > p, li p { font-family:'Helvetica',Arial,sans-serif;font-size:16px;fo=
+nt-weight:normal;line-height:24px;padding:0px; }
+  .e h3,
+  .e p,
+  .e span { padding-bottom:0px;padding-top:0px;mso-margin-top-alt:0px;mso-m=
+argin-bottom-alt:0px; }
+  .e span,
+  .e li { font-family:'Helvetica',Arial,sans-serif;font-size:16px;color:#4A=
+5B6A;line-height:24px; }
+  .rec { font-family:  ui-sans-serif, system-ui, -apple-system, BlinkMacSys=
+temFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-ser=
+if, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color E=
+moji" !important; }
+  .rec__button:hover { background-color: #f9fafb !important; }
+  .copyright a {color: inherit !important; text-decoration: none !important=
+; font-size: inherit !important; font-family: inherit !important; font-weig=
+ht: inherit !important; line-height: inherit !important;}
+  .txt_social p { padding: 0; word-break: break-all; }
+  .table, .table-c, .table-h { border: 1px solid #C0C0C0; }
+  .table-c { padding:5px; background-color:#FFFFFF; }
+  .table-c p { color: #283642; font-family:'Helvetica',Arial,sans-serif !im=
+portant;overflow-wrap: break-word; }
+  .table-h { padding:5px; background-color:#F1F1F1; }
+  .table-h p { color: #283642; font-family:'Trebuchet MS','Lucida Grande',T=
+ahoma,sans-serif !important;overflow-wrap: break-word; }
+  @media only screen and (max-width:667px) {
+    .aa, .w100pc { width: 100% !important; }
+    .bb, .bb td { max-width: 100% !important; }
+    .bb img { max-width: 100% !important; height: auto !important; }
+    .dd { overflow-wrap: break-word !important; }
+    .cc { padding: 0px 8px !important; }
+    .ee { padding-top:10px !important;padding-bottom:10px !important; }
+    .ff ul, .ff ol { margin: 0px 0px 0px 10px !important;padding: 0px !impo=
+rtant; }
+    .ff li { margin:10px 0px 0px 10px !important; }
+    .r {height:140px !important;}
+    .s p { font-size:13px !important;line-height:15px !important; }
+    .mob-hide {display:none !important;}
+    .mob-show {display: block !important; width: auto !important; overflow:=
+ visible !important; float: none !important; max-height: inherit !important=
+; line-height: inherit !important;}
+    .mob-stack {width:100% !important;display:block !important;}
+    .mob-w-full {width:100% !important;}
+    .mob-block {display:block !important;}
+    .embed-img {padding:0px 0px 12px 0px !important;}
+    .socialShare {padding-top:15px !important;}
+    .rec { padding-left:15px!important;padding-right:15px!important; }
+    .bodyWrapper { padding:0px 4px 0px 4px !important; }
+    .social-mobile {float:left !important;margin-top:10px !important;}
+  }
+  @media screen and (max-width: 480px) {
+    u + .a .gg { width: 100% !important; width: 100vw !important; }
+    .tok-heart { padding-top:75% !important; }
+    .tok-play { padding-top: 250px !important; }
+  }
+  @media screen and (max-width: 320px) {
+    .tok-heart { padding-top:65% !important; }
+  }
+  .u { border: 1px solid #CACACA !important; border-radius: 2px !important;=
+ background-color: #ffffff !important; padding: 0px 13px 0px 13px !importan=
+t; font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Se=
+goe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif !important;fon=
+t-size: 12px !important; color: #767676 !important; }
+  .u a { text-decoration: none; display: block !important; color: #767676 !=
+important; margin: 0px !important; }
+  .u span, .u img { color: #767676 !important;margin:0px !important; max-he=
+ight:32px !important;background-color:#ffffff !important; }
+</style><!--[if mso]><style type=3D"text/css">
+    h1, h2, h3, h4, h5, h6 {font-family: Arial, sans-serif !important;}
+    body, table, td, p, a, span {font-family: Arial, sans-serif !important;=
+}
+    sup { font-size: 100% !important;vertical-align: .5em !important;mso-te=
+xt-raise: -1.5% !important;line-height: 0 !important; }
+    ul { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ul li { margin-left: 0px !important; mso-special-format: decimal; }
+    ol { margin-left:0px !important; margin-right:10px !important; margin-t=
+op:20px !important; margin-bottom:20px !important; }
+    ol li { margin-left: 0px !important; mso-special-format: decimal; }
+    li.listItem { margin-left:15px !important; margin-top:0px !important; }
+    .paddingDesktop { padding: 10px 0 !important; }
+    .edm_outlooklist { margin-left: -20px !important; }
+    .embedImage { display:none !important; }
+</style><![endif]--><!-- __merge_tags_in_links__ --><style>
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:200;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs13FvsUZiZSSUhiCXAA.woff2') format('woff2')}
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:300;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs169vsUZiZSSUhiCXAA.woff2') format('woff2')}
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:400;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs1_FvsUZiZSSUhiCXAA.woff2') format('woff2')}
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:500;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs18NvsUZiZSSUhiCXAA.woff2') format('woff2')}
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:600;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs1y9osUZiZSSUhiCXAA.woff2') format('woff2')}
+      @font-face{font-family:'Oswald';font-style:normal;font-weight:700;fon=
+t-display:swap;src:url('https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIj=
+g75cFRf3bXL8LICs1xZosUZiZSSUhiCXAA.woff2') format('woff2')}
+</style></head><body class=3D"a" style=3D"margin:0px auto;padding:0px;word-=
+wrap:normal;word-spacing:normal;background-color:#FFFFFF;"><div role=3D"art=
+icle" aria-roledescription=3D"email" aria-label=3D"email_name" lang=3D"en" =
+style=3D"font-size:1rem"><table role=3D"none" width=3D"100%" border=3D"0" c=
+ellspacing=3D"0" align=3D"center" cellpadding=3D"0" class=3D"gg"><tr><td al=
+ign=3D"center" valign=3D"top"><table role=3D"none" width=3D"670" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" class=3D"aa" style=3D"width:670px;ta=
+ble-layout:fixed;"><tr><td class=3D"bodyWrapper" align=3D"center" valign=3D=
+"top" style=3D"padding:0px 0px 0px 0px;"><table role=3D"none" width=3D"100%=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td=
+ align=3D"center" valign=3D"top" style=3D"border-width:0px 0px 0px 0px;bord=
+er-style: solid; border-color: #283642;border-radius:0px 0px 0px 0px;backgr=
+ound-color:#FFFFFF;" class=3D"c"><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr id=3D"heade=
+r"><td style=3D"padding:0;"><div style=3D"padding:0;"><table role=3D"none" =
+width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"ce=
+nter"><tr><td style=3D"line-height:0;"><div data-open-tracking=3D"true"> <i=
+mg src=3D"https://link.mail.beehiiv.com/ss/o/u001.gAFOR2Wt-uftqtX7qdQ0ow/4t=
+e/Ek7xDdLsSGaJzjV0nJyz4g/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=
+=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 !=
+important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0=
+ !important;margin-left:0 !important;padding-top:0 !important;padding-botto=
+m:0 !important;padding-right:0 !important;padding-left:0 !important;"/> </d=
+iv></td></tr></table></div></td></tr><tr id=3D"content-blocks"><td class=3D=
+"email-card-body" align=3D"center" valign=3D"top" style=3D"padding-bottom:8=
+px;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" align=3D"center"><tr><td><table role=3D"none" width=3D"100%"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolo=
+r=3D"transparent" style=3D"background-color:transparent;border-bottom-width=
+:0px;border-color:#283642;border-left-width:0px;border-right-width:0px;bord=
+er-style:solid;border-top-width:1px;padding:10.0px 0px 10.0px 0px;box-sizin=
+g:border-box;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><tr><td class=3D"dd"=
+ align=3D"center" valign=3D"top" style=3D"color:#283642;font-weight:600;pad=
+ding:0px 8px;text-align:center;"><h1 style=3D"color:#283642;font-weight:600=
+;mso-line-height-alt:90.0%;"><b>CARS NEVER DIE</b></h1></td></tr><tr><td al=
+ign=3D"center" valign=3D"top" style=3D"padding-bottom:10px;padding-left:8px=
+;padding-right:8px;padding-top:10px; " class=3D"dd"><table role=3D"none" bo=
+rder=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"bb" style=3D"margin=
+:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" class=3D"bb" style=
+=3D"width:634px;"><img src=3D"https://media.staginghiiv.com/cdn-cgi/image/f=
+it=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80,width=3D1920,=
+height=3D3840/uploads/asset/file/5811eae2-521b-443b-9cb9-083c6fd4e489/White=
+_Brown_House_Mountain_Daytime.jpg?t=3D1742989804" alt=3D"" height=3D"auto" =
+width=3D"634" style=3D"display:block;width:100%;border-radius:0px 0px 0px 0=
+px;border-style:solid;border-width:0px 0px 0px 0px;box-sizing:border-box;bo=
+rder-color:#E5E7EB;" border=3D"0"/></td></tr></table></td></tr></table></td=
+></tr><tr><td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;heig=
+ht:10.0px;"> &nbsp; </td></tr></table></td></tr><tr><td><table role=3D"none=
+" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"=
+"><tr><td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;height:1=
+0.0px;"> &nbsp; </td></tr><tr><td bgcolor=3D"#F3F1EE" style=3D"background-c=
+olor:#F3F1EE;border-bottom-width:1px;border-color:#283642;border-left-width=
+:0px;border-right-width:0px;border-style:solid;border-top-width:1px;padding=
+:20.0px 0px 20.0px 0px;box-sizing:border-box;"><table role=3D"none" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"table-l=
+ayout:fixed;"><tr><td width=3D"10" style=3D"line-height:1px;font-size:1px;w=
+idth:10px;"> &nbsp; </td><td><table role=3D"none" width=3D"100%" border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><tr><t=
+d width=3D"100%"><table role=3D"none" width=3D"100%" class=3D"mob-w-full" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td width=3D"50%" style=
+=3D"vertical-align:top;" class=3D"mob-stack"><table role=3D"none" width=3D"=
+100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td class=
+=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#283642;font-weight:70=
+0;padding:0px 8px;text-align:left;"><h2 style=3D"color:#283642;font-weight:=
+700;mso-line-height-alt:100.0%;"><b>WHY I DID NOT SPLEEP LAST NIGHT?</b></h=
+2></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 8px;te=
+xt-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0=
+%;"> The dust has barely settled on the Monterey Peninsula, but the big mon=
+ey didn&#39;t pack up and go home. If you spent any time watching the board=
+s yesterday, you saw $6.63M shift hands across 26 six-figure cars online. T=
+he physical auctions in California might be over, but the digital platforms=
+ are immediately absorbing the unspent capital of frustrated underbidders w=
+ho missed out on the physical auction blocks. </p></td></tr></tbody></table=
+></td><td width=3D"50%" style=3D"vertical-align:top;" class=3D"mob-stack"><=
+table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0"><tbody><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 8p=
+x;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:1=
+50.0%;"> Bring a Trailer completely dominated yesterday&#39;s action, takin=
+g home 25 of the 26 six-figure sales. Cars & Bids logged a single, high-pro=
+file closing with a 992-generation Porsche 911 GT3 finding a new home for $=
+266,500. It is clear that the modern GT and analog V12 market is not experi=
+encing any post-Monterey hangover; instead, we are seeing immediate, highly=
+ liquid redeployment of cash. </p></td></tr><tr><td class=3D"dd" align=3D"l=
+eft" style=3D"padding:0px 8px;text-align:left;word-break:break-word;"><p st=
+yle=3D"mso-line-height-alt:150.0%;"> The daily volume trajectory illustrate=
+s a steady mid-week momentum. The market has found its late-summer rhythm, =
+showing consistent daily turnover as high-end collectors seek out curated s=
+pecs without the physical auction house premiums. </p></td></tr></tbody></t=
+able></td></tr></table></td></tr></table></td><td width=3D"10" style=3D"lin=
+e-height:1px;font-size:1px;width:10px;"> &nbsp; </td></tr></table></td></tr=
+><tr><td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;height:10=
+.0px;"> &nbsp; </td></tr></table></td></tr><tr><td align=3D"center" valign=
+=3D"top" style=3D"padding-bottom:10px;padding-left:8px;padding-right:8px;pa=
+dding-top:10px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" class=3D"bb" style=3D"margin:0 auto 0 auto;"><tr>=
+<td align=3D"center" valign=3D"top" class=3D"bb" style=3D"width:634px;"><im=
+g src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3D=
+auto,onerror=3Dredirect,quality=3D80,width=3D1920,height=3D3840/uploads/ass=
+et/file/ea665acc-6ad2-4f0b-89b1-7ce597339412/image.png?t=3D1787318541" alt=
+=3D"" height=3D"auto" width=3D"634" style=3D"display:block;width:100%;" bor=
+der=3D"0"/></td></tr></table></td></tr><tr><td><table role=3D"none" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D""><tr><=
+td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;height:10.0px;"=
+> &nbsp; </td></tr><tr><td bgcolor=3D"transparent" style=3D"background-colo=
+r:transparent;padding:10.0px 0px 10.0px 0px;box-sizing:border-box;"><table =
+role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"table-layout:fixed;"><tr><td class=3D"dd" align=3D"left" valign=
+=3D"top" style=3D"color:#4A5B6A;font-weight:400;padding:0px 8px;text-align:=
+left;"><h5 style=3D"color:#4A5B6A;font-weight:400;mso-line-height-alt:0.0%;=
+">Vehicle Spotlight</h5></td></tr><tr><td class=3D"dd" align=3D"left" valig=
+n=3D"top" style=3D"color:#283642;font-weight:700;padding:0px 8px;text-align=
+:left;"><h2 style=3D"color:#283642;font-weight:700;mso-line-height-alt:100.=
+0%;"><b>2005 Porsche Carrera GT</b></h2></td></tr><tr><td align=3D"center" =
+valign=3D"top" style=3D"padding-bottom:10px;padding-left:8px;padding-right:=
+8px;padding-top:10px; " class=3D"dd"><table role=3D"none" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" class=3D"bb" style=3D"margin:0 auto 0 auto;=
+"><tr><td align=3D"center" valign=3D"top" class=3D"bb" style=3D"width:634px=
+;"><img src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,for=
+mat=3Dauto,onerror=3Dredirect,quality=3D80,width=3D1920,height=3D3840/uploa=
+ds/asset/file/8f1aaa42-da7a-4e86-907e-4490b95a0e41/image.png?t=3D1787318648=
+" alt=3D"" height=3D"auto" width=3D"634" style=3D"display:block;width:100%;=
+" border=3D"0"/></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"l=
+eft" style=3D"padding:0px 8px;text-align:left;word-break:break-word;"><p st=
+yle=3D"mso-line-height-alt:150.0%;"> Behind every perfect corner lies inten=
+tion. </p></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0p=
+x 8px;text-align:left;word-break:break-word;"><p style=3D"mso-line-height-a=
+lt:150.0%;"> We step into three of Copenhagen=E2=80=99s most captivating ho=
+mes: spaces bathed in calm light, layered with earthy tones and crafted wit=
+h a sharp eye for functional beauty. </p></td></tr><tr><td class=3D"dd" ali=
+gn=3D"left" style=3D"padding:0px 8px;text-align:left;word-break:break-word;=
+"><p style=3D"mso-line-height-alt:150.0%;"><span style=3D"color:#d65a43;"><=
+b>SEE HOW LOCALS STYLE WITH PURPOSE =E2=86=92</b></span></p></td></tr></tab=
+le></td></tr><tr><td height=3D"5.0px" style=3D"line-height:1px;font-size:1p=
+x;height:5.0px;"> &nbsp; </td></tr></table></td></tr><tr><td><table role=3D=
+"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D""><tr><td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;hei=
+ght:10.0px;"> &nbsp; </td></tr><tr><td bgcolor=3D"#F3F1EE" style=3D"backgro=
+und-color:#F3F1EE;border-bottom-width:1px;border-color:#283642;border-left-=
+width:0px;border-right-width:0px;border-style:solid;border-top-width:1px;pa=
+dding:20.0px 0px 20.0px 0px;box-sizing:border-box;"><table role=3D"none" wi=
+dth=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"tabl=
+e-layout:fixed;"><tr><td width=3D"10" style=3D"line-height:1px;font-size:1p=
+x;width:10px;"> &nbsp; </td><td><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><t=
+r><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#4A5B6A;fon=
+t-weight:400;padding:0px 8px;text-align:left;"><h5 style=3D"color:#4A5B6A;f=
+ont-weight:400;mso-line-height-alt:0.0%;">The Leader Board</h5></td></tr><t=
+r><td class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#283642;fon=
+t-weight:700;padding:0px 8px;text-align:left;"><h2 style=3D"color:#283642;f=
+ont-weight:700;mso-line-height-alt:100.0%;"><b>Auction House Roundup (7-Day=
+ Rolling $100k+ Average Sale Price Leaderboard)</b></h2></td></tr><tr><td c=
+lass=3D"dd" align=3D"left" style=3D"padding:0px 8px;text-align:left;word-br=
+eak:break-word;"><p style=3D"mso-line-height-alt:150.0%;"> The leaderboard =
+is sorted strictly by the average sale price of six-figure cars over the pa=
+st 7 days. This ranking highlights which platforms are capturing the highes=
+t-tier inventory versus those driving sheer volume. </p></td></tr><tr><td s=
+tyle=3D"padding-bottom:14px;padding-left:8px;padding-right:8px;padding-top:=
+14px;"><table class=3D"table" width=3D"100%" style=3D"border-bottom-width:1=
+px;border-collapse:collapse;border-left-width:1px;border-right-width:1px;bo=
+rder-top-width:1px;table-layout:fixed;"><tr><th class=3D"table-h" width=3D"=
+20%" valign=3D"middle" style=3D"border-bottom-width:1px;border-left-width:1=
+px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-t=
+op:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left=
+;word-break:break-word;"><b>Rank</b></p></th><th class=3D"table-h" width=3D=
+"20%" valign=3D"middle" style=3D"border-bottom-width:1px;border-left-width:=
+1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-=
+top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:lef=
+t;word-break:break-word;"><b>Auction Site</b></p></th><th class=3D"table-h"=
+ width=3D"20%" valign=3D"middle" style=3D"border-bottom-width:1px;border-le=
+ft-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px=
+;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-=
+align:left;word-break:break-word;"><b>7-Day Avg Sale Price ($)</b></p></th>=
+<th class=3D"table-h" width=3D"20%" valign=3D"middle" style=3D"border-botto=
+m-width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1=
+px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150=
+.0%;padding:0px;text-align:left;word-break:break-word;"><b>7-Day $100k+ Vol=
+ume ($)</b></p></th><th class=3D"table-h" width=3D"20%" valign=3D"middle" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+><b>6-Figure Lots Sold</b></p></th></tr><tr><td class=3D"table-c" width=3D"=
+20%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;=
+border-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:=
+5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wo=
+rd-break:break-word;"> 1 </p></td><td class=3D"table-c" width=3D"20%" valig=
+n=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-rig=
+ht-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p s=
+tyle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:b=
+reak-word;"> duPont REGISTRY Live </p></td><td class=3D"table-c" width=3D"2=
+0%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;b=
+order-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5=
+px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wor=
+d-break:break-word;"> 608,273.08 </p></td><td class=3D"table-c" width=3D"20=
+%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;bo=
+rder-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5p=
+x;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word=
+-break:break-word;"> 7,907,550.00 </p></td><td class=3D"table-c" width=3D"2=
+0%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;b=
+order-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5=
+px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wor=
+d-break:break-word;"> 13 </p></td></tr><tr><td class=3D"table-c" width=3D"2=
+0%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;b=
+order-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5=
+px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wor=
+d-break:break-word;"> 2 </p></td><td class=3D"table-c" width=3D"20%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> Bring a Trailer </p></td><td class=3D"table-c" width=3D"20%" va=
+lign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-=
+right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><=
+p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-brea=
+k:break-word;"> 274,100.75 </p></td><td class=3D"table-c" width=3D"20%" val=
+ign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-r=
+ight-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p=
+ style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break=
+:break-word;"> 32,069,787.35 </p></td><td class=3D"table-c" width=3D"20%" v=
+align=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border=
+-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;">=
+<p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-bre=
+ak:break-word;"> 117 </p></td></tr><tr><td class=3D"table-c" width=3D"20%" =
+valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;borde=
+r-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"=
+><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-br=
+eak:break-word;"> 3 </p></td><td class=3D"table-c" width=3D"20%" valign=3D"=
+top" style=3D"border-bottom-width:1px;border-left-width:1px;border-right-wi=
+dth:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"> Car & Classic </p></td><td class=3D"table-c" width=3D"20%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> 177,025.50 </p></td><td class=3D"table-c" width=3D"20%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> 177,025.50 </p></td><td class=3D"table-c" width=3D"20%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> 1 </p></td></tr><tr><td class=3D"table-c" width=3D"20%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> 4 </p></td><td class=3D"table-c" width=3D"20%" valign=3D"top" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+> Cars & Bids </p></td><td class=3D"table-c" width=3D"20%" valign=3D"top" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+> 172,153.24 </p></td><td class=3D"table-c" width=3D"20%" valign=3D"top" st=
+yle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1px=
+;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-=
+line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;">=
+ 1,721,532.40 </p></td><td class=3D"table-c" width=3D"20%" valign=3D"top" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+> 10 </p></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" st=
+yle=3D"padding:0px 8px;text-align:left;word-break:break-word;"><p style=3D"=
+mso-line-height-alt:150.0%;"> While duPont REGISTRY Live maintains the high=
+est average transaction size due to hypercar listings like the Carrera GT, =
+Bring a Trailer remains the massive engine of the collector car market, dig=
+esting 117 six-figure transactions in a single week. </p></td></tr><tr><td =
+class=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#283642;font-weig=
+ht:700;padding:0px 8px;text-align:left;"><h2 style=3D"color:#283642;font-we=
+ight:700;mso-line-height-alt:100.0%;"><b>WHAT TO WATCH</b></h2></td></tr><t=
+r><td class=3D"dd" align=3D"left" style=3D"padding:0px 8px;text-align:left;=
+word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"></p></td><=
+/tr><tr><td width=3D"100%"><table role=3D"none" width=3D"100%" class=3D"mob=
+-w-full" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td width=3D"=
+50%" style=3D"vertical-align:top;" class=3D"mob-stack"><table role=3D"none"=
+ width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr=
+><td align=3D"center" valign=3D"top" style=3D"padding-bottom:10px;padding-l=
+eft:8px;padding-right:8px;padding-top:10px; " class=3D"dd"><table role=3D"n=
+one" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=3D"bb" style=3D=
+"margin:0 auto 0 auto;"><tr><td align=3D"center" valign=3D"top" class=3D"bb=
+" style=3D"width:297px;"><img src=3D"https://media.staginghiiv.com/cdn-cgi/=
+image/fit=3Dscale-down,format=3Dauto,onerror=3Dredirect,quality=3D80,width=
+=3D1920,height=3D3840/uploads/asset/file/64b0bc18-dca3-4fb5-a998-970ac675da=
+b1/Living_Room_Furniture_Photo.jpg?t=3D1742997251" alt=3D"" height=3D"auto"=
+ width=3D"297" style=3D"display:block;width:100%;border-radius:0px 0px 0px =
+0px;border-style:solid;border-width:0px 0px 0px 0px;box-sizing:border-box;b=
+order-color:#E5E7EB;" border=3D"0"/></td></tr></table></td></tr><tr><td cla=
+ss=3D"dd" align=3D"left" valign=3D"top" style=3D"color:#283642;font-weight:=
+700;padding:0px 8px;text-align:left;"><h3 style=3D"color:#283642;font-weigh=
+t:700;mso-line-height-alt:100.0%;"><b>SUBTLE SOPHISTICATION</b></h3></td></=
+tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 8px;text-align:=
+left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"> The =
+secrets behind a neutral palette that feels anything but cold. </p></td></t=
+r><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 8px;text-align:l=
+eft;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%;"><span =
+style=3D"color:#d65a43;"><b>LEARN MORE =E2=86=92</b></span></p></td></tr></=
+tbody></table></td><td width=3D"50%" style=3D"vertical-align:top;" class=3D=
+"mob-stack"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0"><tbody><tr><td align=3D"center" valign=3D"top" style=
+=3D"padding-bottom:10px;padding-left:8px;padding-right:8px;padding-top:10px=
+; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"bb" style=3D"margin:0 auto 0 auto;"><tr><td align=3D"c=
+enter" valign=3D"top" class=3D"bb" style=3D"width:297px;"><img src=3D"https=
+://media.staginghiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,onerr=
+or=3Dredirect,quality=3D80,width=3D1920,height=3D3840/uploads/asset/file/4a=
+32748b-b3d3-42e2-a58e-f27638352a41/Cozy_Winter_Holidays_Photo.jpg?t=3D17429=
+97032" alt=3D"" height=3D"auto" width=3D"297" style=3D"display:block;width:=
+100%;border-radius:0px 0px 0px 0px;border-style:solid;border-width:0px 0px =
+0px 0px;box-sizing:border-box;border-color:#d65a43;" border=3D"0"/></td></t=
+r></table></td></tr><tr><td class=3D"dd" align=3D"left" valign=3D"top" styl=
+e=3D"color:#283642;font-weight:700;padding:0px 8px;text-align:left;"><h3 st=
+yle=3D"color:#283642;font-weight:700;mso-line-height-alt:100.0%;"><b>CRAFTI=
+NG HYGGE</b></h3></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"pad=
+ding:0px 8px;text-align:left;word-break:break-word;"><p style=3D"mso-line-h=
+eight-alt:150.0%;"> Creating authentic warmth beyond candles and knits. </p=
+></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"padding:0px 8px;tex=
+t-align:left;word-break:break-word;"><p style=3D"mso-line-height-alt:150.0%=
+;"><span style=3D"color:#d65a43;"><b>LEARN MORE =E2=86=92</b></span></p></t=
+d></tr></tbody></table></td></tr></table></td></tr></table></td><td width=
+=3D"10" style=3D"line-height:1px;font-size:1px;width:10px;"> &nbsp; </td></=
+tr></table></td></tr><tr><td height=3D"10.0px" style=3D"line-height:1px;fon=
+t-size:1px;height:10.0px;"> &nbsp; </td></tr></table></td></tr><tr><td><tab=
+le role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D""><tr><td height=3D"10.0px" style=3D"line-height:1px;font-s=
+ize:1px;height:10.0px;"> &nbsp; </td></tr><tr><td bgcolor=3D"transparent" s=
+tyle=3D"background-color:transparent;padding:10.0px 0px 5.0px 0px;box-sizin=
+g:border-box;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><tr><td class=3D"dd"=
+ align=3D"left" valign=3D"top" style=3D"color:#4A5B6A;font-weight:400;paddi=
+ng:0px 8px;text-align:left;"><h5 style=3D"color:#4A5B6A;font-weight:400;mso=
+-line-height-alt:0.0%;">Data Corner</h5></td></tr><tr><td class=3D"dd" alig=
+n=3D"left" valign=3D"top" style=3D"color:#283642;font-weight:700;padding:0p=
+x 8px;text-align:left;"><h2 style=3D"color:#283642;font-weight:700;mso-line=
+-height-alt:100.0%;"><b>High-End Price Breakdown & Valuation Spread (7-Day =
+Rolling Context) </b></h2></td></tr><tr><td align=3D"center" valign=3D"top"=
+ style=3D"padding-bottom:10px;padding-left:8px;padding-right:8px;padding-to=
+p:10px; " class=3D"dd"><table role=3D"none" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" class=3D"bb" style=3D"margin:0 auto 0 auto;"><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"bb" style=3D"width:634px;"><img src=3D=
+"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down,format=3Dauto,one=
+rror=3Dredirect,quality=3D80,width=3D1920,height=3D3840/uploads/asset/file/=
+9d6620ab-7a4f-443e-af94-192bd9950424/image.png?t=3D1787319092" alt=3D"" hei=
+ght=3D"auto" width=3D"634" style=3D"display:block;width:100%;" border=3D"0"=
+/></td></tr></table></td></tr><tr><td class=3D"dd" align=3D"left" style=3D"=
+padding:0px 8px;text-align:left;word-break:break-word;"><p style=3D"mso-lin=
+e-height-alt:150.0%;"> The bulk of the high-end market remains concentrated=
+ in the $100k to $250k tier, acting as the entry point for blue-chip modern=
+ classics. However, the upper brackets have shown remarkable health, indica=
+ting that seven-figure buyers are comfortable transacting online without ph=
+ysical inspections. </p></td></tr><tr><td style=3D"padding-bottom:12px;padd=
+ing-left:30px;padding-right:20px;padding-top:12px;" class=3D"ee"><div style=
+=3D"margin-left:0px;" class=3D"edm_outlooklist"><ul style=3D"font-weight:no=
+rmal;list-style-type:disc;margin-bottom:12px !important;margin-top:12px !im=
+portant;padding:0px 0px 0px 0px;"><li class=3D"listItem ultext"><p style=3D=
+"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-wo=
+rd;"><b>$100k - $250k:</b> 94 sales (80 on Bring a Trailer, 8 on Cars & Bid=
+s, 5 on duPont REGISTRY Live, 1 on Car & Classic) </p></li><li class=3D"lis=
+tItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align=
+:left;word-break:break-word;"><b>$250k - $500k:</b> 29 sales (22 on Bring a=
+ Trailer, 5 on duPont REGISTRY Live, 2 on Cars & Bids) </p></li><li class=
+=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;tex=
+t-align:left;word-break:break-word;"><b>$500k - $750k:</b> 8 sales (7 on Br=
+ing a Trailer, 1 on duPont REGISTRY Live) </p></li><li class=3D"listItem ul=
+text"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wo=
+rd-break:break-word;"><b>$750k - $1M:</b> 6 sales (5 on Bring a Trailer, 1 =
+on duPont REGISTRY Live) </p></li><li class=3D"listItem ultext"><p style=3D=
+"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-wo=
+rd;"><b>$1M - $2M:</b> 3 sales (All on Bring a Trailer) </p></li><li class=
+=3D"listItem ultext"><p style=3D"mso-line-height-alt:150.0%;padding:0px;tex=
+t-align:left;word-break:break-word;"><b>$2M+:</b> 1 sale (On duPont REGISTR=
+Y Live) </p></li></ul></div></td></tr><tr><td class=3D"dd" align=3D"left" v=
+align=3D"top" style=3D"color:#283642;font-weight:700;padding:0px 8px;text-a=
+lign:left;"><h2 style=3D"color:#283642;font-weight:700;mso-line-height-alt:=
+100.0%;"><br>TOP MOVERS</h2></td></tr><tr><td style=3D"padding-bottom:14px;=
+padding-left:8px;padding-right:8px;padding-top:14px;"><table class=3D"table=
+" width=3D"100%" style=3D"border-bottom-width:1px;border-collapse:collapse;=
+border-left-width:1px;border-right-width:1px;border-top-width:1px;table-lay=
+out:fixed;"><tr><th class=3D"table-h" width=3D"25%" valign=3D"middle" style=
+=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1px;bo=
+rder-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-lin=
+e-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><b>=
+VEHICLE</b></p></th><th class=3D"table-h" width=3D"25%" valign=3D"middle" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+><b>YEAR</b></p></th><th class=3D"table-h" width=3D"25%" valign=3D"middle" =
+style=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1=
+px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"ms=
+o-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;=
+"><b>SOLD PRICE ($)</b></p></th><th class=3D"table-h" width=3D"25%" valign=
+=3D"middle" style=3D"border-bottom-width:1px;border-left-width:1px;border-r=
+ight-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p=
+ style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break=
+:break-word;"><b>AUCTION HOUSE</b></p></th></tr><tr><td class=3D"table-c" w=
+idth=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-wi=
+dth:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;padd=
+ing-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align=
+:left;word-break:break-word;"><span style=3D"text-decoration:underline;"><b=
+><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M=
+0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3u7UDscrRf4qRPAt6JyjJur4a8TnCeTSAp9jd_Q5Z9=
+5v7bL91XfkkLrdrxkzaROu6Z5Bpvt3Zac85w9e6RamRmzGAw3pWDTl8aPl3-KZWBm5eSclsi2xn=
+ig7gUPBb4ozU4IBWybnkCGha6WSp4awS-MPc4mdThq1hfVmmzewwwaT60iRAey5ILg_wFHj4JQ3=
+Wocz5RbOUyD9NpPS82YXSSF7h3Q05zLvso_Q8qxP9M8wg/4tc/V_Z_M0T4SUmqcTBDUitwpg/h2=
+/h001.jdW2TE2gOJAxFnH1QD1wD21SWlQgYiQ_5oeJoT_t3nM?utm_source=3Dcarsneverdie=
+.beehiiv.com&utm_medium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"n5T1p=
+nqRihT19HDpUzvOCcQeUFUsU8cAxtOSNSJnk5Zl3jb30RMWcdULIFUOUzzF4N3lpKB0P2J5LrLF=
+30kvNNtg3PDwkTLaNYeYt82ikYIcHUpRuGN9aEtixa9ctj34A4V5AEdO04FChIOU9shfdRpuY2m=
+ByFQgUCeABMJnqdSgQ6mc3BUAyRroWkrOn2ogsaednsxNJoImC4YXz5Je60ZZc8wci8atD2t0lP=
+O5YN83LHqhV75Os2VfVPsrEkAXFIvyRdpLIjS1D4a43zirWENDaDwzNlH765GsbltYxH5Y7t94I=
+1A2wuPN3hGJ1ASh3zJYMHZxg86YzNDqtfS9NwMUvnGPVdY57Wa8Jk8dcfCnlbSVFn1ceaj" tar=
+get=3D"_blank" rel=3D"noopener noreferrer nofollow" style=3D"text-decoratio=
+n-color: #8b0000;"><span style=3D"color: #8b0000;">2019 Porsche 911 GT2 RS =
+Weissach</span></a></b></span></p></td><td class=3D"table-c" width=3D"25%" =
+valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;borde=
+r-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"=
+><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-br=
+eak:break-word;"> 2019 </p></td><td class=3D"table-c" width=3D"25%" valign=
+=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-righ=
+t-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p st=
+yle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:br=
+eak-word;"> 907,500 </p></td><td class=3D"table-c" width=3D"25%" valign=3D"=
+top" style=3D"border-bottom-width:1px;border-left-width:1px;border-right-wi=
+dth:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"> Bring a Trailer </p></td></tr><tr><td class=3D"table-c" width=3D"2=
+5%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;b=
+order-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5=
+px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;wor=
+d-break:break-word;"><span style=3D"text-decoration:underline;"><b><a class=
+=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAq=
+P6q331mgxz4HLcOSJfRqi0cG3tTfy31yeaPDHgPcvL_Vi7RE1sbrA11iEwuWbqEWFeJDdHFU7Ho=
+ljv0A2Wvox28D-3KnIgMg5V3QgWaExFAUnBS1i1bSLCnd1iwZ-lRq0lPWE5JZ5r3bE3fj92Ijt5=
+Mn5kyVQvbenS4J90V4R3w1jjEnTSvl4BOOMuob1m3FRBLzdF3hbL26t91xRirwFV6XhjiixLQcs=
+vQitWMQQrje9TVAjghOHXstQobJizK1IjL9Q/4tc/V_Z_M0T4SUmqcTBDUitwpg/h3/h001.Dga=
+Lt6FDfj79KpMB5Djq9ukLtOKVhgcwoiX8teWrpVM?utm_source=3Dcarsneverdie.beehiiv.=
+com&utm_medium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"QHplI04ukOTkjO=
+nQCAIxzWBvtG7jj6pBtIOTrSCuKldno9ej3ZfciUTGHRL134JI0t4VUaceRqvNK33wKfkjd6tUc=
+0wAHGwQv9a4cdTufN0caNXXDcdK5MpXE9UgnLF1Dz1SrzEM6AaJ9j8c4DQod09Bhhn3BDpNjyMc=
+LuRV7fB2EmgbxUZrwaz8VH6XEKP9axJoqkO3vs6jZDKiiXYoWZnLCvM6rl7GIfR2I8i4Rrvj0zS=
+QaSz4T6Ul3PvePPghMAMW2SSOMW7e3X8FmblMU2rf1TIj28bIMup70jeVoA3m3jf2jpFeXyW4qI=
+G16Ne4rXuDs6UX6wQSbw8X8mQ3zClmDB652zsZctG3SXZTdiJ0gwL6JjSLTrA" target=3D"_b=
+lank" rel=3D"noopener noreferrer nofollow" style=3D"text-decoration-color: =
+#8b0000;"><span style=3D"color: #8b0000;">2019 Ferrari 812 Superfast</span>=
+</a></b></span></p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" =
+style=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1=
+px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"ms=
+o-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;=
+"> 2019 </p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=
+=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1px;bo=
+rder-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-lin=
+e-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"> 57=
+3,500 </p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"=
+border-bottom-width:1px;border-left-width:1px;border-right-width:1px;border=
+-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-he=
+ight-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"> Bring =
+a Trailer </p></td></tr><tr><td class=3D"table-c" width=3D"25%" valign=3D"t=
+op" style=3D"border-bottom-width:1px;border-left-width:1px;border-right-wid=
+th:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=
+=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break=
+-word;"><span style=3D"text-decoration:underline;"><b><a class=3D"link" hre=
+f=3D"https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HL=
+cOSJfRqi0cG3tP7uSS1g3ckJ0nFPGjoiu3xU47_JTZMz0ywYcXzInhdRUbfZ0qLnBrDywKopBvH=
+z1HFJdvj2WcsEkn73EQwUQsWRbhVEEoo1HrgbncPUDwfha4tvqWxcC2IpVwFWuDohLhMS9Rs49j=
+qEDbvElFoI5gnfBWEt6ruZ0hyrCvJpWT9hutQuUFWKV0rRb1Y4mw7Maq7Ez-46yh8uQpxox2ZtZ=
+_QLVV8vajcdzZdDZFk979xQ/4tc/V_Z_M0T4SUmqcTBDUitwpg/h4/h001.fexrxbEiz-leh_a5=
+9BvlxLLQu2b8t9bQw0bwaL1PF1I?utm_source=3Dcarsneverdie.beehiiv.com&utm_mediu=
+m=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"3Zsz4MlINrFBZyRtIFETaravLJn=
+Jr12F79TCKpLC6iNoOtMM8N4754Zst4mNwnIiE5DL4HWMTVzdP3EJ4gQpJnXUtYz6PZDYwfO7um=
+Rt3C9ZEVivgqJP2N0jC8aGmNHqdlP19DL7OnWKMjIePeyVAQ6hcgjvPi9EWOrEOo1dmmVwHUDz5=
+uDASbffinfe7OsJR9ibo5Bi06CYEYmVhp1ymBpfqVUJi3aBXMGIgxHzORcCgQlQtZOuwpLDApia=
+1gwwWRi86qjCakqEr7zsBq0T4N9S6SyHwjyLAagaSjtSsGMzk7AGRXXfnEXjbiCesrLbu7asspK=
+nmKsPw1DsUBqNYBhR4hRRaQgFgr9doMsvLxiRMxMC6Nhp1Cb" target=3D"_blank" rel=3D"=
+noopener noreferrer nofollow" style=3D"text-decoration-color: #8b0000;"><sp=
+an style=3D"color: #8b0000;">2015 Ferrari 458 Italia</span></a></b></span><=
+/p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-=
+bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-wi=
+dth:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-al=
+t:150.0%;padding:0px;text-align:left;word-break:break-word;"> 2015 </p></td=
+><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-=
+width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px=
+;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0=
+%;padding:0px;text-align:left;word-break:break-word;"> 508,500 </p></td><td=
+ class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-widt=
+h:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;pad=
+ding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;pa=
+dding:0px;text-align:left;word-break:break-word;"> Bring a Trailer </p></td=
+></tr><tr><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"borde=
+r-bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-=
+width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-=
+alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D"text-decoration:underline;"><b><a class=3D"link" href=3D"https://link.m=
+ail.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tPcRQjE=
+dZ3dZDtAhnO64CA3ATPoVbxTc9s3Wi398jSdB3Gv-yrsDR5b9afj72obldjJ0gvDaBFI26rpcdK=
+WtjG_WOtC1qjDWM3bPvl24n8xjbAU1erbV20_rRweeDKCILyfcN8vHVEQIGFEEFxk_CSdhjhW5i=
+p6zEMxtVtAM2WDGTLsBudYPDfrNSamzb5sIXsnGpJ2HqufDwPXaDLSJfyoDxL0vGmPMpEu2ktCU=
+QtNQ/4tc/V_Z_M0T4SUmqcTBDUitwpg/h5/h001.22juZRS_WfbL4au3uY6igKrLFJAo3yEOhnD=
+2i9utCGk?utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_=
+campaign=3Dnew-post" bh-p=3D"o8VGNHKRGIrOa0wjq0GP8JShE9hzrSDdL2P8HuIhxF5ilm=
+RLZORLoTvJKo6H7nBmyIRvaXcVHskqTGlyjpy9X6FiIScilFqv3rfZd3ZlHeFv1IzNNDggqBHJJ=
+vxfghC4NCXrRgXMVGQ6umcrLt3BAPUydsO7rWBusfycWriAD8RU5i19DgH0fXC7dxCXrj8IAreJ=
+HQnXlVNlgZsh66QtfP1YzqiC4AuDy6P6lEaR2Tf1KgulMmvW9M7hocyJAtexDDKPvG3dP6BbbLW=
+5E71KqgwvoSuAGoxQCaYIXxKI8vdfWFR6lGNLBrq4GfsXdCBulI24vc0t6sODgG9CJSh2eah7o0=
+3IVht7hjRf6a59cpGk6TkKys8Bb1k" target=3D"_blank" rel=3D"noopener noreferrer=
+ nofollow" style=3D"text-decoration-color: #8b0000;"><span style=3D"color: =
+#8b0000;">Mercedes-Benz 300 SLR Replica 6-Speed</span></a></b></span></p></=
+td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-botto=
+m-width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1=
+px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150=
+.0%;padding:0px;text-align:left;word-break:break-word;"> =E2=80=94 </p></td=
+><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-=
+width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px=
+;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0=
+%;padding:0px;text-align:left;word-break:break-word;"> 417,500 </p></td><td=
+ class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-widt=
+h:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;pad=
+ding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;pa=
+dding:0px;text-align:left;word-break:break-word;"> Bring a Trailer </p></td=
+></tr><tr><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"borde=
+r-bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-=
+width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-=
+alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D"text-decoration:underline;"><b><a class=3D"link" href=3D"https://link.m=
+ail.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3vWc9yfy=
+nBRhVxFyPSWJn9BRphhoSYCRxBSiGGprKMYCQ_eDbTIB2orS9KkLsLn-zFR4zfaGCVfbHF0WqOe=
+YZD9SJAsvotg9sDeSgOoJo34HOHTppdF5SBNha3Y-vhKwIbqnWX78IZqVROMhCBuauC6FgqTUqn=
+vngY1WSY3-xquys6NFx-raRvmwH27AUiIzZ44T6e9jbMSuqLmpwgEGoCgqBrM5VSf4isCsxD-0w=
+e9ff_iekCZu00A7epv1vOvxr8/4tc/V_Z_M0T4SUmqcTBDUitwpg/h6/h001.evyTzSvC4SukRK=
+FAlqFMHACxhyR9D9XEuHF-Ckr8ESQ?utm_source=3Dcarsneverdie.beehiiv.com&utm_med=
+ium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"74wGCwlhNEg59mn7ud3W56vXs=
+H5sFqZEec6p00E9dMDYX6ubhaLbLFGzDSKVAH4sa4vdfKJWVGZEwfkYrfUM8HpARAlLTWquLNM4=
+LwiDyrDfEk6FK9gMY8708NG3BGpEu1gZ60NSfQdJ7mSQ94GM1Y9KwQguRln8rVDdor6NXXAgKjZ=
+HO7MdhsBenmzSuuGIKSgYZ6PsAaQhr33cimEcwVpb3CpAQeXYwdK8J2YREeEka1CkNOPQSYnRlF=
+YUR76PgLFLktxG4tjtuFJeXVfFNud2RkHypUiAq7kLjuNxFlgNGd1XkQHQh7OMlB1ECP2ZKpNFW=
+X0f4DsHXmb63qCmn5aeskd5i112RToTvRGGL8G1u2KM423HmzcKlT89Bz" target=3D"_blank=
+" rel=3D"noopener noreferrer nofollow" style=3D"text-decoration-color: #8b0=
+000;"><span style=3D"color: #8b0000;">2012 Lamborghini Aventador LP700-4 Co=
+upe</span></a></b></span></p></td><td class=3D"table-c" width=3D"25%" valig=
+n=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-rig=
+ht-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p s=
+tyle=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:b=
+reak-word;"> 2012 </p></td><td class=3D"table-c" width=3D"25%" valign=3D"to=
+p" style=3D"border-bottom-width:1px;border-left-width:1px;border-right-widt=
+h:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D=
+"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-wo=
+rd;"> 319,500 </p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" s=
+tyle=3D"border-bottom-width:1px;border-left-width:1px;border-right-width:1p=
+x;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso=
+-line-height-alt:150.0%;padding:0px;text-align:left;word-break:break-word;"=
+> Bring a Trailer </p></td></tr><tr><td class=3D"table-c" width=3D"25%" val=
+ign=3D"top" style=3D"border-bottom-width:1px;border-left-width:1px;border-r=
+ight-width:1px;border-top-width:1px;padding-bottom:5px;padding-top:5px;"><p=
+ style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:left;word-break=
+:break-word;"><span style=3D"text-decoration:underline;"><b><a class=3D"lin=
+k" href=3D"https://link.mail.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331m=
+gxz4HLcOSJfRqi0cG3sdvnOmrdCFInyyAEFwKlu-9nqDtiVB8_3OmDlUhO2XxNwlB1X5cC417Gg=
+oFqn_d2DUuaZdiweVCe59mgMMOgnx9BRyhIHeggdG334NK5OLnf3W4oieQmnjg5PCOFeott9d9e=
+ya7S6j4wN4s_zwl2HscRSQZRGXlFtfEuo9jfBnEcXQPUfT6AyDHw7mNbcrLfF7pcLPLjevZsWM1=
+sZoSPO0/4tc/V_Z_M0T4SUmqcTBDUitwpg/h7/h001.PUL_-qZygUFdHoUKrmHsbV0lnXjzXg6b=
+ic_0sGt58kE?utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&u=
+tm_campaign=3Dnew-post" bh-p=3D"UjtCg0nXn8lZwacuArPJYK4IPiBlwHbBDcxUlDPQ3Ym=
+YYxwAoOOjxptdGpyyYy5VlLvff0oW8T86vGBqADngdP1K4xamjRPbUaEtbMEYPMMou0M9VFofrF=
+XM6yt8YSqhXY5MruFhuU0BOmmLOkBMAFbUtY3BIC7PY67Di67O13ZyP9Lk7wnvRAi4fmea0tdFd=
+zazZ1jVEJaUWBOw7zuCVuvVDAVMIFcMI1M56lu5bod3JMq3qzfJAf4ofgpJV1e9Tt0trhzsZhL0=
+gewlMUAZpS2Df0dYPcC7abL6A4kHSFQMgWGUNPlx0nFP8GEMveGyqlpZ8ym0VzsRoLPRxqHbP5H=
+XjRLU7RdNVS4Z0Zy3u9YCD4o" target=3D"_blank" rel=3D"noopener noreferrer nofo=
+llow" style=3D"text-decoration-color: #8b0000;"><span style=3D"color: #8b00=
+00;">1981 Ferrari 512 BB</span></a></b></span></p></td><td class=3D"table-c=
+" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left=
+-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;p=
+adding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-al=
+ign:left;word-break:break-word;"> 1981 </p></td><td class=3D"table-c" width=
+=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:=
+1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-=
+top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:lef=
+t;word-break:break-word;"> 300,943.35 </p></td><td class=3D"table-c" width=
+=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-width:=
+1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;padding-=
+top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:lef=
+t;word-break:break-word;"> Bring a Trailer </p></td></tr><tr><td class=3D"t=
+able-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;borde=
+r-left-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom=
+:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;t=
+ext-align:left;word-break:break-word;"><span style=3D"text-decoration:under=
+line;"><b><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001=
+.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tu8eRYNMZa23CXM3lXquww86vo2JdcQH=
+TNB-zzrVYVImKOr2Ac1cycYHNFgo2RAJ7NK4KVFN8G1_BSmMa62nc_IX0ymF087T6ylge_GphxX=
+rAmvkr2PcNxbF9OLDXrSO77dE-35r0bYeMxellH3q5ecXbeE3UClaKEhguPKWkRkx65hsLHsbrE=
+nZ7LzgCfOPB4zcOM8RO4kPHgZzoEnW-G/4tc/V_Z_M0T4SUmqcTBDUitwpg/h8/h001.vd-4S7K=
+6fRHxztTA7YG_djbWx3pScajl_IklzaC0bkU?utm_source=3Dcarsneverdie.beehiiv.com&=
+utm_medium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"bItDYvfRdTrqR2Lp5S=
+bwixhTGxOJ6M7XfOCGlnI1mQWkrfwyspVdFjPeUrKsWAHyDMZ9PzgowIimbfDvA15FqGn24JYGV=
+52mYbx08I90ZtlNYniE4PzotVm3HWdDAKfLoe7CJrJLt34gdxOy6qJ787tsyIk2M1PwGjvqUk84=
+OjSX3sbI76t8hNzPVNU8HL6mmBvToowUDJZNLOBQOiSFz8VkGgmuXImM1KM9ZqVjEetuIhnytW7=
+IBhGDF8y5ALiS8Bn6StTYNDW1q3tVnWOIvoUBirQBOLdOoOVGcE1MMsYeQxnCbDqWDFzcYesQY1=
+HnpxLwRUsOS4HLwicGHiIdEqXCQzqJhmYqU8Aog1ubk5wY5QK" target=3D"_blank" rel=3D=
+"noopener noreferrer nofollow" style=3D"text-decoration-color: #8b0000;"><s=
+pan style=3D"color: #8b0000;">2016 Nissan GT-R Nismo</span></a></b></span><=
+/p></td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-=
+bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-wi=
+dth:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-al=
+t:150.0%;padding:0px;text-align:left;word-break:break-word;"> 2016 </p></td=
+><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-=
+width:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px=
+;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0=
+%;padding:0px;text-align:left;word-break:break-word;"> 275,500 </p></td><td=
+ class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-widt=
+h:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;pad=
+ding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;pa=
+dding:0px;text-align:left;word-break:break-word;"> Bring a Trailer </p></td=
+></tr><tr><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"borde=
+r-bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-=
+width:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-=
+alt:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=
+=3D"text-decoration:underline;"><b><a class=3D"link" href=3D"https://link.m=
+ail.beehiiv.com/ss/c/u001.AVSL5CBbZI_JD4YsVKaxY8mJ_2jyXOW7Xrxk3JsD-hioCxTyD=
+TJuhVAEI9IwPuzL-ge4q3Fok89HCGUOfWKlTRXUApAgh67-Ta8r4mvkf0FlmWmO--_GvsPpBb3x=
+KgxbXYuTCRuVXW-UPqVUxuzwAZIYCp6W_e0PgshFDv6v11eb0WZ8PSOROTEYkHylri_VPr2hbYZ=
+2eXwMwhexjDKgHNyoyDTNRi2QB3QEjgKFrRJFwESzRgo_DW1YEH4LS2SA9yXqWVOTTOy9K3-AeB=
+V_oA/4tc/V_Z_M0T4SUmqcTBDUitwpg/h9/h001.WA_aX59aq1WMFWQFXxJQiUqNoupoAVl-8Fl=
+CfBv2NoM?utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_=
+campaign=3Dnew-post" bh-p=3D"VN5zGX6hVS9yNJYG7e8e3vPN56d6KhFVzd5FyHCpFwz30x=
+m9Q2nnNLK8433X4Y7EPXmIYEp9qoh4Mr8oUDnRnjLRxdjZUC3kabpAeE4LIlu5djMTEAQLGBta9=
+1IziDRFbBpTLEZQni59WcE8oAQDIbHAhAWV9ENsrxDZ7RtmjBdqd2vrRJu9eodAoa9WRloEJfw7=
+nTDAIdjk3rM6duMbI1oXSHVwcGGT5wq1A6i3DDyQnyY2qCp5vHt0MIsu4wxXeeetTjgrpe5oEzr=
+Tng2JSgR3QjjUVjiQg0jdGdZSFKWx3xVvvVNzZmEPZOwpmnTY22HmYQeOJUHh04Z21k2TIJRNwl=
+unIzXVFHg4097tlIRfOYlzvliHrvE" target=3D"_blank" rel=3D"noopener noreferrer=
+ nofollow" style=3D"text-decoration-color: #8b0000;"><span style=3D"color: =
+#8b0000;">2023 Porsche 911 GT3</span></a></b></span></p></td><td class=3D"t=
+able-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;borde=
+r-left-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom=
+:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;t=
+ext-align:left;word-break:break-word;"> 2023 </p></td><td class=3D"table-c"=
+ width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-=
+width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;pa=
+dding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-ali=
+gn:left;word-break:break-word;"> 266,500 </p></td><td class=3D"table-c" wid=
+th=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left-widt=
+h:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;paddin=
+g-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-align:l=
+eft;word-break:break-word;"> Cars & Bids </p></td></tr><tr><td class=3D"tab=
+le-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-=
+left-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5=
+px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;tex=
+t-align:left;word-break:break-word;"><span style=3D"text-decoration:underli=
+ne;"><b><a class=3D"link" href=3D"https://link.mail.beehiiv.com/ss/c/u001.I=
+bEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3tZz4HM_zLuRFqzGFFogMnErLkdkEC5gJXh=
+H373Byg2eApnXFuk6zXloUkmoVxk0f13MdFu2XmaBX-mfvCefehP9MdO6b5FGMvIJelGnGvFIBN=
+XgfBcjxL_BAbl_gkrii1x2DbhJJTIhLyHDVKIcZ4yfEV50HiM_2USMk4Ui4m0mrT9vnXvd24j75=
+9_en0VOqjJf37FWzJrLfCS4cIHQmMb/4tc/V_Z_M0T4SUmqcTBDUitwpg/h10/h001.or105bv3=
+oKLx5l2W8UxA-D6a8wwiwKomEHXJiMKPziY?utm_source=3Dcarsneverdie.beehiiv.com&u=
+tm_medium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"gk5KK8IMsyBNQ48VGuB=
+RKOpSI0a3pBEcqeoWyo4vKYyEByv624NlDDejJPiI9LakbsRi7SltGOJSfJMShnaxRbQdAPI0GI=
+fIYTWtairueaQvWG98vzVa9sxw3WEYvosxqjdHpKK1ht5y48MihYde4dm66pimch68wee8Gk6JN=
+FyiTsHK27wcajJj7kgVJrHt2Y7cxwYznbKAMPrzW24F94sofU39FRdD5lDSeGLmmpX07Z7wABjH=
+3NiCxzapnBJXBSN23vn82fWhN1S7MH7GU3n34y3nvijDsJdT12ENYZoCrLrNhrKhFRX1MqPqtz1=
+zVMbnc2BiIv4QLOaK1JxOQKM0y8G4Fnz1Cc471OE3rCLCw9z8" target=3D"_blank" rel=3D=
+"noopener noreferrer nofollow" style=3D"text-decoration-color: #8b0000;"><s=
+pan style=3D"color: #8b0000;">2007 Porsche 911 GT3</span></a></b></span></p=
+></td><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bo=
+ttom-width:1px;border-left-width:1px;border-right-width:1px;border-top-widt=
+h:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:=
+150.0%;padding:0px;text-align:left;word-break:break-word;"> 2007 </p></td><=
+td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-wi=
+dth:1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;p=
+adding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;=
+padding:0px;text-align:left;word-break:break-word;"> 260,750 </p></td><td c=
+lass=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:=
+1px;border-left-width:1px;border-right-width:1px;border-top-width:1px;paddi=
+ng-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padd=
+ing:0px;text-align:left;word-break:break-word;"> Bring a Trailer </p></td><=
+/tr><tr><td class=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-=
+bottom-width:1px;border-left-width:1px;border-right-width:1px;border-top-wi=
+dth:1px;padding-bottom:5px;padding-top:5px;"><p style=3D"mso-line-height-al=
+t:150.0%;padding:0px;text-align:left;word-break:break-word;"><span style=3D=
+"text-decoration:underline;"><b><a class=3D"link" href=3D"https://link.mail=
+.beehiiv.com/ss/c/u001.IbEMCT2M0hpX3NRAqP6q331mgxz4HLcOSJfRqi0cG3t3os4fdb8n=
+lxwWG4dmnF5L9CoXxBknYrwQ9CD9e3cl3HXL_CS__06UxPX6PMw-piUmQQ4A0fQa2C6WQh2GeoY=
+JWOkaAMfMk3ShKwl-cHYW3Moim8x52JMQBrvUtrnPrC3DkHk5fB_28tGA25tkTCHk6Jyzu0u17m=
+Ap3qvfzMWqenwJs8zfCyHhtNhU9CIuLOQOSo5st6x7GyKRXc8LSIloEuFob6yOa7wlv01mWVz8l=
+g/4tc/V_Z_M0T4SUmqcTBDUitwpg/h11/h001.oUW5TB3tvmBsJL93soOy9NuvnUVkueaf7Nrmf=
+Cd76Ag?utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_ca=
+mpaign=3Dnew-post" bh-p=3D"3DfVpN0J5dKx64AzjSNKlkRLZmxB84iYgEC3C7lZ2HqBySZs=
+jhmNOzVQbeaaso0PLZ9RwCG2oBj6IrhXPox9ml3Bx3bfB9xXFYHzfwmqKEqXqrN0l6OVgcagvBf=
+S8tAMPCjuM7g5lKY1v43Ud0sK2ZyUeUJawGrH7JHAKPwIekRbafE4MXr4kHTz2JvYWQuJmJo7XG=
+W3pR3cZaglxrGV5WfYCaOqODRbPIiKZBHhzjPZKladrLxemTaPlwELlTfhFbLRTRcxgsZNmP8Kl=
+2gpgPQ1h6BWDThZoNl5JIUcChUl5SQg8EKA8NHgsuy0kXK0d4MdNNzH43vIIkobfojA3cQKCF9H=
+JluGt04qiucmVPzjiMor3rnKVea" target=3D"_blank" rel=3D"noopener noreferrer n=
+ofollow" style=3D"text-decoration-color: #8b0000;"><span style=3D"color: #8=
+b0000;">2000 Ferrari 550 Maranello</span></a></b></span></p></td><td class=
+=3D"table-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;=
+border-left-width:1px;border-right-width:1px;border-top-width:1px;padding-b=
+ottom:5px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:=
+0px;text-align:left;word-break:break-word;"> 2000 </p></td><td class=3D"tab=
+le-c" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-=
+left-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5=
+px;padding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;tex=
+t-align:left;word-break:break-word;"> 247,500 </p></td><td class=3D"table-c=
+" width=3D"25%" valign=3D"top" style=3D"border-bottom-width:1px;border-left=
+-width:1px;border-right-width:1px;border-top-width:1px;padding-bottom:5px;p=
+adding-top:5px;"><p style=3D"mso-line-height-alt:150.0%;padding:0px;text-al=
+ign:left;word-break:break-word;"> Bring a Trailer </p></td></tr></table></t=
+d></tr></table></td></tr><tr><td height=3D"10.0px" style=3D"line-height:1px=
+;font-size:1px;height:10.0px;"> &nbsp; </td></tr></table></td></tr><tr><td>=
+<table role=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" style=3D""><tr><td bgcolor=3D"#F3F1EE" style=3D"background-color:=
+#F3F1EE;border-bottom-width:1px;border-color:#283642;border-left-width:0px;=
+border-right-width:0px;border-style:solid;border-top-width:1px;padding:20.0=
+px 0px 20.0px 0px;box-sizing:border-box;"><table role=3D"none" width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"table-layout:f=
+ixed;"><tr><td width=3D"20" style=3D"line-height:1px;font-size:1px;width:20=
+px;"> &nbsp; </td><td><table role=3D"none" width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><tr><td class=
+=3D"dd" align=3D"center" style=3D"padding:0px 8px;text-align:center;word-br=
+eak:break-word;"><p style=3D"mso-line-height-alt:150.0%;"> Chat tomorrow, <=
+/p></td></tr><tr><td class=3D"dd" align=3D"center" style=3D"padding:0px 8px=
+;text-align:center;word-break:break-word;"><p style=3D"mso-line-height-alt:=
+150.0%;"> dRew </p></td></tr></table></td><td width=3D"20" style=3D"line-he=
+ight:1px;font-size:1px;width:20px;"> &nbsp; </td></tr></table></td></tr></t=
+able></td></tr><tr><td><table role=3D"none" width=3D"100%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" style=3D""><tr><td bgcolor=3D"transparent"=
+ style=3D"background-color:transparent;padding:0.0px 0px 0.0px 0px;box-sizi=
+ng:border-box;"><table role=3D"none" width=3D"100%" border=3D"0" cellspacin=
+g=3D"0" cellpadding=3D"0" style=3D"table-layout:fixed;"><tr><td class=3D"dd=
+" align=3D"left" style=3D"padding:0px 8px;text-align:left;word-break:break-=
+word;"><p style=3D"mso-line-height-alt:150.0%;"></p></td></tr></table></td>=
+</tr><tr><td height=3D"10.0px" style=3D"line-height:1px;font-size:1px;heigh=
+t:10.0px;"> &nbsp; </td></tr></table></td></tr></table></td></tr><tr><td st=
+yle=3D"padding:0 8px 40px 8px;"><table role=3D"none" width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=
+=3D"left" valign=3D"middle"><table role=3D"none" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"left"><tr><td align=3D"left" valign=3D"mi=
+ddle" style=3D"padding:0px 0px 0px 0px;font-family:Inter,Arial,sans-serif;f=
+ont-size:14px;color:#374151;"><span>Share on:</span><span style=3D"display:=
+inline-block;width:12px;"></span><a style=3D"color:#374151;font-size:14px;t=
+ext-decoration:underline;text-decoration-color:#374151;" href=3D"https://ww=
+w.facebook.com/sharer/sharer.php?u=3Dhttps%3A%2F%2Fcarsneverdie.beehiiv.com=
+%2F&utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_campa=
+ign=3Dnew-post" bh-p=3D"2HEsozWGRBaHJmtoJPc9lEgVwlHQ08AgMqrK0ivN2AxJaTNVwLH=
+DQgIUCdoVXvZxpA3euhYntRXUKoPANRkrjxvb7Mc072W79UesSLfbfWPnKCU5N1ChXkyTBwd3Kh=
+Gexm4k4P7Dcz3WVSOr56UCXjKUsK4AtQfFzWHUFrCWatEBaNOtm3scm8qslC7pzmyDqnq5Ox6yo=
+q56HQvHuXzmPdYDyLHiZCDHBMv8vY9Lt187YBAbRuY3G6c7N4kEQgqkUl3AgXeyhavv3Fd0">Fa=
+cebook</a><span style=3D"display:inline-block;width:8px;"></span><span styl=
+e=3D"color:#E5E7EB;">|</span><span style=3D"display:inline-block;width:8px;=
+"></span><a style=3D"color:#374151;font-size:14px;text-decoration:underline=
+;text-decoration-color:#374151;" href=3D"https://www.threads.net/intent/pos=
+t?text=3Dhttps%3A%2F%2Fcarsneverdie.beehiiv.com%2F&utm_source=3Dcarsneverdi=
+e.beehiiv.com&utm_medium=3Dnewsletter&utm_campaign=3Dnew-post" bh-p=3D"lBBu=
+KOTB3eFCivSDiuAWXyMeMiWqiZAMzIl8ZwWFyfbQz1Ib4YjxvvtlrMyxKmXjV4B9OvojNSj4Axf=
+maf5XHoxe2ZRtiwmYV23OSNLqMB6J6KmASQgw5BNXoXHAAWAwkRrSPNFpxrqAuHhxdKu6g7QmSM=
+OhpOclYWJI9gin970lw6uHzt3qt0M2o8pNFPpvJub3c9wV1wnzcO6BeuyDghqaYyRxV9jxJy9Q0=
+FeBDifVP5D2Aqgb3kEfoHRx3Leo5WdNmdMnMKkluf">Threads</a><span style=3D"displa=
+y:inline-block;width:8px;"></span><span style=3D"color:#E5E7EB;">|</span><s=
+pan style=3D"display:inline-block;width:8px;"></span><a style=3D"color:#374=
+151;font-size:14px;text-decoration:underline;text-decoration-color:#374151;=
+" href=3D"https://twitter.com/intent/tweet?url=3Dhttps%3A%2F%2Fcarsneverdie=
+.beehiiv.com%2F&utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewslett=
+er&utm_campaign=3Dnew-post" bh-p=3D"vd3m4Z8lWzO5xWJISKhXH2rkaiW5VJ1U73E78fj=
+jmXTZiuwSpGS426vGydBaOZaHH4PWR4kl2pF3NfQfdmU2G7FqlmKaoEV7SghGxNR5GnKZuOJB9t=
+JUktLM7c1bulQLiTPWkOyQdVdIcqinZ66fANPueiCPtVp4MXPOrt2J17iCYm4PpdTngCMW9oRzZ=
+fJixxfd9Bb5JuNhjKGNl6zi9ZjzHoqCDjKjHzkKcBLU4C958Z1eAuiBXWGEpo116TwHNohgShdc=
+Zt0AE">X</a><span style=3D"display:inline-block;width:8px;"></span><span st=
+yle=3D"color:#E5E7EB;">|</span><span style=3D"display:inline-block;width:8p=
+x;"></span><a style=3D"color:#374151;font-size:14px;text-decoration:underli=
+ne;text-decoration-color:#374151;" href=3D"https://www.linkedin.com/sharing=
+/share-offsite?url=3Dhttps%3A%2F%2Fcarsneverdie.beehiiv.com%2F&utm_source=
+=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_campaign=3Dnew-post=
+" bh-p=3D"kKUCbEI91keBXqreIKeRKOlbHdeebg4o0gvXuBp0avvnx5fDxiajgd0U0inTxP5Hg=
+6wtYc8ZuUTlGpMalxMEeEF828nHWlQEi7mC5a5FETzysvBamwDnrkaVGvk5RswftjQrch5akY5o=
+PCmXgUZuEXVqmam32gKVLEX1FrCBjQpTxpphQhs9LOjE4vIjzyu7UdDhdr85AhTwk90JtlHlURU=
+XNhTHIpoi92Il7NYpn8OP1uRfsaK7zilVJU8f9EwCUpDV9Xklg0Sw5hARJk">LinkedIn</a></=
+td></tr></table></td><td align=3D"right" valign=3D"middle" width=3D"36" sty=
+le=3D"width:36px;min-width:36px;white-space:nowrap;"></td></tr></table></td=
+></tr></table></td></tr><tr><td align=3D"center" valign=3D"top"><table role=
+=3D"none" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"center"><tr><td><tr><td class=3D"b" align=3D"center" valign=3D"top"=
+ bgcolor=3D"#283642" style=3D"padding:0px 0px 0px 0px;border-style:solid;bo=
+rder-width:0px 0px 0px 0px;border-color:#283642;border-bottom-left-radius:0=
+px;border-bottom-right-radius:0px;"><table role=3D"none" width=3D"100%" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td clas=
+s=3D"w" align=3D"center" valign=3D"top" style=3D"padding:20px 20px 0 20px;"=
+><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center"><tr><td align=3D"center" valign=3D"top" style=3D"padding-botto=
+m:24px;"><img width=3D"38" height=3D"38" alt=3D"Cars Never Die" border=3D"0=
+" style=3D"display:block;width:38px;height:38px;border-radius:100px;object-=
+fit:cover;" src=3D"https://media.beehiiv.com/cdn-cgi/image/fit=3Dscale-down=
+,format=3Dauto,onerror=3Dredirect,quality=3D80/uploads/publication/logo/ec5=
+a45c5-fcef-4515-8372-2b500843ed81/carsneverdie.png?v=3D1787405037"/></td></=
+tr></table></td></tr><tr><td class=3D"w" align=3D"center" valign=3D"top" st=
+yle=3D"padding:0 20px 20px 20px;"><table role=3D"none" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center"><tr><td align=3D"center" vali=
+gn=3D"top" style=3D"padding-bottom:12px;"><p style=3D"font-family:'Helvetic=
+a',Arial,sans-serif;font-size:14px;font-weight:400;color:#F3F1EE;margin:0;p=
+adding:0;"> &copy; 2026 Cars Never Die </p></td></tr><tr><td align=3D"cente=
+r" valign=3D"top" style=3D"padding-bottom:12px;"><p style=3D"font-family:'H=
+elvetica',Arial,sans-serif;font-size:14px;font-weight:400;color:#F3F1EE;mar=
+gin:0;padding:0;"> 228 Park Ave S, #29976, New York, New York 10003, United=
+ States </p></td></tr><tr><td align=3D"center" valign=3D"top" style=3D"padd=
+ing-bottom:24px;"><p style=3D"font-family:'Helvetica',Arial,sans-serif;font=
+-size:14px;font-weight:400;color:#F3F1EE;margin:0;padding:0;"><a class=3D"l=
+ink" href=3D"https://carsneverdie.beehiiv.com/subscribe/aa9777c4-eb3e-43c2-=
+bd25-245899f555b6/preferences?post_id=3D61695eac-c89a-43a6-8824-fb612d6bb23=
+9&last_resource_guid=3DPost%3A61695eac-c89a-43a6-8824-fb612d6bb239&utm_sour=
+ce=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm_campaign=3Dnew-po=
+st&last_resource_guid=3DPost%3A61695eac-c89a-43a6-8824-fb612d6bb239&jwt_tok=
+en=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJzY3JpYmVyX2lkIjoiNDViY2NmZ=
+DAtMzVjZi00NDdlLWIyNWQtNTEyOTM2MWI0YmYyIiwicHVibGljYXRpb25faWQiOiJlYzVhNDVj=
+NS1mY2VmLTQ1MTUtODM3Mi0yYjUwMDg0M2VkODEiLCJhY2Nlc3NfdHlwZSI6InJlYWQtb25seSI=
+sImV4cCI6MTc4NzU3Nzg3NSwiaXNzIjoiaHR0cHM6Ly9hcHAuYmVlaGlpdi5jb20iLCJpYXQiOj=
+E3ODc0MDUwNzV9._AImLj9UIaNpK0hHjHEQWFOdin0QRrk2NESIcO0wr1g" bh-p=3D"2PFskzd=
+mzpecDFwKOJdvxe2qRioAfxhgsrdeK86evBmrNcaZMSXNI7Jk4ImggL92n4yKbV9O9pVLizhEhB=
+arfqwKzCrnwOIuAyxK0TOJiPYADAEgkMZ4ym4c69eGfIDqpCzOuF9cWMalEGB7XyrdAVdl0CQHm=
+90J9fyonMAxhy85ZN5VyC1PyS4Ndr53eZXHZJPXYOn2UALCj1nOe0HMCTyNXLLgP2O4Tgq2jWlY=
+Sv7gNoT3chSKktfuj2sxC3yyyK5buJy7KZU4AM6crCHNhQNZjMJBHRk3t3pZ2w43yuE7Mo8Jalx=
+FMxMc0kmiPYuT3ReMlcNlzbksFpCRSFjOrjGGRthdS9O3uO7QKupw0Ny8nwVwKrLSx0vTqzr6CJ=
+58pWiubi6WMEI9YoVqriPWKetKkssOpmncVwVwA99QmHB69vidOYi5IlfrAD6k" style=3D"te=
+xt-decoration:underline;font-style:normal;white-space:nowrap;color:#F3F1EE;=
+">Unsubscribe</a></p></td></tr><tr style=3D"display:table-row !important;">=
+<td align=3D"center" valign=3D"top" style=3D"display:table-cell !important;=
+"><table role=3D"none" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"center" style=3D"display:table !important;"><tr style=3D"display:tabl=
+e-row !important;"><td align=3D"center" valign=3D"middle" style=3D"display:=
+table-cell !important;border:1px solid #e5e7eb;border-radius:4px;padding:8p=
+x 16px;background-color:#ffffff;"><a style=3D"text-decoration:none;display:=
+block !important;" href=3D"https://www.beehiiv.com/powered-by?publication_l=
+ogo=3Dhttps%3A%2F%2Fmedia.beehiiv.com%2Fcdn-cgi%2Fimage%2Ffit%3Dscale-down%=
+2Cformat%3Dauto%2Conerror%3Dredirect%2Cquality%3D80%2Fuploads%2Fpublication=
+%2Flogo%2Fec5a45c5-fcef-4515-8372-2b500843ed81%2Fcarsneverdie.png%3Fv%3D178=
+7405037&publication_name=3DCars+Never+Die&utm_campaign=3D61695eac-c89a-43a6=
+-8824-fb612d6bb239&utm_medium=3Dpost_email&utm_source=3Dcars_never_die" bh-=
+p=3D"fmevOKT6M0dCPRiP85ce60jGenESdwEnkFPWaRrZJQZU2Zi29tQlSLptiqWXhOKuCAMXM4=
+HvCrrUHqfLFOF3RVDc5EAANyIN9sHcsnrfgOjt2dOgBLTWx6AMq4wCxDvPfr9eop9ln7kDHFAB5=
+2ZDPjaBByOQ7O3FUHMNF2tIWNEa67x0dP2wJXfPA1ZEOT5dKGCGLVTCdus2pEDSSn7t4eytDMJK=
+BgclXpPzRpKQ4vb0bNsYOh5bSEeAFAyXKmAg2rOpotZB2irOSPnQSO3Csnvv4kckl9QnIkVaYiw=
+94KLF4zI6mKugp0AOclRfG7w0S09PhXXTru7zTZSo2ic6hMHw7IAhokLy"><img src=3D"http=
+s://media.beehiiv.com/output-onlinepngtools.png" width=3D"14" alt=3D"beehii=
+v logo" style=3D"display:inline-block !important;max-width:14px !important;=
+vertical-align:-2px !important;width:14px !important;" border=3D"0"/><span =
+style=3D"padding-left:8px !important;display:inline-block !important;font-f=
+amily:'Inter',Arial,sans-serif;font-size:14px;font-weight:400;color:#374151=
+;">Powered by beehiiv</span></a></td></tr></table></td></tr><tr><td align=
+=3D"center" valign=3D"top" style=3D"padding-top:24px;"><p style=3D"font-fam=
+ily:'Helvetica',Arial,sans-serif;font-size:14px;font-weight:400;color:#F3F1=
+EE;margin:0;padding:0;"><a clicktracking=3D"off" data-skip-tracking=3D"true=
+" class=3D"link" href=3D"https://www.beehiiv.com/report_abuse/{{report_abus=
+e_token}}?utm_source=3Dcarsneverdie.beehiiv.com&utm_medium=3Dnewsletter&utm=
+_campaign=3Dnew-post" style=3D"text-decoration:underline;color:#F3F1EE;">Re=
+port abuse</a></p></td></tr><tr><td align=3D"left" valign=3D"top" height=3D=
+"2" style=3D"height:2px;line-height:1px;font-size:1px;mso-line-height-rule:=
+exactly;"><a href=3D'https://hp.beehiiv.com/aa9777c4-eb3e-43c2-bd25-245899f=
+555b6' style=3D"color:#283642 !important;cursor:default;font-size:1px;text-=
+decoration:none;"></a></td></tr><tr><td align=3D"left" valign=3D"top" heigh=
+t=3D"2" style=3D"height:2px;"><a href=3D'https://email.beehiivstatus.com/{{=
+omnivery_honeypot_hash}}/hclick' clicktracking=3D"off" style=3D"color:#2836=
+42 !important;cursor:default;font-size:1px;text-decoration:none;"></a></td>=
+</tr></table></td></tr></table></td></tr></td></tr></table></td></tr></tabl=
+e></td></tr></table></td></tr></table></div></body></html>
+--2c35a7c583f5f14b769c50e5c907ff4906a9abb1f54d2ea677e2aae0c65d--

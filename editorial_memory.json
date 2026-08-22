@@ -1,7 +1,29 @@
 [
   {
+    "date": "2026-08-22",
+    "title": "WHY I DID NOT SLEEP LAST NIGHT",
+    "spotlight_car": "2020 McLaren Senna GTR",
+    "top_movers": [
+      "2020 McLaren Senna GTR",
+      "2020 Ferrari 488 Pista",
+      "2018 Porsche GT2 RS",
+      "2017 Ford GT",
+      "2020 Ferrari F8 Tributo",
+      "2016 Ferrari 488 Spider",
+      "2008 Ferrari 599 GTB",
+      "2025 Porsche 718 Cayman GT4 RS Clubsport",
+      "1997 Ferrari F355 GTS 6-Speed",
+      "1967 Chevrolet Corvette Convertible L71 427/435 4-Speed"
+    ],
+    "themes": [
+      "2020 McLaren Senna GTR",
+      "Post-Monterey Digital Consignments",
+      "Gated Manuals and Conversions"
+    ]
+  },
+  {
     "date": "2026-08-21",
-    "title": "Post-Monterey Liquid Flow: V12s and GTs Hold the Line",
+    "title": "WHY I DID NOT SLEEP LAST NIGHT",
     "spotlight_car": "2021 McLaren 765LT",
     "top_movers": [
       "1973 Porsche 911 Carrera RS Lightweight",
@@ -16,9 +38,9 @@
       "1996 Porsche 911 Carrera 4S Coupe 6-Speed"
     ],
     "themes": [
-      "[2021 McLaren 765LT](https://live.dupontregistry.com/auction/2021-mclaren-765ltcuracaobluemsooptions-3718)",
-      "Post-Monterey Manual Momentum",
-      "Rennsport Volume Check"
+      "2021 McLaren 765LT",
+      "Analogue V12 Escalation",
+      "Post-Monterey GT Momentum"
     ]
   },
   {
@@ -42,28 +64,6 @@
       "Late-Model Rennsport Variants",
       "Front-Engine V12 Ferraris",
       "High-Tier Replica Builds"
-    ]
-  },
-  {
-    "date": "2026-08-22",
-    "title": "Post-Monterey Dry Powder: Hypercars and V8 GTs Dominate the Digital Boards",
-    "spotlight_car": "2020 McLaren Senna GTR",
-    "top_movers": [
-      "2020 McLaren Senna GTR",
-      "2020 Ferrari 488 Pista",
-      "2018 Porsche GT2 RS",
-      "2017 Ford GT",
-      "2020 Ferrari F8 Tributo",
-      "2016 Ferrari 488 Spider",
-      "2008 Ferrari 599 GTB",
-      "2025 Porsche 718 Cayman GT4 RS Clubsport",
-      "1997 Ferrari F355 GTS 6-Speed",
-      "1967 Chevrolet Corvette Convertible L71 427/435 4-Speed"
-    ],
-    "themes": [
-      "Highlight of the Day",
-      "Modern Ferrari V8 Market Trajectory",
-      "Late-Model Porsche GT Car Reserves"
     ]
   }
 ]
