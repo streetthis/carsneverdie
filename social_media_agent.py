@@ -87,16 +87,18 @@ def render_vertical_reel(spotlight_car: str, hammer_price: str, photo_url: str, 
             draw.text((width // 2, 1280), "• duPont REGISTRY Live & BaT Volume", font=font_small, fill=(255, 255, 255), anchor="mm")
 
         else:
-            # --- SCENE 3: CALL TO ACTION (CTA) ---
-            draw.text((width // 2, 500), "WANT DAILY MARKET INTEL?", font=font_large, fill=(255, 255, 255), anchor="mm")
-            draw.text((width // 2, 620), "Get full sales data, price breakdowns & previews", font=font_small, fill=(3, 7, 18), anchor="mm")
-            draw.text((width // 2, 680), "delivered to your inbox every morning.", font=font_small, fill=(3, 7, 18), anchor="mm")
+            # --- SCENE 3: CALL TO ACTION (CONVERSION ENGINE) ---
+            draw.text((width // 2, 480), "GET THE DAILY VALUATION SHEET", font=font_large, fill=(255, 255, 255), anchor="mm")
+            draw.text((width // 2, 580), "Free daily 6-figure auction price intel,", font=font_small, fill=(3, 7, 18), anchor="mm")
+            draw.text((width // 2, 640), "valuation spreads & upcoming lot alerts.", font=font_small, fill=(3, 7, 18), anchor="mm")
 
-            draw.rectangle([100, 820, 980, 1150], fill=(3, 7, 18), outline=(255, 255, 255), width=4)
-            draw.text((width // 2, 920), "SUBSCRIBE TO THE NEWSLETTER", font=font_medium, fill=(255, 255, 255), anchor="mm")
-            draw.text((width // 2, 1040), "carsneverdie.beehiiv.com", font=font_large, fill=(214, 90, 67), anchor="mm")
+            draw.rectangle([100, 780, 980, 1100], fill=(3, 7, 18), outline=(255, 255, 255), width=4)
+            draw.text((width // 2, 860), "100% FREE DAILY INBOX DROP", font=font_medium, fill=(255, 255, 255), anchor="mm")
+            draw.text((width // 2, 980), "carsneverdie.beehiiv.com", font=font_large, fill=(214, 90, 67), anchor="mm")
 
-            draw.text((width // 2, 1300), "👉 LINK IN BIO TO JOIN 👈", font=font_medium, fill=(255, 255, 255), anchor="mm")
+            draw.rectangle([100, 1200, 980, 1420], fill=(255, 255, 255), outline=(3, 7, 18), width=3)
+            draw.text((width // 2, 1260), "COMMENT 'DATA' FOR DIRECT LINK 📩", font=font_medium, fill=(214, 90, 67), anchor="mm")
+            draw.text((width // 2, 1340), "OR CLICK LINK IN BIO TO JOIN FREE", font=font_small, fill=(3, 7, 18), anchor="mm")
 
         # Footer watermark
         draw.text((width // 2, 1820), "carsneverdie.beehiiv.com • TikTok & Instagram @carsneverdie", font=font_small, fill=(156, 163, 175) if scene_idx != 2 else (3, 7, 18), anchor="mm")
@@ -123,7 +125,6 @@ def generate_social_media_assets(tool_context: ToolContext) -> str:
     """Generates daily 9:16 vertical video reel (output_reel.mp4) and caption script (output_social_caption.txt) 
     for TikTok and Instagram, then auto-publishes to social accounts if API credentials are standard."""
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    markdown_path = os.path.join(base_dir, "output_whatsapp.txt")
     html_path = os.path.join(base_dir, "output_body_content.html")
     reel_path = os.path.join(base_dir, "output_reel.mp4")
     caption_path = os.path.join(base_dir, "output_social_caption.txt")
@@ -160,21 +161,17 @@ def generate_social_media_assets(tool_context: ToolContext) -> str:
     # Render Vertical Video Reel MP4
     reel_status = render_vertical_reel(spotlight_car, hammer_price, photo_url, daily_volume, sales_count, reel_path)
 
-    # Build TikTok & Instagram Reel Caption
-    caption_text = f"""🏎️ CARS NEVER DIE • Daily Collector Car Market Intel ({today_str})
+    # Build High-Converting Growth Caption Script
+    caption_text = f"""🔥 WHY DID THIS {spotlight_car.upper()} HAMMER FOR {hammer_price}? 🤯
 
-Featured Spotlight: {spotlight_car}
-Hammer Price: {hammer_price} USD
+Yesterday, {daily_volume} shifted across {sales_count} six-figure collector cars on Bring a Trailer and duPont REGISTRY Live.
 
-📊 Yesterday's Market Summary:
-• Total Transacted Volume: {daily_volume}
-• Six-Figure Sales Count: {sales_count} cars traded ($100k+)
-• Top Platforms: Bring a Trailer & duPont REGISTRY Live
+Featured Spotlight: {spotlight_car} ({hammer_price})
 
-Want full sales breakdowns, valuation spreadsheets, and live auction alerts in your inbox every morning?
+📊 Want full daily sales spreadsheets, price tier breakdowns, and live auction alerts sent straight to your inbox?
 
-📩 Subscribe to the free newsletter:
-👉 carsneverdie.beehiiv.com (Link in bio!)
+📩 COMMENT "DATA" BELOW & we'll DM you the free subscription link! 
+👉 Or click the Link in Bio to join free: carsneverdie.beehiiv.com
 
 #CarsNeverDie #CollectorCars #BringATrailer #duPontRegistry #Supercars #Porsche #Ferrari #Lamborghini #Hypercar #CarCollector #AuctionNews #AutomotiveMarket"""
 
