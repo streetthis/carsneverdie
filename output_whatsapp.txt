@@ -1,80 +1,36 @@
 *WHY I DID NOT SLEEP LAST NIGHT*
 
-If you watched the digital boards yesterday, you saw exactly how the post-Monterey capital rotation is playing out. There was no late-summer slowdown. $7.01M shifted hands across 19 six-figure cars on a random Friday in late August. This is the classic window where bidders who kept their hands down in California are now hunting aggressively on their phones, injecting serious liquid momentum back into online platforms.
+Yesterday was a loud reminder that while the physical tents in Monterey have packed up and left, the high-end online market isn't taking a single breath. We watched $5.67M trade hands across 21 six-figure sales yesterday, and the action was incredibly telling.
 
-Bring a Trailer led the charge with $4.25M in volume across 13 high-end lots, while duPont REGISTRY Live kept its ultra-high-end streak alive, locking in $2.54M on just 4 completed sales. This suggests that the high-end digital market is not just holding firm—it is absorbing the premium demand that physical auction houses left behind last week.
+If you thought a post-Monterey hangover would quiet down the bidding, think again. From an $812k air-cooled RS lightweight to a $707k gated-era V12 Lambo, the smart money is still moving fast, aggressively targeting limited-run modern classics and analogue beasts that are getting harder to find in any market condition.
 
 [Chart: Daily Volume Trajectory]
 
+---
+
 ##### Vehicle Spotlight
-*2020 McLaren Senna GTR*
+*2021 McLaren 765LT*
 
-Track-only hypercars are notoriously difficult to value because they exist outside the bounds of street legality and standard club racing classes. Yet, when a 1-of-75 track weapon like the 2020 McLaren Senna GTR (https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697) crosses the digital block, the collector market pays close attention. Yesterday, duPont REGISTRY Live hammered down No. 45 of 75, finished in MSO Pure White, for a substantial $1,187,550.
+While standard 720S prices continue to face typical modern supercar depreciation, the limited-run 765LT is proving to be a genuine store of value. Bidders recognized the rarity of this spec and paid up for a highly documented example. At $635,250, it represents a strong, stable marker for McLaren's ultimate series models in the current secondary market.
 
-Unlike standard road-going Sennas, the GTR throws out all road compliance regulations to maximize ground-effect aerodynamics, generating a massive 2,205 pounds of downforce. Powered by a twin-turbocharged 4.0-liter V8 pushing 814 horsepower, this carbon-clad brute represents McLaren's ultimate vision of track performance. Buying a GTR is a pure statement of track intent, and this result confirms that ultra-low-volume track toys are still highly valued assets for collectors wanting the absolute peak of modern performance.
+[Chart: 2021 McLaren 765LT]
 
-* *Hammer Price*: $1,187,550
-* *Platform*: duPont REGISTRY Live
-* *Listing*: 2020 McLaren Senna GTR (https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697)
-
-[Chart: 2020 McLaren Senna GTR]
+---
 
 ##### The Leader Board
 *Auction House Roundup (7-Day Rolling $100k+ Average Sale Price Leaderboard)*
 
-Over the past rolling seven days, the online market for six-figure collector cars logged a massive 139 completed sales, resulting in $41.31M in total transaction volume. The clear platform dynamic remains: Bring a Trailer commands the volume engine with 110 transactions, while duPont REGISTRY Live rules the top of the price tiers, pulling in an extraordinary average sale price of $564.6k.
-
 | Rank | Auction Site | 7-Day Avg Sale Price ($) | 7-Day $100k+ Volume ($) | 6-Figure Lots Sold |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | duPont REGISTRY Live | 564,650.00 | 11,857,650.00 | 21 |
-| 2 | Bring a Trailer | 257,999.04 | 28,379,894.75 | 110 |
-| 3 | Cars & Bids | 139,091.18 | 973,638.25 | 7 |
-| 4 | Car & Classic | 101,247.20 | 101,247.20 | 1 |
+| 1 | duPont REGISTRY Live | 548,347.06 | 9,321,900.00 | 17 |
+| 2 | Bring a Trailer | 248,268.46 | 28,054,336.40 | 113 |
 
 [Chart: Average Sale Price by Auction House Combo Chart]
 
-*WHAT TO WATCH*
-
-With the physical auctions in Monterey wrapped up, we are seeing a massive influx of premium digital consignments hitting the boards this weekend. Collectors who missed out on high-reserve lots in California are actively scanning their screens, looking to redeploy their capital into clean, documented machinery.
-
-First, keep a close eye on modern track specials closing over the next 48 hours. Following the $1.18M Senna GTR and the $803k GT2 RS yesterday, watch the reserve levels on high-tier Porsches and track-only platforms. Bidders are highly selective right now, prioritizing original paint, low track hours, and single-ownership provenance over speculative builds.
-
-Second, watch the momentum on gated modern classics and manual conversions. Converted Italian V12s and manual-swapped late-90s models continue to outperform standard paddle-shift equivalents by wide margins. If you see clean manual or converted modern exotics closing today or tomorrow, expect late-bidding frenzies as collectors hunt for analog mechanical engagement.
-
-##### Data Corner
-*High-End Price Breakdown & Valuation Spread (7-Day Rolling Context)*
-
-The 7-day price distribution demonstrates where the core liquidity of the online market resides. An overwhelming 93 out of 139 transactions closed in the entry-luxury $100k - $250k tier, showing that the high-end daily driver and sports car market is incredibly liquid. Meanwhile, the $250k - $500k tier remains solid with 27 completed transactions.
-
-As you move beyond $500k, the volume thins out, but the average values spike dramatically. The multi-million dollar space remains highly concentrated, with duPont REGISTRY Live commanding the sole transaction over $2M this week (the $3.72M Porsche Carrera GT on August 15). Bring a Trailer holds a dominant share of the $500k to $2M space, while duPont REGISTRY Live continues to capture high-end market share as prices climb.
-
-[Chart: Price Tier Distribution]
-
-[Chart: Price Valuation Histogram]
+---
 
 *TOP MOVERS*
 
-Here is a breakdown of the key six-figure sales completed yesterday, August 21, 2026, showcasing strong results across modern hypercars, track-day specials, and vintage analog legends:
-
 | Vehicle | Year | Sold Price ($) | Auction House |
 | :--- | :--- | :--- | :--- |
-| [2020 McLaren Senna GTR (https://live.dupontregistry.com/auction/2020-mclaren-sennagtr45of75msopurewhite-3697)] | 2020 | 1,187,550 | duPont REGISTRY Live |
-| [2020 Ferrari 488 Pista (https://bringatrailer.com/listing/2020-ferrari-488-pista-40/)] | 2020 | 1,127,500 | Bring a Trailer |
-| [2018 Porsche GT2 RS (https://live.dupontregistry.com/auction/2018-porsche-gt2rsweissachpackage3019miles-3739)] | 2018 | 803,250 | duPont REGISTRY Live |
-| [2017 Ford GT (https://bringatrailer.com/listing/2017-ford-gt-19/)] | 2017 | 728,500 | Bring a Trailer |
-| [2020 Ferrari F8 Tributo (https://bringatrailer.com/listing/2020-ferrari-f8-tributo-18/)] | 2020 | 462,500 | Bring a Trailer |
-| [2016 Ferrari 488 Spider (https://bringatrailer.com/listing/2016-ferrari-488-spider-11/)] | 2016 | 390,500 | Bring a Trailer |
-| [2008 Ferrari 599 GTB (https://live.dupontregistry.com/auction/2008-ferrari-599gtbvipbook4500miles-3767)] | 2008 | 372,750 | duPont REGISTRY Live |
-| [2025 Porsche 718 Cayman GT4 RS Clubsport (https://bringatrailer.com/listing/2025-porsche-718-cayman-gt4-rs-clubsport/)] | 2025 | 248,500 | Bring a Trailer |
-| [1997 Ferrari F355 GTS 6-Speed (https://bringatrailer.com/listing/1997-ferrari-f355-gts-25/)] | 1997 | 219,500 | Bring a Trailer |
-| [1967 Chevrolet Corvette Convertible L71 427/435 4-Speed (https://bringatrailer.com/listing/1967-chevrolet-corvette-convertible-337/)] | 1967 | 219,500 | Bring a Trailer |
-
-*WHAT'S COMING UP THIS WEEK*
-
-This week marks the beginning of the post-Monterey catalog transition. Physical auction houses are shipping cars and settling accounts, while digital platforms are capitalizing on the massive price benchmarks established on the peninsula. Expect a major influx of premium consignments from dealers and private collectors looking to capture the remaining late-summer buyer enthusiasm.
-
-For serious collectors, this is a prime window to acquire vehicles. Many buyers who exhausted their energy or missed out during Car Week are taking a brief breather, which means less crowded bidding wars on digital listings over the next seven days. Keep your notifications active on Bring a Trailer and duPont REGISTRY Live, and be ready to pull the trigger if a clean, highly documented spec flies under the radar.
-
-Catch you tomorrow,
-
-*dRew*
+| 1973 Porsche 911 Carrera RS Lightweight (https://bringatrailer.com/listing/1973-porsche-911-carrera-rs-sport-4/) | 1973 | 812,500.00 | Bring a Trailer |
