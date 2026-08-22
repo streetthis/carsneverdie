@@ -101,7 +101,7 @@ def render_vertical_reel(spotlight_car: str, hammer_price: str, photo_url: str, 
             draw.text((width // 2, 1340), "OR CLICK LINK IN BIO TO JOIN FREE", font=font_small, fill=(3, 7, 18), anchor="mm")
 
         # Footer watermark
-        draw.text((width // 2, 1820), "carsneverdie.beehiiv.com • TikTok & Instagram @carsneverdie", font=font_small, fill=(156, 163, 175) if scene_idx != 2 else (3, 7, 18), anchor="mm")
+        draw.text((width // 2, 1820), "carsneverdie.beehiiv.com • Instagram @Cars._.Never._.Die", font=font_small, fill=(156, 163, 175) if scene_idx != 2 else (3, 7, 18), anchor="mm")
 
         frames.append(img)
 
@@ -196,13 +196,13 @@ Featured Spotlight: {spotlight_car} ({hammer_price})
             post_url = "https://api.upload-post.com/v1/posts"
             headers = {"Authorization": f"Bearer {api_key}"}
             payload = {
-                "accounts": ["tiktok_carsneverdie", "instagram_carsneverdie"],
+                "accounts": ["tiktok_carsneverdie", "instagram_Cars._.Never._.Die"],
                 "caption": caption_text,
                 "video_url": reel_path
             }
             resp = requests.post(post_url, headers=headers, json=payload, timeout=15)
             if resp.status_code in (200, 201):
-                publish_status = f"Successfully published daily reel to TikTok & Instagram! (API Response: {resp.status_code})"
+                publish_status = f"Successfully published daily reel to TikTok & Instagram @Cars._.Never._.Die! (API Response: {resp.status_code})"
             else:
                 publish_status = f"Social API return code {resp.status_code}: {resp.text}"
         except Exception as e:
