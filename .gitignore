@@ -30,3 +30,7 @@ volume_count_combo.png
 output_body_content.html
 output_whatsapp.txt
 
+# Beehiiv browser session state (contains sensitive auth tokens)
+beehiiv_session.json
+beehiiv_session_*.json
+

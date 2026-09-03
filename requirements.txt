@@ -6,3 +6,4 @@ markdown
 matplotlib
 pillow
 moviepy
+playwright

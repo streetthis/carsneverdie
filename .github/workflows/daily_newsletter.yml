@@ -32,6 +32,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          playwright install chromium --with-deps
 
       - name: Run Newsletter Pipeline
         env:
@@ -41,9 +42,11 @@ jobs:
           BEEHIIV_API_KEY: ${{ secrets.BEEHIIV_API_KEY }}
           BEEHIIV_PUBLICATION_ID: ${{ secrets.BEEHIIV_PUBLICATION_ID }}
           BEEHIIV_POST_STATUS: "confirmed"
+          BEEHIIV_STORAGE_STATE: ${{ secrets.BEEHIIV_STORAGE_STATE }}
           UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
           SOCIAL_POSTING_API_KEY: ${{ secrets.SOCIAL_POSTING_API_KEY }}
         run: python agents.py
+
 
       - name: Commit and push updated editorial memory and social media assets
         run: |

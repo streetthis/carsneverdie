@@ -83,6 +83,34 @@ def create_beehiiv_post(
         }
     }
     
+    # Try Playwright browser automation first if session state or file is available
+    from beehiiv_playwright_publisher import publish_newsletter_via_browser, get_session_file_path
+    session_file = get_session_file_path()
+    has_playwright_auth = os.path.exists(session_file) or bool(os.getenv("BEEHIIV_STORAGE_STATE"))
+    
+    if has_playwright_auth:
+        print("[beehiiv_publisher_agent] Detected Beehiiv browser session state. Publishing via Playwright...")
+        browser_res = publish_newsletter_via_browser(
+            title=clean_title,
+            subtitle=clean_subtitle,
+            body_html_path=body_content_path,
+            publish_now=(target_status == "confirmed")
+        )
+        if browser_res.get("success"):
+            _POST_CREATED_IN_SESSION = True
+            _LAST_CREATED_POST_INFO = {
+                "post_url": browser_res.get("post_url"),
+                "status": target_status
+            }
+            return {
+                "success": True,
+                "message": browser_res.get("message"),
+                "post_url": browser_res.get("post_url")
+            }
+        else:
+            print(f"[beehiiv_publisher_agent] Browser automation failed: {browser_res.get('error')}. Falling back to REST API...")
+
+    # Fallback to direct REST API
     try:
         response = requests.post(url, headers=headers, json=payload)
         if response.status_code in [200, 201]:
@@ -104,10 +132,12 @@ def create_beehiiv_post(
         else:
             return {
                 "error": f"beehiiv API request failed with status {response.status_code}",
-                "details": response.text
+                "details": response.text,
+                "notice": "On standard Beehiiv plans, the Posts API is restricted. Please run save_beehiiv_session.py to use Playwright browser publishing instead."
             }
     except Exception as e:
         return {"error": f"Exception connecting to beehiiv API: {str(e)}"}
+
 
 # --- beehiiv Publisher Agent Definition ---
 
