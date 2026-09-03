@@ -81,7 +81,8 @@ def publish_newsletter_via_browser(
             # 1. Navigate to publications dashboard / post creation
             new_post_url = f"https://app.beehiiv.com/publications/{clean_pub_id}/posts/new"
             print(f"[Beehiiv Playwright] Navigating to: {new_post_url}")
-            response = page.goto(new_post_url, wait_until="networkidle", timeout=45000)
+            response = page.goto(new_post_url, wait_until="domcontentloaded", timeout=60000)
+
             
             # Check if redirected to login (expired session)
             if "login" in page.url:

@@ -29,7 +29,11 @@ def main():
         page = context.new_page()
         
         print("Navigating to Beehiiv login page...")
-        page.goto("https://app.beehiiv.com/login", wait_until="networkidle")
+        try:
+            page.goto("https://app.beehiiv.com/login", wait_until="domcontentloaded", timeout=60000)
+        except Exception as e:
+            print(f"[Note] Initial page load event notice: {e}")
+
         
         print("\n>>> Please complete login in the opened browser window.")
         print(">>> Once you are on the Beehiiv dashboard / publications page, return here and press ENTER.")
