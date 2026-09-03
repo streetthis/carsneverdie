@@ -320,7 +320,7 @@ CRITICAL: Pass the ENTIRE editorial markdown text exactly as received. Do not tr
 
 publisher_agent = Agent(
     name="publisher_designer",
-    model="gemini-3.5-flash",
+    model="gemini-3.6-flash",
     instruction=PUBLISHER_INSTRUCTION,
     tools=[build_newsletter_html]
 )

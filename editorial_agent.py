@@ -211,7 +211,7 @@ Catch you tomorrow,
 
 editorial_agent = Agent(
     name="dRew_editor",
-    model="gemini-3.5-flash",
+    model="gemini-3.6-flash",
     instruction=EDITORIAL_PERSONA_INSTRUCTION,
     tools=[search_car_news, get_recent_editorial_memory, save_today_editorial_memory]
 )

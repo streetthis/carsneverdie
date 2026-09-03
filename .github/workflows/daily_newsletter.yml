@@ -49,6 +49,10 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add editorial_memory.json output_reel.mp4 output_social_caption.txt archives/
+          git add editorial_memory.json output_social_caption.txt 2>/dev/null || true
+          git add output_reel.mp4 output_reel.gif 2>/dev/null || true
+          git add archives/*.txt archives/*.json 2>/dev/null || true
           git diff-index --quiet HEAD || git commit -m "Update daily editorial memory log & social media assets [skip ci]"
-          git push
+          git pull --rebase origin main || true
+          git push origin main
+

@@ -14,3 +14,19 @@ Thumbs.db
 # Virtual environments
 venv/
 .venv/
+
+# Generated Media & Video Binaries (prevent repo bloat)
+archives/*.mp4
+*.mp4
+output_reel.gif
+
+# Temporary chart & output generations
+price_band_*.png
+test_*.png
+price_histogram.png
+daily_trend_line.png
+auction_house_leaderboard.png
+volume_count_combo.png
+output_body_content.html
+output_whatsapp.txt
+

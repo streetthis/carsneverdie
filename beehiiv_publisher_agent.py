@@ -124,7 +124,7 @@ Your procedure:
 
 beehiiv_publisher_agent = Agent(
     name="beehiiv_publisher",
-    model="gemini-3.5-flash",
+    model="gemini-3.6-flash",
     instruction=BEEHIIV_PUBLISHER_INSTRUCTION,
     tools=[create_beehiiv_post]
 )

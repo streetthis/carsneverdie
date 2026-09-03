@@ -549,7 +549,7 @@ Your job:
 
 data_analyst = Agent(
     name="data_analyst",
-    model="gemini-3.5-flash",
+    model="gemini-3.6-flash",
     instruction=DATA_ANALYST_INSTRUCTION,
     tools=[
         get_past_week_six_figure_sales,

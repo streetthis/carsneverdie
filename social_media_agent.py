@@ -215,7 +215,7 @@ Featured Spotlight: {spotlight_car} ({hammer_price})
 
 social_media_agent = Agent(
     name="social_media_agent",
-    model="gemini-2.5-flash",
+    model="gemini-3.6-flash",
     description="Autonomous social media publisher for TikTok and Instagram Reels.",
     instruction="""You are the Social Media Specialist for Cars Never Die.
 Your job is to read today's newsletter content, render a 9:16 vertical HD video reel (output_reel.mp4) featuring yesterday's spotlight car and daily volume metrics, and publish/archive the reel and caption with a CTA to subscribe to carsneverdie.beehiiv.com.
